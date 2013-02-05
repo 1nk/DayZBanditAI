@@ -1,0 +1,1 @@
+{ _x addRating -20000; } forEach allMissionObjects "zZombie_Base";
