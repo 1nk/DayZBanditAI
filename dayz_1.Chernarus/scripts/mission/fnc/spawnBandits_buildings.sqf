@@ -41,7 +41,7 @@ private["_testmode", "_totalAI","_minAI","_addAI", "_spawnd","_maxspawnd", "_pat
 		if(count _this > 1) then {_addAI = _this select 1;};
 		_maxspawnd = 300;
 		if(count _this > 3) then {_maxspawnd = _this select 3;};
-		_weapongrade = 1;
+		_weapongrade = floor(random 3);
 		if(count _this > 5) then {_weapongrade = _this select 5;};
 		_seekrange = 100;
 		//if(count _this > 6) then {_seekrange = _this select 6;};
@@ -62,7 +62,9 @@ private["_testmode", "_totalAI","_minAI","_addAI", "_spawnd","_maxspawnd", "_pat
 	_bldgpos = [];
 	_i = 0;
 	_j = 0;
-	_nearbldgs = nearestObjects [getpos player, ["Building"], _spawnd];
+	//High-value buildings:
+	//["Land_SS_hangar","Land_Mil_ControlTower","Land_Mil_Barracks_i","Land_Mil_Barracks","Land_Mil_Barracks_L","Land_A_GeneralStore_01","Land_A_GeneralStore_01a","Land_A_Hospital","Land_a_stationhouse"];
+	_nearbldgs = nearestObjects [getpos player, ["House"], _spawnd];
 	{
 		private["_y"];
 		_y = _x buildingPos _i;
@@ -75,7 +77,7 @@ private["_testmode", "_totalAI","_minAI","_addAI", "_spawnd","_maxspawnd", "_pat
 		_i = 0;
 	} forEach _nearbldgs;
 	
-	if (_totalAI > 0) then {						// Only run script if there is at least one bandit to spawn
+	if ((_totalAI > 0) && (count _bldgpos > 0)) then {						// Only run script if there is at least one bandit to spawn
 		for "_i" from 1 to _totalAI do {
 		  _p = _bldgpos select floor(random count _bldgpos);
 		  /*if (count _p > 0) then {

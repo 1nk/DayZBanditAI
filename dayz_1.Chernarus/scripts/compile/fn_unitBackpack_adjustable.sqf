@@ -6,7 +6,7 @@
 
 		_chance = floor(random 10) + 1;		// Generate a random number between 1-10 used to assign a random gadget
 		_chance2 = floor(random 10) + 1;		// Generate a random number between 1-10 used to assign a random tool
-        _bags = ["CZ_VestPouch_EP1","DZ_Patrol_Pack_EP1", "DZ_Assault_Pack_EP1", "DZ_CivilBackpack_EP1", "DZ_ALICE_Pack_EP1", "DZ_Backpack_EP1"]; //Possible types of backpacks to assign
+        _bags = ["CZ_VestPouch_EP1","DZ_Patrol_Pack_EP1", "DZ_Assault_Pack_EP1", "DZ_CivilBackpack_EP1", "DZ_ALICE_Pack_EP1", "DZ_Backpack_EP1", "DZ_British_ACU", "DZ_TK_Assault_Pack_EP1"]; //Possible types of backpacks to assign
 		//_tools = ["ItemWatch","ItemKnife","ItemCompass","ItemMap","ItemToolbox","ItemMatchbox"];	//Unused; tool selection is now hardcoded
 		_gadgets = ["ItemGPS","NVGoggles","binocular_vector","ItemFlashlightRed"]; //Possible gadgets to assign
 		

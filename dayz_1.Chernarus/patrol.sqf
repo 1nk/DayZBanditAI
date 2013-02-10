@@ -69,6 +69,13 @@ if(_obj isKindOf "Man" || _obj isKindOf "Car") then {
 _obj setDir (random 360);
 
 while{_patrol && alive _obj} do {
+		sleep (random _maxwait);
+		_pos = _bldgpos select floor(random count _bldgpos);
+		_obj move _pos;
+};
+
+/*
+while{_patrol && alive _obj} do {
 	if (_obj distance player < 75) then {
 		sleep 40;
 		//_obj setCombatMode "RED";
@@ -84,5 +91,5 @@ while{_patrol && alive _obj} do {
 	};
 //	waitUntil{unitReady _obj;};
 //	_obj setDirection (random 360);
-};
+};*/
 //////////////////////////////////////////////////////////////////

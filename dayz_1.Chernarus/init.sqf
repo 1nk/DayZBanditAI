@@ -23,6 +23,10 @@ progressLoadingScreen 0.2;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\setup_functions_med.sqf";	//Functions used by CLIENT for medical
 progressLoadingScreen 0.4;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";				//Compile regular functions
+//Load AI Bandit Module
+call compile preprocessFileLineNumbers "scripts\init\dayz_ai_functions.sqf";
+call compile preprocessFileLineNumbers "scripts\mission\mission_functions.sqf";
+zombie_generate = compile preprocessFileLineNumbers "scripts\compile\zombie_generate.sqf";
 progressLoadingScreen 1.0;
 
 "filmic" setToneMappingParams [0.153, 0.357, 0.231, 0.1573, 0.011, 3.750, 6, 4]; setToneMapping "Filmic";

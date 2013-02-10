@@ -41,7 +41,7 @@ private["_testmode", "_totalAI","_minAI","_addAI", "_minspawnd", "_maxspawnd", "
 		if(count _this > 3) then {_maxspawnd = _this select 3;};
 		_patrold = 250;
 		if(count _this > 4) then {_patrold = _this select 4;};
-		_weapongrade = 1;
+		_weapongrade = floor(random 3);
 		if(count _this > 5) then {_weapongrade = _this select 5;};
 		
 		//Calculate values
