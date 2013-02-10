@@ -30,8 +30,9 @@
 	fnc_unitPistols = compile preprocessFileLineNumbers "scripts\compile\fn_unitPistols.sqf";
 	//fnc_unitPistols_adjustable = compile preprocessFileLineNumbers "scripts\compile\fn_unitPistols_adjustable.sqf";
 	ai_fired = compile preprocessFileLineNumbers "scripts\compile\ai_fired.sqf";
-	ai_targets = compile preprocessFileLineNumbers "scripts\compile\ai_targets.sqf";
-	ai_reloadifempty = compile preprocessFileLineNumbers "scripts\compile\ai_reloadifempty.sqf";
+	ai_alertzombies = compile preprocessFileLineNumbers "scripts\compile\ai_alertzombies.sqf";
+	//ai_targets = compile preprocessFileLineNumbers "scripts\compile\ai_targets.sqf";
+	//ai_reloadifempty = compile preprocessFileLineNumbers "scripts\compile\ai_reloadifempty.sqf";
 	//ai_patrol = compile preprocessFileLineNumbers "scripts\compile\ai_patrol.sqf";
 
 initialized = true;
