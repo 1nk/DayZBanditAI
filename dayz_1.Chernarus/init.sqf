@@ -24,8 +24,12 @@ call compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\setup_functi
 progressLoadingScreen 0.4;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";				//Compile regular functions
 //Load AI Bandit Module
-call compile preprocessFileLineNumbers "scripts\init\dayz_ai_functions.sqf";
-call compile preprocessFileLineNumbers "scripts\mission\mission_functions.sqf";
+if (!isServer) then {
+	call compile preprocessFileLineNumbers "scripts\init\dayz_ai_functions.sqf";
+	progressLoadingScreen 0.6;
+	call compile preprocessFileLineNumbers "scripts\mission\mission_functions.sqf";
+	progressLoadingScreen 0.8;
+};
 zombie_generate = compile preprocessFileLineNumbers "scripts\compile\zombie_generate.sqf";
 progressLoadingScreen 1.0;
 
