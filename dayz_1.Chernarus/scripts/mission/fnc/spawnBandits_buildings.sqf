@@ -13,6 +13,7 @@ private["_testmode", "_totalAI","_minAI","_addAI", "_spawnd","_maxspawnd", "_pat
 		_maxwait = 120;
 		_pursuit = 75;
 		_spawnd = 200;
+		_patrold = 250;
 		player setcaptive true;						// Bandits should not be hostile to player in test mode.
 
 	} else {
@@ -43,14 +44,15 @@ private["_testmode", "_totalAI","_minAI","_addAI", "_spawnd","_maxspawnd", "_pat
 		if(count _this > 3) then {_maxspawnd = _this select 3;};
 		_weapongrade = floor(random 3);
 		if(count _this > 5) then {_weapongrade = _this select 5;};
-		_seekrange = 100;
+		//_seekrange = 100;
 		//if(count _this > 6) then {_seekrange = _this select 6;};
-		_seekfactor = 0.75;
+		//_seekfactor = 0.75;
 		//if(count _this > 7) then {_seekfactor = _this select 7;};
 		
 		//Editables
 		_radfactor = 1.0;
 		_maxwait = 180;
+		_patrold = 250;
 		
 		//Calculate values
 		_totalAI = (_minAI + round(random _addAI));		
@@ -117,8 +119,9 @@ private["_testmode", "_totalAI","_minAI","_addAI", "_spawnd","_maxspawnd", "_pat
 			[_unit] call fnc_banditLoot;													// AI bandit Ammunition loot
 			[_unit] call fnc_genericLoot;													// AI bandit Food/Medical/Misc loot. To do: Customizable food amounts
 			//[_eastGrp, _pos, 0, "COMBAT",_bldgpos] call fnc_taskPatrol_buildings;	// (Customizable) 4th variable - unit behavior. Third variable unused
-			nul = [_unit, _spawnd, true, _maxwait, _pursuit] execVM "patrol.sqf";
+			//nul = [_unit, _spawnd, true, _maxwait, _pursuit] execVM "patrol.sqf";
 			//[_unit, _spawnd, true, _maxwait, _pursuit] call ai_patrol;
+			null = [_eastGrp,_pos,_patrold] execVM "BIN_taskPatrol.sqf";
 			{ _x addRating -20000; } forEach allMissionObjects "zZombie_Base";				// Spawned unit should be immediately hostile to existing zombies
 			//hint format["Last created AI unit: %1 (%2 of %3). Weapon Grade %4",_type,_i,_totalAI,_weapongrade];			// Report total number of AI spawned (for testing)
 			sleep 9.0;																		// Take a break.
