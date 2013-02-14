@@ -4,7 +4,7 @@
 	private ["_unit","_edible""_edibles","_medical","_medicals1","_medicals2","_misc","_miscs","_rnde","_rndm","_rnde2","_rndm2","_rndm3","_i","_bpedi1","_bpedi2","_bpmedi1","_bpmedi2"];
 	_unit = _this select 0;
 
-	_edibles = ["ItemSodaCoke", "ItemSodaPepsi", "ItemWaterbottle", "FoodCanSardines", "FoodCanBakedBeans", "FoodCanFrankBeans", "FoodCanPasta", "FoodSteakCooked", "FoodSteakRaw", "ItemWaterbottleUnfilled","FoodmuttonCooked","FoodchickenCooked","FoodBaconCooked","FoodRabbitCooked","FoodbaconRaw","FoodchickenRaw","FoodmuttonRaw","foodrabbitRaw"];
+	_edibles = ["ItemSodaCoke", "ItemSodaPepsi", "ItemWaterbottle", "FoodCanSardines", "FoodCanBakedBeans", "FoodCanFrankBeans", "FoodCanPasta", "ItemWaterbottleUnfilled","ItemWaterbottleBoiled","PartWoodPile","FoodmuttonCooked","FoodchickenCooked","FoodBaconCooked","FoodRabbitCooked","FoodbaconRaw","FoodchickenRaw","FoodmuttonRaw","foodrabbitRaw"];
 	_medicals1 = ["ItemBandage", "ItemPainkiller"];
 	_medicals2 = ["ItemMorphine", "ItemBandage", "ItemBloodbag", "ItemPainkiller", "ItemAntibiotic"];
 	_miscs = ["ItemSandbag", "ItemTent", "ItemJerrycan", "PartWheel", "PartEngine", "PartFueltank", "ItemTankTrap", "ItemWire", "PartGlass", "PartVRotor", "TrapBear", "Skin_Camo1_DZ", "Skin_Sniper1_DZ", "ItemHeatpack", "HandRoadFlare", "HandChemBlue", "HandChemRed", "HandChemGreen"];
