@@ -36,8 +36,8 @@ _blacklist = if ((count _this) > 4) then {_blacklist = _this select 4} else {[]}
 _mode = ["YELLOW", "RED"] call BIS_fnc_selectRandom;
 _formation = ["STAG COLUMN", "WEDGE", "ECH LEFT", "ECH RIGHT", "VEE", "DIAMOND"] call BIS_fnc_selectRandom;
 
-_grp setBehaviour "AWARE";
-_grp setSpeedMode "LIMITED";
+_grp setBehaviour "COMBAT";
+_grp setSpeedMode "NORMAL";
 _grp setCombatMode _mode;
 _grp setFormation _formation;
 
@@ -76,7 +76,7 @@ while {count _wp_array < _wp_count} do
 	    // The following code is an extract from Random Building Position Script v1.0 by Tophe of Östgöta Ops
 	    //////////////////////////////////////////////////////////////////
 	    _bldgpos = [];
-	    _bldgs = nearestObjects [_wp_pos, ["House"], 50];
+	    _bldgs = nearestObjects [_wp_pos, ["Building"], 50];
 	    {
 		  private["_i","_y"];
 	        _i = 0;
