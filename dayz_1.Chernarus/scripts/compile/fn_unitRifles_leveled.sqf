@@ -12,8 +12,10 @@
 
 	switch (_weapongrade) do {
 	  case 0: {		//Farm / Residential / Supermarket
-		_rifles = ["Winchester1866", "LeeEnfield", "MR43", "huntingrifle","M1014"];
-		_mags = ["15Rnd_W1866_Slug", "10x_303","2Rnd_shotgun_74Slug", "5x_22_LR_17_HMR","8Rnd_B_Beneli_74Slug"];
+	  //["MR43", ];
+	  //["2Rnd_shotgun_74Slug",];
+		_rifles = ["Winchester1866", "LeeEnfield", "huntingrifle","M1014"];
+		_mags = ["15Rnd_W1866_Slug", "10x_303", "5x_22_LR_17_HMR","8Rnd_B_Beneli_74Slug"];
 	  };
 	  case 1: {		//Military
 		_rifles = ["M16A2","M16A2GL","AK_74","M4A1_Aim","AKS_74_kobra","AKS_74_U","AK_47_M","M24","M1014","DMR","M4A1","M14_EP1","Remington870_lamp","MP5A5","MP5SD","M4A3_CCO_EP1","Sa58P_EP1","Sa58V_EP1"];
