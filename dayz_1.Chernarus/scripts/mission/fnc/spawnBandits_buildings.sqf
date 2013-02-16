@@ -44,19 +44,13 @@ private["_testmode", "_totalAI","_minAI","_addAI", "_spawnd","_maxspawnd", "_pat
 		if(count _this > 3) then {_maxspawnd = _this select 3;};
 		_weapongrade = floor(random 3);
 		if(count _this > 5) then {_weapongrade = _this select 5;};
-		//_seekrange = 100;
-		//if(count _this > 6) then {_seekrange = _this select 6;};
-		//_seekfactor = 0.75;
-		//if(count _this > 7) then {_seekfactor = _this select 7;};
 		
 		//Editables
 		_radfactor = 1.0;
-		_maxwait = 180;
 		_patrold = 250;
 		
 		//Calculate values
 		_totalAI = (_minAI + round(random _addAI));		
-		_pursuit = (_seekrange * _seekfactor);
 		_spawnd = (_radfactor * _maxspawnd);
 	};
 	
@@ -64,9 +58,10 @@ private["_testmode", "_totalAI","_minAI","_addAI", "_spawnd","_maxspawnd", "_pat
 	_bldgpos = [];
 	_i = 0;
 	_j = 0;
-	//High-value buildings:
-	//["Land_SS_hangar","Land_Mil_ControlTower","Land_Mil_Barracks_i","Land_Mil_Barracks","Land_Mil_Barracks_L","Land_A_GeneralStore_01","Land_A_GeneralStore_01a","Land_A_Hospital","Land_a_stationhouse"];
 	_nearbldgs = nearestObjects [getpos player, ["House"], _spawnd];
+	if (count _nearbldgs == 0) then {
+		_nearbldgs = nearestObjects [getpos player, ["Building"], _spawnd];
+	};
 	{
 		private["_y"];
 		_y = _x buildingPos _i;
@@ -116,11 +111,8 @@ private["_testmode", "_totalAI","_minAI","_addAI", "_spawnd","_maxspawnd", "_pat
 			[_unit] call fnc_unitBackpack_adjustable;										// (Customizable rates) Bandit backpack, tools, gadgets 
 			[_unit] call fnc_unitPistols;													// Random AI Bandit sidearm
 			[_unit, _weapongrade] call fnc_unitRifles_leveled;								// (Customizable rates) 2nd variable - AI Bandit weapon grade (0-3: Low-High)
-			[_unit] call fnc_banditLoot;													// AI bandit Ammunition loot
+			//[_unit] call fnc_banditLoot;													// AI bandit Ammunition loot
 			[_unit] call fnc_genericLoot;													// AI bandit Food/Medical/Misc loot. To do: Customizable food amounts
-			//[_eastGrp, _pos, 0, "COMBAT",_bldgpos] call fnc_taskPatrol_buildings;	// (Customizable) 4th variable - unit behavior. Third variable unused
-			//nul = [_unit, _spawnd, true, _maxwait, _pursuit] execVM "patrol.sqf";
-			//[_unit, _spawnd, true, _maxwait, _pursuit] call ai_patrol;
 			null = [_eastGrp,_pos,_patrold] execVM "BIN_taskPatrol.sqf";
 			{ _x addRating -20000; } forEach allMissionObjects "zZombie_Base";				// Spawned unit should be immediately hostile to existing zombies
 			//hint format["Last created AI unit: %1 (%2 of %3). Weapon Grade %4",_type,_i,_totalAI,_weapongrade];			// Report total number of AI spawned (for testing)
