@@ -89,9 +89,10 @@ private["_testmode", "_totalAI","_minAI","_addAI", "_minspawnd", "_maxspawnd", "
 			//[_unit] call fnc_unitRifles;													// All rifles have equal chance of being selected
 			//[_unit, 1] call fnc_unitRifles_adjustable;									// (Customizable rates) 2nd variable - AI Bandit weapons: 0 (No Sniper), 1 (No Railgun), 2 (Default)
 			[_unit, _weapongrade] call fnc_unitRifles_leveled;								// (Customizable rates) 2nd variable - AI Bandit weapon grade (0-3: Low-High)
-			[_unit] call fnc_banditLoot;													// AI bandit Ammunition loot
+			//[_unit] call fnc_banditLoot;													// AI bandit Ammunition loot
 			[_unit] call fnc_genericLoot;													// AI bandit Food/Medical/Misc loot. To do: Customizable food amounts
-			[_eastGrp, _pos, _patrold, "COMBAT"] call fnc_taskPatrol;						// (Customizable) 4th variable - unit behavior ("COMBAT" is somewhat more human-like)
+			//[_eastGrp, _pos, _patrold, "COMBAT"] call fnc_taskPatrol;						// (Customizable) 4th variable - unit behavior ("COMBAT" is somewhat more human-like)
+			null = [_eastGrp,_pos,_patrold] execVM "BIN_taskPatrol.sqf";
 			{ _x addRating -20000; } forEach allMissionObjects "zZombie_Base";				// Spawned unit should be immediately hostile to existing zombies
 			//hint format["Last created AI unit: %1 (%2 of %3). Weapon Grade %4",_type,_i,_totalAI,_weapongrade];			// Report total number of AI spawned (for testing)
 			sleep 9.0;																		// Take a break.
