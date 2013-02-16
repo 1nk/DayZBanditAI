@@ -1210,7 +1210,7 @@ class Mission
 	};
 	class Sensors
 	{
-		items=174;
+		items=175;
 		class Item0
 		{
 			position[]={6362.1455,5.9899998,2617.2646};
@@ -1225,7 +1225,7 @@ class Mission
 			age="UNKNOWN";
 			text="Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,300,250,0] call fnc_spawnBandits_buildings;";
 			class Effects
 			{
 			};
@@ -1244,7 +1244,7 @@ class Mission
 			age="UNKNOWN";
 			text="Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,2,50,300,250,0] call fnc_spawnBandits_buildings;";
 			class Effects
 			{
 			};
@@ -1263,7 +1263,7 @@ class Mission
 			age="UNKNOWN";
 			text="Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,2,50,300,250,1] call fnc_spawnBandits_buildings;";
 			class Effects
 			{
 			};
@@ -1282,7 +1282,7 @@ class Mission
 			age="UNKNOWN";
 			text="Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,300,250,1] call fnc_spawnBandits_buildings;";
 			class Effects
 			{
 			};
@@ -1301,7 +1301,7 @@ class Mission
 			age="UNKNOWN";
 			text="Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,300,250,0] call fnc_spawnBandits_buildings;";
 			class Effects
 			{
 			};
@@ -1358,7 +1358,7 @@ class Mission
 			age="UNKNOWN";
 			text="HVB";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_HVB;";
+			expActiv="_nul = [0,1,50,300,250,1] call fnc_spawnBandits_HVB;";
 			class Effects
 			{
 			};
@@ -1375,9 +1375,9 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="HVB";
+			text="Balota AF HVB";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_HVB;";
+			expActiv="_nul = [0,2,50,300,250,1] call fnc_spawnBandits_HVB;";
 			class Effects
 			{
 			};
@@ -1394,9 +1394,9 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Buildings";
+			text="Balota Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,300,250,0] call fnc_spawnBandits_buildings;";
 			class Effects
 			{
 			};
@@ -1413,9 +1413,9 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Buildings";
+			text="Komarovo Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,300,250,0] call fnc_spawnBandits_buildings;";
 			class Effects
 			{
 			};
@@ -1434,7 +1434,7 @@ class Mission
 			age="UNKNOWN";
 			text="Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,300,250,1] call fnc_spawnBandits_buildings;";
 			class Effects
 			{
 			};
@@ -1453,7 +1453,7 @@ class Mission
 			age="UNKNOWN";
 			text="Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,300,250,1] call fnc_spawnBandits_buildings;";
 			class Effects
 			{
 			};
@@ -1472,7 +1472,7 @@ class Mission
 			age="UNKNOWN";
 			text="Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,300,250,1] call fnc_spawnBandits_buildings;";
 			class Effects
 			{
 			};
@@ -1491,7 +1491,7 @@ class Mission
 			age="UNKNOWN";
 			text="Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,300,250,1] call fnc_spawnBandits_buildings;";
 			class Effects
 			{
 			};
@@ -1510,7 +1510,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,1,50,300,250,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1527,7 +1527,7 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Buildings";
+			text="StarySobor Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
 			expActiv="_nul = [0,1,50,300,250,1] call fnc_spawnBandits_buildings;";
 			class Effects
@@ -1546,7 +1546,7 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Buildings";
+			text="StarySobor Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
 			expActiv="_nul = [0,1,50,300,250,1] call fnc_spawnBandits_buildings;";
 			class Effects
@@ -1565,7 +1565,7 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Buildings";
+			text="NovySobor Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
 			expActiv="_nul = [0,2,50,300,250,1] call fnc_spawnBandits_buildings;";
 			class Effects
@@ -1605,7 +1605,7 @@ class Mission
 			age="UNKNOWN";
 			text="Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,300,250,0] call fnc_spawnBandits_buildings;";
 			class Effects
 			{
 			};
@@ -1624,7 +1624,7 @@ class Mission
 			age="UNKNOWN";
 			text="Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,300,250,1] call fnc_spawnBandits_buildings;";
 			class Effects
 			{
 			};
@@ -1643,7 +1643,7 @@ class Mission
 			age="UNKNOWN";
 			text="Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,300,250,1] call fnc_spawnBandits_buildings;";
 			class Effects
 			{
 			};
@@ -1662,7 +1662,7 @@ class Mission
 			age="UNKNOWN";
 			text="Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,3,50,300,250,4] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,3,50,300,250,1] call fnc_spawnBandits_buildings;";
 			class Effects
 			{
 			};
@@ -1681,7 +1681,7 @@ class Mission
 			age="UNKNOWN";
 			text="Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,300,250,1] call fnc_spawnBandits_buildings;";
 			class Effects
 			{
 			};
@@ -1700,7 +1700,7 @@ class Mission
 			age="UNKNOWN";
 			text="Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,300,250,0] call fnc_spawnBandits_buildings;";
 			class Effects
 			{
 			};
@@ -1738,7 +1738,7 @@ class Mission
 			age="UNKNOWN";
 			text="Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,300,250,0] call fnc_spawnBandits_buildings;";
 			class Effects
 			{
 			};
@@ -1755,9 +1755,9 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="HVB";
+			text="NWAF HVB";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,2] call fnc_spawnBandits_HVB;";
+			expActiv="_nul = [0,2,50,300,250,2] call fnc_spawnBandits_HVB;";
 			class Effects
 			{
 			};
@@ -1774,9 +1774,9 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="HVB";
+			text="NWAF HVB";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,1] call fnc_spawnBandits_HVB;";
+			expActiv="_nul = [0,2,50,300,250,1] call fnc_spawnBandits_HVB;";
 			class Effects
 			{
 			};
@@ -1793,7 +1793,7 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="HVB";
+			text="NWAF HVB";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
 			expActiv="_nul = [0,1,50,300,250,2] call fnc_spawnBandits_HVB;";
 			class Effects
@@ -1812,7 +1812,7 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Buildings";
+			text="NWAF Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
 			expActiv="_nul = [0,1,50,300,250,2] call fnc_spawnBandits_buildings;";
 			class Effects
@@ -1831,9 +1831,9 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Buildings";
+			text="Grishno Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,300,250,1] call fnc_spawnBandits_buildings;";
 			class Effects
 			{
 			};
@@ -1852,7 +1852,7 @@ class Mission
 			age="UNKNOWN";
 			text="Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,300,250,1] call fnc_spawnBandits_buildings;";
 			class Effects
 			{
 			};
@@ -1869,9 +1869,9 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Buildings";
+			text="Nadezhdino Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,300,250,0] call fnc_spawnBandits_buildings;";
 			class Effects
 			{
 			};
@@ -1890,7 +1890,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1909,7 +1909,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1928,7 +1928,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2004,7 +2004,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,1,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2023,7 +2023,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2042,7 +2042,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2080,7 +2080,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2099,7 +2099,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2110,13 +2110,12 @@ class Mission
 			a=200;
 			b=200;
 			activationBy="ANY";
-			repeating=1;
 			timeoutMin=30;
 			timeoutMid=60;
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Random";
+			text="RandomNoRepeat";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
 			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
 			class Effects
@@ -2137,7 +2136,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2156,7 +2155,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2175,7 +2174,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2211,7 +2210,7 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Random";
+			text="Green Mountain Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
 			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
 			class Effects
@@ -2232,7 +2231,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2251,7 +2250,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2289,7 +2288,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2306,9 +2305,9 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Random";
+			text="NWAF Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2344,7 +2343,7 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Random";
+			text="NWAF Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
 			expActiv="_nul = [0,1,50,500,250,1] call fnc_spawnBandits_random;";
 			class Effects
@@ -2365,7 +2364,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2384,7 +2383,7 @@ class Mission
 			age="UNKNOWN";
 			text="Buildings";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,300,250,1] call fnc_spawnBandits_buildings;";
 			class Effects
 			{
 			};
@@ -2479,7 +2478,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2498,7 +2497,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2536,7 +2535,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2555,7 +2554,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2574,7 +2573,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2593,7 +2592,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2612,7 +2611,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2631,7 +2630,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2648,9 +2647,9 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Random";
+			text="Balota Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2661,13 +2660,12 @@ class Mission
 			a=200;
 			b=200;
 			activationBy="ANY";
-			repeating=1;
 			timeoutMin=30;
 			timeoutMid=60;
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Random";
+			text="RandomNoRepeat";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
 			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
 			class Effects
@@ -2707,7 +2705,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2726,7 +2724,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2745,7 +2743,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2764,7 +2762,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2783,7 +2781,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2800,9 +2798,9 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Random";
+			text="Drozhino Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2819,9 +2817,9 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Random";
+			text="Kozlovka Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2840,7 +2838,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2857,9 +2855,9 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Random";
+			text="Balota Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2876,9 +2874,9 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Random";
+			text="Komarovo Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2895,9 +2893,9 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Random";
+			text="Kamenka Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2914,9 +2912,9 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Random";
+			text="Pavlovo Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2935,7 +2933,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2954,7 +2952,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2973,7 +2971,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2992,7 +2990,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3011,7 +3009,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3028,9 +3026,9 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Random";
+			text="Grishno Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3047,9 +3045,9 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Random";
+			text="Devils Castle Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3068,7 +3066,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3087,7 +3085,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3106,7 +3104,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3125,7 +3123,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3144,7 +3142,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3163,7 +3161,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3182,7 +3180,7 @@ class Mission
 			age="UNKNOWN";
 			text="HVB";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_HVB;";
+			expActiv="_nul = [0,2,50,500,250,1] call fnc_spawnBandits_HVB;";
 			class Effects
 			{
 			};
@@ -3201,7 +3199,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3220,7 +3218,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3239,7 +3237,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3277,7 +3275,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3296,7 +3294,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3315,7 +3313,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3334,7 +3332,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3351,9 +3349,9 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Random";
+			text="Gorka Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3370,9 +3368,9 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Random";
+			text="Dubrovka Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3389,9 +3387,9 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Random";
+			text="Dubrovka Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3429,7 +3427,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3448,7 +3446,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3467,7 +3465,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3486,7 +3484,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3505,7 +3503,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3524,7 +3522,7 @@ class Mission
 			age="UNKNOWN";
 			text="HVB";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_HVB;";
+			expActiv="_nul = [0,2,50,500,250,1] call fnc_spawnBandits_HVB;";
 			class Effects
 			{
 			};
@@ -3543,7 +3541,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3600,7 +3598,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3619,7 +3617,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3636,9 +3634,9 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Random";
+			text="Nadezhdino Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3657,7 +3655,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3674,9 +3672,9 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Random";
+			text="Gorka Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3733,7 +3731,7 @@ class Mission
 			age="UNKNOWN";
 			text="Random";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,50,500,250,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -3768,9 +3766,9 @@ class Mission
 			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			text="HVB";
+			text="StarySobor HVB";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,300,250,4] call fnc_spawnBandits_HVB;";
+			expActiv="_nul = [0,1,50,300,250,1] call fnc_spawnBandits_HVB;";
 			class Effects
 			{
 			};
@@ -4476,6 +4474,25 @@ class Mission
 			text="RandomNoRepeat";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
 			expActiv="_nul = [0,2,50,500,250,4] call fnc_spawnBandits_random;";
+			class Effects
+			{
+			};
+		};
+		class Item174
+		{
+			position[]={3705.1804,309.94174,8241.8516};
+			a=200;
+			b=200;
+			activationBy="ANY";
+			repeating=1;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=120;
+			interruptable=1;
+			age="UNKNOWN";
+			text="Random";
+			expCond="(vehicle player in thislist) OR (player in thislist)";
+			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
