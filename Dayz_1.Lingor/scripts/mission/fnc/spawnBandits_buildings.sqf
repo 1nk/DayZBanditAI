@@ -74,15 +74,7 @@ private["_testmode", "_totalAI","_minAI","_addAI", "_spawnd","_maxspawnd", "_pat
 	
 	if (_totalAI > 0) then {						// Only run script if there is at least one bandit to spawn
 		for "_i" from 1 to _totalAI do {
-		  _p = _bldgpos select floor(random count _bldgpos);
-		  /*if (count _p > 0) then {
-			call compile format ["
-			_m%1 = createMarker[""MRK%1"",[_p select 0,_p select 1]];
-			_m%1 setMarkerShape ""ICON"";
-			_m%1 setMarkerType ""DOT"";
-			_m%1 setmarkercolor ""ColorRedAlpha"";
-		  ",_i];
-		  };*/
+			_p = _bldgpos select floor(random count _bldgpos);
 
 			//_pos = _p;
 			_pos = [_p, 0, 100, 0, 0, 20, 0] call BIS_fnc_findSafePos;
