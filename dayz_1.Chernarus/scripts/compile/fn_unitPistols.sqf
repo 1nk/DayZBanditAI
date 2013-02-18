@@ -6,6 +6,10 @@
 
 	_pistols = ["M9", "glock17_EP1", "Colt1911", "UZI_EP1", "M9SD", "revolver_EP1", "Makarov"];
 	_pistolmags = ["15Rnd_9x19_M9", "17Rnd_9x19_glock17", "7Rnd_45ACP_1911", "30Rnd_9x19_UZI", "15Rnd_9x19_M9SD", "6Rnd_45ACP", "8Rnd_9x18_Makarov"];
+	/*DayZ 2017
+	_pistols = ["revolver_EP1","Makarov"];
+	_pistolmags = ["6Rnd_45ACP","8Rnd_9x18_Makarov"];
+	*/
 	
 	_rnd = floor random (count _pistols);
 	_pistol = _pistols select _rnd;

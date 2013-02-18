@@ -12,19 +12,32 @@
 
 	switch (_weapongrade) do {
 	  case 0: {		//Farm / Residential / Supermarket
+	  //Removed weapons
 	  //["MR43", ];
 	  //["2Rnd_shotgun_74Slug",];
 		_rifles = ["Winchester1866", "LeeEnfield", "huntingrifle","M1014"];
 		_mags = ["15Rnd_W1866_Slug", "10x_303", "5x_22_LR_17_HMR","8Rnd_B_Beneli_74Slug"];
+		/*DayZ 2017
+		_rifles = ["LeeEnfield","Winchester1866","Crossbow","MR43"];
+		_mags = ["10x_303","15Rnd_W1866_Slug","BoltSteel","2Rnd_shotgun_74Slug"];
+		*/
 	  };
 	  case 1: {		//Military
 		_rifles = ["M16A2","M16A2GL","AK_74","M4A1_Aim","AKS_74_kobra","AKS_74_U","AK_47_M","M24","M1014","DMR","M4A1","M14_EP1","Remington870_lamp","MP5A5","MP5SD","M4A3_CCO_EP1","Sa58P_EP1","Sa58V_EP1"];
 		_mags = ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_545x39_AK","30Rnd_556x45_Stanag", "30Rnd_545x39_AK","30Rnd_545x39_AK","30Rnd_762x39_AK47","5Rnd_762x51_M24","8Rnd_B_Beneli_74Slug","20Rnd_762x51_DMR","30Rnd_556x45_Stanag","20Rnd_762x51_DMR","8Rnd_B_Beneli_74Slug","30Rnd_9x19_MP5","30Rnd_9x19_MP5SD","30Rnd_556x45_Stanag","30Rnd_762x39_SA58","30Rnd_762x39_SA58"];
+		/*DayZ 2017
+		_rifles = ["LeeEnfield","Winchester1866","Remington870_lamp"];
+		_mags = ["10x_303","15Rnd_W1866_Slug","8Rnd_B_Beneli_74Slug"];
+		*/
 	  };
 	  case 2: {		//Military Special
 		_rifles = ["M16A2","M16A2GL","M249_DZ","AK_74","M4A1_Aim","AKS_74_kobra","AKS_74_U","AK_47_M","M24","SVD_CAMO","M1014","M107_DZ","DMR","M4A1","M14_EP1","Remington870_lamp","M240_DZ","M4A1_AIM_SD_camo","M16A4_ACG","M4A1_HWS_GL_camo","Mk_48_DZ","M4A3_CCO_EP1"];
 		_mags = ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","200Rnd_556x45_M249","30Rnd_545x39_AK","30Rnd_556x45_Stanag","30Rnd_545x39_AK","30Rnd_545x39_AK","30Rnd_762x39_AK47","5Rnd_762x51_M24","10Rnd_762x54_SVD","8Rnd_B_Beneli_74Slug","10Rnd_127x99_m107"," 20Rnd_762x51_DMR","30Rnd_556x45_Stanag","20Rnd_762x51_DMR","8Rnd_B_Beneli_74Slug","100Rnd_762x51_M240","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","100Rnd_762x51_M240","30Rnd_556x45_Stanag"];
-	  };
+		/*DayZ 2017
+		_rifles = ["LeeEnfield","Winchester1866","Remington870_lamp"];
+		_mags = ["10x_303","15Rnd_W1866_Slug","8Rnd_B_Beneli_74Slug"];
+		*/
+	 };
 	  case 3: {		//HeliCrash
 		_rifles = ["FN_FAL","bizon_silenced","M14_EP1","FN_FAL_ANPVS4","M107_DZ","BAF_AS50_scoped","Mk_48_DZ","M249_DZ","BAF_L85A2_RIS_Holo","DMR","G36C","G36C_camo","G36A_camo","G36K_camo"];
 		_mags = ["20Rnd_762x51_FNFAL","64Rnd_9x19_SD_Bizon", "20Rnd_762x51_DMR","20Rnd_762x51_FNFAL","10Rnd_127x99_m107","10Rnd_127x99_m107","100Rnd_762x51_M240","200Rnd_556x45_M249","30Rnd_556x45_Stanag", "20Rnd_762x51_DMR","30Rnd_556x45_G36","30Rnd_556x45_G36","30Rnd_556x45_G36","30Rnd_556x45_G36"];

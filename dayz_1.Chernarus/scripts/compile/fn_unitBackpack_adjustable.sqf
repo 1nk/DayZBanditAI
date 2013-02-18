@@ -4,11 +4,17 @@
         private ["_unit","_bag","_bags","_rnd","_equip","_equips","_rndeq3","_i","_chance","_chance2","_cEquips","_uEquips","_rEquips","_tools","_gadgets","_gadgets","_gadget","_rgadget"];
         _unit = _this select 0;
 
-		_chance = floor(random 10) + 1;		// Generate a random number between 1-10 used to assign a random gadget
+		_chance = floor(random 10) + 1;			// Generate a random number between 1-10 used to assign a random gadget
 		_chance2 = floor(random 10) + 1;		// Generate a random number between 1-10 used to assign a random tool
-        _bags = ["CZ_VestPouch_EP1","DZ_Patrol_Pack_EP1", "DZ_Assault_Pack_EP1", "DZ_CivilBackpack_EP1", "DZ_ALICE_Pack_EP1", "DZ_Backpack_EP1", "DZ_British_ACU", "DZ_TK_Assault_Pack_EP1"]; //Possible types of backpacks to assign
-		//_tools = ["ItemWatch","ItemKnife","ItemCompass","ItemMap","ItemToolbox","ItemMatchbox"];	//Unused; tool selection is now hardcoded
+        
+		//DayZ
+		_bags = ["CZ_VestPouch_EP1","DZ_Patrol_Pack_EP1", "DZ_Assault_Pack_EP1", "DZ_CivilBackpack_EP1", "DZ_ALICE_Pack_EP1", "DZ_Backpack_EP1", "DZ_British_ACU", "DZ_TK_Assault_Pack_EP1"]; //Possible types of backpacks to assign
 		_gadgets = ["ItemGPS","NVGoggles","binocular_vector","ItemFlashlightRed"]; //Possible gadgets to assign
+		
+		/*DayZ 2017
+		_bags = ["ice_apo_pack1","ice_apo_pack2","ice_apo_pack3","ice_apo_pack4"]; //Possible types of backpacks to assign
+		_gadgets = ["ItemFlashlightRed"]; //Possible gadgets to assign
+		*/
 		
 		//Generate random backpack
         _rnd = floor random (count _bags);
