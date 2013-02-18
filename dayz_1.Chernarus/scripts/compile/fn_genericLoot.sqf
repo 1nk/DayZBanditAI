@@ -30,21 +30,21 @@
 	
 	//Backpack Medicals
 	for [{_i=0},{_i<_bpmedicals},{_i=_i+1}] do {
-		(unitBackpack _unit) addMagazineCargo [_medicals2 select (floor random (count _medicals2)), floor random _nbpmedicals];
+		(unitBackpack _unit) addMagazineCargo [_medicals2 select (floor random (count _medicals2)), floor random (_nbpmedicals + 1)];
 	};
 
 	//Backpack Edibles
 	for [{_i=0},{_i<_bpedibles},{_i=_i+1}] do {
-		(unitBackpack _unit) addMagazineCargo [_edibles select (floor random (count _edibles)), floor random _nbpedibles];
+		(unitBackpack _unit) addMagazineCargo [_edibles select (floor random (count _edibles)), floor random (_nbpedibles + 1)];
 	};
 	
 	//Inventory Medicals
 	for [{_i=0},{_i<_invmedicals},{_i=_i+1}] do {
-		_unit addMagazine [_medicals1 select (floor random (count _medicals1)), floor random _ninmedicals];
+		_unit addMagazine [_medicals1 select (floor random (count _medicals1)), floor random (_ninmedicals + 1)];
 	};
 	
 	//Inventory Edibles
 	for [{_i=0},{_i<_invedibles},{_i=_i+1}] do {
-		_unit addMagazine [_edibles select (floor random (count _edibles)), floor random _ninedibles];
+		_unit addMagazine [_edibles select (floor random (count _edibles)), floor random (_ninedibles + 1)];
 	};
 	
