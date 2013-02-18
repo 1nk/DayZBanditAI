@@ -15,8 +15,8 @@
 	fnc_setBehaviour = compile preprocessFileLineNumbers "scripts\compile\fn_setBehaviour.sqf";
 	fnc_setSkills = compile preprocessFileLineNumbers "scripts\compile\fn_setSkills.sqf";
 	fnc_spawn_deathFlies = compile preprocessFileLineNumbers "scripts\compile\fn_spawn_deathFlies.sqf";
-	fnc_taskPatrol = compile preprocessFileLineNumbers "scripts\compile\fn_taskPatrol.sqf";
-	fnc_taskPatrol_buildings = compile preprocessFileLineNumbers "scripts\compile\fn_taskPatrol_buildings.sqf";
+	//fnc_taskPatrol = compile preprocessFileLineNumbers "scripts\compile\fn_taskPatrol.sqf";
+	//fnc_taskPatrol_buildings = compile preprocessFileLineNumbers "scripts\compile\fn_taskPatrol_buildings.sqf";
 	fnc_unitLoadout = compile preprocessFileLineNumbers "scripts\compile\fn_unitLoadout.sqf";
 	fnc_unitLoadoutLoot = compile preprocessFileLineNumbers "scripts\compile\fn_unitLoadoutLoot.sqf";
 	fnc_banditLoot = compile preprocessFileLineNumbers "scripts\compile\fn_banditLoot.sqf";
@@ -31,8 +31,6 @@
 	//fnc_unitPistols_adjustable = compile preprocessFileLineNumbers "scripts\compile\fn_unitPistols_adjustable.sqf";
 	ai_fired = compile preprocessFileLineNumbers "scripts\compile\ai_fired.sqf";
 	ai_alertzombies = compile preprocessFileLineNumbers "scripts\compile\ai_alertzombies.sqf";
-	//ai_targets = compile preprocessFileLineNumbers "scripts\compile\ai_targets.sqf";
-	//ai_reloadifempty = compile preprocessFileLineNumbers "scripts\compile\ai_reloadifempty.sqf";
-	//ai_patrol = compile preprocessFileLineNumbers "scripts\compile\ai_patrol.sqf";
+	getBuildingPosition = compile preprocessFileLineNumbers "scripts\compile\fn_getBuildingPosition.sqf";
 
 initialized = true;
