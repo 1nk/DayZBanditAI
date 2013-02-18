@@ -3,7 +3,7 @@
 	Note: Called through mission.sqm
 */
 
-private["_testmode", "_totalAI","_minAI","_addAI", "_spawnd","_maxspawnd", "_patrold","_weapongrade","_bldgpos","_i","_j","_nearbldgs","_maxwait","_radfactor","_seekrange","_seekfactor","_pursuit","spawnchance"];
+private["_testmode", "_totalAI","_minAI","_addAI", "_spawnd","_maxspawnd", "_patrold","_weapongrade","_bldgpos","_i","_j","_nearbldgs","_radfactor","spawnchance"];
 
 	_testmode = 0; //Default: 0, Test Mode: 1
 	
@@ -19,22 +19,25 @@ private["_testmode", "_totalAI","_minAI","_addAI", "_spawnd","_maxspawnd", "_pat
 	} else {
 		/* Variables:
 		
+		_radfactor: Spawn radius factor. Default: 1.0. Higher value: larger spawn radius. Smaller value: smaller spawn radius.
+		_patrold = Maximum distance between patrol waypoints.
+		_spawnchance: Chance to add a specified number of AI to spawn (Default 5%)
+		
 		_minAI: Minimum number of AI bandits to spawn.
 		_addAI: Additional random number of AI bandits to spawn.
-		_radfactor: Spawn radius factor. Default: 1.0. Higher value: larger spawn radius. Smaller value: smaller spawn radius.
 		_maxspawnd: Maximum distance to select buildings to spawn AI bandit.
 		_weapongrade: Weapon grade of bandit. 0: Civilian Grade Weapons, 1: Low Grade Military, 2: Medium Grade Military, 3: High Grade Military
-		_seekrange: Base seek range for AI bandit. May be modified by _seekfactor.
-		_seekfactor: Seek range multiplier, modifies _seekrange. Larger value will increase the range at which the AI bandit will begin to seek out the player, smaller value will decrease it. (Default 0.75)
 		_totalAI: Total number of AI to spawn. Script does not proceed if zero value.
-		_maxwait: Maximum wait time in seconds before AI moves to the next waypoint.
-		_pursuit: Within this distance, AI bandit will seek out player's current position every 40 seconds. (Default 100m)
 		_spawnd: Calculated distance to select buildings to spawn AI bandit.
 		*/
 		
+		//Editables
+		_radfactor = 1.0;
+		_patrold = 250;
+		_spawnchance = 0.10;
+		
 		//Values taken from mission.sqm. If not present, use preset values. 
 		_minAI = 0;
-		_spawnchance = 1.0;
 		if ((random 1) < _spawnchance) then {
 			if(count _this > 0) then {_minAI = _this select 0;};
 		};
@@ -45,40 +48,21 @@ private["_testmode", "_totalAI","_minAI","_addAI", "_spawnd","_maxspawnd", "_pat
 		_weapongrade = 1 + floor(random 2);
 		if(count _this > 5) then {_weapongrade = _this select 5;};
 		
-		//Editables
-		_radfactor = 1.0;
-		_patrold = 250;
-		
 		//Calculate values
 		_totalAI = (_minAI + round(random _addAI));				
 		_spawnd = (_radfactor * _maxspawnd);
 	};
 	
 	// Generate a list of useable building positions within a distance of _maxspawnd meters.
-	_bldgpos = [];
-	_i = 0;
-	_j = 0;
-	//High-value buildings:
-	//["Land_SS_hangar","Land_Mil_ControlTower","Land_Mil_Barracks_i","Land_Mil_Barracks","Land_Mil_Barracks_L","Land_A_GeneralStore_01","Land_A_GeneralStore_01a","Land_A_Hospital","Land_a_stationhouse","CampEast_EP1","MASH_EP1"];
 	_nearbldgs = nearestObjects [getpos player, ["Land_SS_hangar","Land_Mil_ControlTower","Land_Mil_Barracks_i","Land_Mil_Barracks","Land_Mil_Barracks_L","Land_A_GeneralStore_01","Land_A_GeneralStore_01a","Land_A_Hospital","Land_a_stationhouse","CampEast_EP1","MASH_EP1","Body"], _spawnd];
 	if (count _nearbldgs == 0) then {
 		_nearbldgs = nearestObjects [getpos player, ["Building"], _spawnd];
 	};
-	{
-		private["_y"];
-		_y = _x buildingPos _i;
-		while {format["%1", _y] != "[0,0,0]"} do {
-			_bldgpos set [_j, _y];
-			_i = _i + 1;
-			_j = _j + 1;
-			_y = _x buildingPos _i;
-		};
-		_i = 0;
-	} forEach _nearbldgs;
+	_bldgpos = [_nearbldgs] call getBuildingPosition;
 	
-	if ((_totalAI > 0) && (count _bldgpos > 0)) then {						// Only run script if there is at least one bandit to spawn
+	if (_totalAI > 0) then {						// Only run script if there is at least one bandit to spawn
 		for "_i" from 1 to _totalAI do {
-			_p = _bldgpos select floor(random count _bldgpos);
+			_p = _bldgpos call BIS_fnc_selectRandom;
 			_pos = [_p, 0, 100, 0, 0, 20, 0] call BIS_fnc_findSafePos;
 			_eastGrp = createGroup east;
 			_SideHQ = createCenter east;
@@ -103,11 +87,11 @@ private["_testmode", "_totalAI","_minAI","_addAI", "_spawnd","_maxspawnd", "_pat
 			[_unit] call fnc_unitBackpack_adjustable;										// (Customizable rates) Bandit backpack, tools, gadgets 
 			[_unit] call fnc_unitPistols;													// Random AI Bandit sidearm
 			[_unit, _weapongrade] call fnc_unitRifles_leveled;								// (Customizable rates) 2nd variable - AI Bandit weapon grade (0-3: Low-High)
-			//[_unit] call fnc_banditLoot;													// AI bandit Ammunition loot
-			[_unit] call fnc_genericLoot;													// AI bandit Food/Medical/Misc loot. To do: Customizable food amounts
+			[_unit] call fnc_genericLoot;													// AI bandit Food/Medical/Misc loot.
 			null = [_eastGrp,_pos,_patrold] execVM "BIN_taskPatrol_HVB.sqf";
 			{ _x addRating -20000; } forEach allMissionObjects "zZombie_Base";				// Spawned unit should be immediately hostile to existing zombies
 			//hint format["Last created AI unit: %1 (%2 of %3). Weapon Grade %4",_type,_i,_totalAI,_weapongrade];			// Report total number of AI spawned (for testing)
+			//titleText["Triggered spawnBandits_HVB","PLAIN DOWN"];							// Report trigger activation (basic)
 			sleep 9.0;																		// Take a break.
 		};
 	};
