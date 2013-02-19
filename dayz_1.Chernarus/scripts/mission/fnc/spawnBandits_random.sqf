@@ -3,16 +3,18 @@
 	Note: Called through mission.sqm
 */
 
-private["_testmode", "_totalAI","_minAI","_addAI", "_minspawnd", "_maxspawnd", "_patrold","_weapongrade","_spawnchance"];
+private ["_testmode", "_totalAI","_minAI","_addAI", "_minspawnd", "_maxspawnd", "_patrold","_weapongrade","_spawnchance"];
 
 	_testmode = 0; //Default: 0, Test Mode: 1
 	
 	if (_testmode == 1) then {
 		_minspawnd = 30;
 		_maxspawnd = 100;
-		_patrold = 250;
-		_totalAI = 10;
+		_minAI = 1;
+		_addAI = 1;
+		_totalAI = 2;
 		_weapongrade = 1;
+		_patrold = 250;
 		player setcaptive true;						// Bandits should not be hostile to player in test mode.
 
 	} else {
@@ -31,9 +33,9 @@ private["_testmode", "_totalAI","_minAI","_addAI", "_minspawnd", "_maxspawnd", "
 		
 		// Values taken from mission.sqm. If not present, use preset values. 
 		_minAI = 0;
-		_spawnchance = 0.05;
+		_spawnchance = 0.15;
 		if ((random 1) < _spawnchance) then {
-			if(count _this > 0) then {_minAI = _this select 0;};
+			_minAI = _this select 0;
 		};
 		_addAI = 0;
 		if(count _this > 1) then {_addAI = _this select 1;};
@@ -73,10 +75,10 @@ private["_testmode", "_totalAI","_minAI","_addAI", "_minspawnd", "_maxspawnd", "
 			
 			[_unit] call fnc_setBehaviour;													// AI behavior configuration
 			[_unit] call fnc_setSkills;														// AI skill configuration
-			[_unit] call fnc_unitBackpack_adjustable;										// (Customizable rates) Bandit backpack, tools, gadgets 
-			[_unit] call fnc_unitPistols;													// Random AI Bandit sidearm
-			[_unit, _weapongrade] call fnc_unitRifles_leveled;								// (Customizable rates) 2nd variable - AI Bandit weapon grade (0-3: Low-High)
-			[_unit] call fnc_genericLoot;													// AI bandit Food/Medical/Misc loot.
+			[_unit] call fnc_unitBackpackTools;												// (Customizable rates) Bandit backpack, tools, gadgets 
+			[_unit, _weapongrade] call fnc_unitSelectPistol;								// Random AI Bandit sidearm
+			[_unit, _weapongrade] call fnc_unitSelectRifle;									// (Customizable rates) 2nd variable - AI Bandit weapon grade (0-3: Low-High)
+			[_unit] call fnc_unitConsumables;												// AI bandit Food/Medical/Misc loot.
 			null = [_eastGrp,_pos,_patrold] execVM "BIN_taskPatrol.sqf";
 			{ _x addRating -20000; } forEach allMissionObjects "zZombie_Base";				// Spawned unit should be immediately hostile to existing zombies
 			//hint format["Last created AI unit: %1 (%2 of %3). Weapon Grade %4",_type,_i,_totalAI,_weapongrade];			// Report total number of AI spawned (for testing)

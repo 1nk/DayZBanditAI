@@ -3,16 +3,16 @@
 	Note: Called through mission.sqm
 */
 
-private["_testmode", "_totalAI","_minAI","_addAI", "_spawnd","_maxspawnd", "_patrold","_weapongrade","_bldgpos","_i","_j","_nearbldgs","_maxwait","_radfactor","_seekrange","_seekfactor","_pursuit","spawnchance"];
+private ["_testmode","_totalAI","_minAI","_addAI","_spawnd","_maxspawnd","_patrold","_weapongrade","_bldgpos","_nearbldgs","_radfactor","_spawnchance"];
 
 	_testmode = 0; //Default: 0, Test Mode: 1
 	
 	if (_testmode == 1) then {
-		_totalAI = 2;
+		_minAI = 1;
+		_addAI = 10;
 		_weapongrade = 1;
-		_maxwait = 120;
-		_pursuit = 75;
-		_spawnd = 200;
+		_maxspawnd = 250;
+		//_spawnd = 200;
 		_patrold = 250;
 		player setcaptive true;						// Bandits should not be hostile to player in test mode.
 
@@ -34,12 +34,12 @@ private["_testmode", "_totalAI","_minAI","_addAI", "_spawnd","_maxspawnd", "_pat
 		//Editables
 		_radfactor = 1.0;
 		_patrold = 250;
-		_spawnchance = 0.10;
+		_spawnchance = 0.15;
 		
 		//Values taken from mission.sqm. If not present, use preset values. 
 		_minAI = 0;
 		if ((random 1) < _spawnchance) then {
-			if(count _this > 0) then {_minAI = _this select 0;};
+			_minAI = _this select 0;
 		};
 		_addAI = 1;
 		if(count _this > 1) then {_addAI = _this select 1;};
@@ -77,7 +77,6 @@ private["_testmode", "_totalAI","_minAI","_addAI", "_spawnd","_maxspawnd", "_pat
 			_unit = _eastGrp createUnit [_type, _pos, [], 0, "FORM"];						// Spawn the AI bandit unit
 			_unit addEventHandler ["Fired", {_this call ai_fired;}];						// Unit firing catches zombies attention, like player
 			_unit addEventHandler ["Fired", {(_this select 0) setvehicleammo 1}];			// AI bandit has unlimited ammunition
-			//_unit addEventHandler ["Fired", {_this call ai_reloadifempty;}];				// AI bandit gains 4 mags for primary weapon if depleted
 			_unit addEventHandler ["HandleDamage",{_this call local_zombieDamage;}];		// AI bandit handles damage (?)
 			_unit addEventHandler ["Killed",{[_this,"banditKills"] call local_eventKill;}]; // Credit player for killing the AI bandit
 			_unit addEventHandler ["Killed",{_this call fnc_spawn_deathFlies;}];			// Spawn flies for AI bandit corpse
@@ -88,14 +87,14 @@ private["_testmode", "_totalAI","_minAI","_addAI", "_spawnd","_maxspawnd", "_pat
 			
 			[_unit] call fnc_setBehaviour;													// AI behavior configuration
 			[_unit] call fnc_setSkills;														// AI skill configuration
-			[_unit] call fnc_unitBackpack_adjustable;										// (Customizable rates) Bandit backpack, tools, gadgets 
-			[_unit] call fnc_unitPistols;													// Random AI Bandit sidearm
-			[_unit, _weapongrade] call fnc_unitRifles_leveled;								// (Customizable rates) 2nd variable - AI Bandit weapon grade (0-3: Low-High)
-			[_unit] call fnc_genericLoot;													// AI bandit Food/Medical/Misc loot.
+			[_unit] call fnc_unitBackpackTools;												// (Customizable rates) Bandit backpack, tools, gadgets 
+			[_unit, _weapongrade] call fnc_unitSelectPistol;								// Random AI Bandit sidearm
+			[_unit, _weapongrade] call fnc_unitSelectRifle;									// (Customizable rates) 2nd variable - AI Bandit weapon grade (0-3: Low-High)
+			[_unit] call fnc_unitConsumables;												// AI bandit Food/Medical/Misc loot.
 			null = [_eastGrp,_pos,_patrold] execVM "BIN_taskPatrol.sqf";
 			{ _x addRating -20000; } forEach allMissionObjects "zZombie_Base";				// Spawned unit should be immediately hostile to existing zombies
 			//hint format["Last created AI unit: %1 (%2 of %3). Weapon Grade %4. (Buildings)",_type,_i,_totalAI,_weapongrade];			//Report trigger activation (verbose)
-			//titleText["Triggered spawnBandits_buildings","PLAIN DOWN"];							// Report trigger activation (basic)
+			//titleText["Triggered spawnBandits_buildings","PLAIN DOWN"];						// Report trigger activation (basic)
 			sleep 9.0;																		// Take a break.
 		};
 	};
