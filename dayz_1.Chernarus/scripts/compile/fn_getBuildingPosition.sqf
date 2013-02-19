@@ -1,5 +1,5 @@
 //Returns an array of possible building positions
-private["_radius","_pos","_bldgpos","_i","_j","_nearbldgs"];
+private ["_bldgpos","_i","_j","_nearbldgs"];
 
 _nearbldgs = _this select 0;
 
