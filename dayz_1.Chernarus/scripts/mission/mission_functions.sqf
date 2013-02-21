@@ -5,6 +5,6 @@
 
 	waituntil {!isnil "bis_fnc_init"};
 	fnc_spawnBandits_random = compile preprocessFileLineNumbers "scripts\mission\fnc\spawnBandits_random.sqf";
-	fnc_spawnBandits_buildings = compile preprocessFileLineNumbers "scripts\mission\fnc\spawnBandits_buildings.sqf";
-	fnc_spawnBandits_HVB = compile preprocessFileLineNumbers "scripts\mission\fnc\spawnBandits_HVB.sqf";
+	fnc_spawnBandits_bldgs = compile preprocessFileLineNumbers "scripts\mission\fnc\spawnBandits_bldgs.sqf";
+	//fnc_spawnBandits_HVB = compile preprocessFileLineNumbers "scripts\mission\fnc\spawnBandits_HVB.sqf";
 	initialized = true;
