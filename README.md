@@ -3,7 +3,7 @@ DayZBanditAI
 
 The DayZ AI Bandit Module is a personal project built from a heavily stripped-down version DaiZy (DayZ SP), intended to simulate multiplayer gameplay in a singleplayer environment using AI Bandits to simulate the threat of hostile human players. 
 
-The AI Bandit Module may be used in a multiplayer environment, but unpredictible events may occur due to variable locality issues. The AI Bandit Module is intended for use with Reality DayZ private hive server files in a lone player environment, but 
+The AI Bandit Module may be used in a multiplayer environment, but unpredictable events may occur due to variable locality issues. The AI Bandit Module is intended for use with Reality DayZ private hive server files in a lone player environment, but 
 *may* also be compatible with DaiZy (Single Player DayZ) with appropriate modifications. 
 
 The AI Bandit Module may be ported into any DayZ map with quick changes to loot data and AI spawn points.
@@ -38,19 +38,21 @@ Features of the DayZ AI Bandit Module:
 
 Limitations of the DayZ AI Bandit Module:
 -----------------------------------------
-* Hand-coded by a novice scripter in Notepad++, tested by trial-and-error (there are many errors).
+* Hand-coded by a novice scripter in Notepad++, tested by trial-and-error (there may be many errors or instances of less-than-perfect coding).
 * Inefficient coding methods (most variables used are local variables)
 * No BE exceptions provided - it is assumed that the server will run with BattlEye disabled.
 * AI Bandit Module may exhibit unintended behavior when more than 1 player is present. Therefore, it is not recommended for use in a publicly-accessible private hive.
 * AI bandits tend to give away their positions by firing at *all* zombies in sight (they cannot decide to hold fire until necessary)
-* Zombies can only detect AI bandit gunfire. They cannot detect AI bandits through sight or sound.
+* Zombies can only detect AI bandit from their gunfire. They cannot detect AI bandits through sight or sound.
 * Zombies cannot attack or damage AI bandits, but will chase and follow them.
-* Zombie corpses tend to build up in large cities as AI bandits continuously hunt them down, causing noticeably lag if left to hunt zombies.
+* Zombie corpses tend to build up in large cities as AI bandits continuously hunt them down, causing noticeable lag if left to hunt zombies.
 * AI bandits tend to "forget" about the player after their initial encounter, and do not chase the player.
-* AI bandits do not work together
-* AI bandits do not use vehicles
+* AI bandits do not work together or use vehicles
 * AI bandits have no sense of self-preservation, and do not run when surrounded by zombies
 * Cannot fully replicate the experience of online gameplay with human players.
 
 Future Goals of the DayZ AI Bandit Module:
 -----------------------------------------
+* Presently, only the AI bandit's weapon loadout is balanced according to their spawn location. Future versions will include backpack and tool loadout balancing. ie: A "newbie" AI bandit with a Lee Enfield and Makarov would not have any chance of carrying a GPS and NV Goggles and lugging around a Coyote Backpack.
+* Import armed helicopter patrols from the Escape Chernarus co-op mission
+* Multiplayer compatibility, improved setup/configuration ease and flexibility
