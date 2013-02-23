@@ -10,14 +10,11 @@ dayZ_instance = 1;					//The instance
 dayzHiveRequest = [];
 initialized = false;
 dayz_previousID = 0;
-lastAISpawnBldg = 0;				//Stores time last building-spawned AI was created
-lastAISpawnKS = 0;					//Stores time last kill-squad AI was created
-lastAISpawnRndm = 0;				//Stores time last randomly-spawned AI was created
-spawnBldgCooldown = 5;				//Maximum rate of building-spawned AI creation (minutes)
-spawnRndmCooldown = 5;				//Maximum rate of randomly-spawned AI creation (minutes)
-spawnKSCooldown = 5;				//Maximum rate of kill-squad creation (minutes)
-maxAISpawned = 10;					//Maximum number of building or randomly-spawned AI
-maxKSSpawned = 5;					//Maximum number of kill-squad AI units
+//maxBldgRate = 5;					//Maximum rate of building-spawned AI creation (minutes)
+//maxRdmRate = 5;					//Maximum rate of randomly-spawned AI creation (minutes)
+//maxKSRate = 15;					//Maximum rate of kill-squad creation (minutes)
+maxAIUnits = 10;					//Maximum number of building or randomly-spawned AI
+minKillSquad = 0;					//Minimum number of surviving Kill Squad members before reinforcements may be spawned in. (0 = all members must die before more can be spawned)
 
 //disable greeting menu 
 player setVariable ["BIS_noCoreConversations", true];
