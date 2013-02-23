@@ -5,12 +5,23 @@
 
 private ["_totalAI","_minAI","_addAI","_spawnd","_maxspawnd","_patrold","_weapongrade","_bldgpos","_nearbldgs","_radfactor","_spawnchance","_isHVB","_bldglist","_curTime","_timePassed"];
 
-	if ( ({alive _x && side _x == east} count allUnits) >= maxAISpawned ) exitWith {titleText["Maximum number of AI exceeded!","PLAIN DOWN"];};	
+	/*if ( ({alive _x && side _x == east} count allUnits) >= maxAISpawned ) exitWith {titleText["Maximum number of AI exceeded!","PLAIN DOWN"];};	
 	_curTime = (DateToNumber date);
 	_timePassed = (_curTime - lastAISpawnBldg) * 525948;
 	if (_timePassed < spawnBldgCooldown) exitWith {titleText["Wait for AI spawn cooldown!","PLAIN DOWN"];};
-	_x setVariable ["lastAISpawnBldg",_curTime,true];
+	_x setVariable ["lastAISpawnBldg",_curTime,true];*/
 	
+	//AI Quantity Limiter
+	if (isNil "numAIUnits") then {
+		numAIUnits = 0;
+	};
+	if (numAIUnits >= maxAIUnits) exitWith {titleText["Maximum number of AI exceeded!","PLAIN DOWN"];};	
+	
+	//AI Spawn Rate Limiter
+	/*if (isNil 'lastBldgUnit') then {
+		lastBldgUnit = (DateToNumber date);
+		publicVariable "lastBldgUnit";
+	};*/
 
 	/* Variables:
 		
@@ -47,7 +58,9 @@ private ["_totalAI","_minAI","_addAI","_spawnd","_maxspawnd","_patrold","_weapon
 	if(count _this > 5) then {_weapongrade = _this select 5;};
 		
 	//Calculate values
-	_totalAI = (_minAI + round(random _addAI));				
+	_totalAI = (_minAI + round(random _addAI));	
+	numAIUnits = numAIUnits + _totalAI;
+	publicVariable "numAIUnits";
 	_spawnd = (_radfactor * _maxspawnd);
 	
 	// Generate a list of useable building positions within a distance of _maxspawnd meters.
@@ -77,6 +90,7 @@ private ["_totalAI","_minAI","_addAI","_spawnd","_maxspawnd","_patrold","_weapon
 			_unit addEventHandler ["HandleDamage",{_this call local_zombieDamage;}];		// AI bandit handles damage (?)
 			_unit addEventHandler ["Killed",{[_this,"banditKills"] call local_eventKill;}]; // Credit player for killing the AI bandit
 			_unit addEventHandler ["Killed",{_this call fnc_spawn_deathFlies;}];			// Spawn flies for AI bandit corpse
+			_unit addEventHandler ["Killed",{_this call fnc_banditAIKilled;}];				// 
 			_unit addEventHandler ["Killed",{_this setDamage 1;}];							// (?)
 			
 			EAST setFriend [WEST, 0];														// Two-way hostility with player
@@ -94,5 +108,5 @@ private ["_totalAI","_minAI","_addAI","_spawnd","_maxspawnd","_patrold","_weapon
 			titleText["Triggered spawnBandits_HVB","PLAIN DOWN"];							// Report trigger activation (basic)
 		};
 	};
-	sleep 1.5;
-	if (true) exitWith {};
+	//sleep 1.5;
+	//if (true) exitWith {};

@@ -5,11 +5,21 @@
 
 private ["_totalAI","_minAI","_addAI","_spawnd","_maxspawnd","_patrold","_weapongrade","_bldgpos","_nearbldgs","_radfactor","_spawnchance","_isHVB","_bldglist","_curTime","_timePassed","_bldgKS"];
 	
-	if (( {alive _x && side _x == resistance} count allUnits) >= maxKSSpawned ) exitWith {titleText["Maximum number of Kill Squad AI exceeded!","PLAIN DOWN"];};	
+	/*if (( {alive _x && side _x == resistance} count allUnits) >= maxKSSpawned ) exitWith {titleText["Maximum number of Kill Squad AI exceeded!","PLAIN DOWN"];};	
 	_curTime = (DateToNumber date);
 	_timePassed = (_curTime - lastAISpawnKS) * 525948;
 	if (_timePassed < spawnKSCooldown) exitWith {titleText["Wait for AI spawn cooldown!","PLAIN DOWN"];};
-	_x setVariable ["lastAISpawnKS",_curTime,true];
+	_x setVariable ["lastAISpawnKS",_curTime,true];*/
+	
+	if (isNil 'numKillSquads') then {
+		numKillSquads = 0;
+	};
+	if (numKillSquads > minKillSquad) exitWith {titleText["Minimum threshold of Kill Squad members not reached!","PLAIN DOWN"];};	
+	
+	/*if (isServer && (isNil 'lastKillSquad')) then {
+		lastKillSquad = (DateToNumber date);
+	} else {
+	};*/
 	
 
 	/* Variables:
@@ -28,7 +38,7 @@ private ["_totalAI","_minAI","_addAI","_spawnd","_maxspawnd","_patrold","_weapon
 		
 	//Editables
 	_radfactor = 1.0;
-	_patrold = 250;
+	_patrold = 500;
 	_spawnchance = 1.0;					//Chance to spawn a specified number of additional AI
 
 	//Values taken from mission.sqm. If not present, use preset values. 
@@ -47,7 +57,9 @@ private ["_totalAI","_minAI","_addAI","_spawnd","_maxspawnd","_patrold","_weapon
 	if(count _this > 5) then {_weapongrade = _this select 5;};
 		
 	//Calculate values
-	_totalAI = (_minAI + round(random _addAI));				
+	_totalAI = (_minAI + round(random _addAI));		
+	numKillSquads = numKillSquads + _totalAI;
+	publicVariable "numKillSquads";
 	_spawnd = (_radfactor * _maxspawnd);
 	
 	// Generate a list of useable building positions within a distance of _maxspawnd meters.
@@ -73,8 +85,9 @@ private ["_totalAI","_minAI","_addAI","_spawnd","_maxspawnd","_patrold","_weapon
 			_unit addEventHandler ["Fired", {(_this select 0) setvehicleammo 1}];			// AI bandit has unlimited ammunition
 			//_unit addEventHandler ["Fired", {_this call ai_reloadifempty;}];				// AI bandit gains 4 mags for primary weapon if depleted
 			_unit addEventHandler ["HandleDamage",{_this call local_zombieDamage;}];		// AI bandit handles damage (?)
-			//_unit addEventHandler ["Killed",{[_this,"banditKills"] call local_eventKill;}]; // Credit player for killing the AI bandit
+			_unit addEventHandler ["Killed",{[_this,"banditKills"] call local_eventKill;}]; // Credit player for killing the AI bandit
 			_unit addEventHandler ["Killed",{_this call fnc_spawn_deathFlies;}];			// Spawn flies for AI bandit corpse
+			_unit addEventHandler ["Killed",{_this call fnc_killSquadKilled;}];				// 
 			_unit addEventHandler ["Killed",{_this setDamage 1;}];							// (?)
 			if (_i == 1) then {
 				_unit setRank "LIEUTENANT";
@@ -94,5 +107,5 @@ private ["_totalAI","_minAI","_addAI","_spawnd","_maxspawnd","_patrold","_weapon
 			titleText["Triggered spawnBandits_killSquad","PLAIN DOWN"];							// Report trigger activation (basic)
 		};
 	};
-	sleep 1.5;
-	if (true) exitWith {};
+	//sleep 1.5;
+	//if (true) exitWith {};
