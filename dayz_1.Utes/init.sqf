@@ -40,7 +40,6 @@ progressLoadingScreen 0.8;
 killSquadHQ = createCenter resistance;
 resistance setFriend [east, 0];
 resistance setFriend [west, 0];
-resistance setFriend [civilian, 0];
 killSquadGrp = createGroup resistance;
 progressLoadingScreen 0.9;
 zombie_generate = compile preprocessFileLineNumbers "scripts\compile\zombie_generate.sqf";
