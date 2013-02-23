@@ -10,9 +10,14 @@ dayZ_instance = 1;					//The instance
 dayzHiveRequest = [];
 initialized = false;
 dayz_previousID = 0;
-lastAISpawnBldg = 0;
-lastAISpawnRndm = 0;
-maxAISpawned = 20;
+lastAISpawnBldg = 0;				//Stores time last building-spawned AI was created
+lastAISpawnKS = 0;					//Stores time last kill-squad AI was created
+lastAISpawnRndm = 0;				//Stores time last randomly-spawned AI was created
+spawnBldgCooldown = 5;				//Maximum rate of building-spawned AI creation (minutes)
+spawnRndmCooldown = 5;				//Maximum rate of randomly-spawned AI creation (minutes)
+spawnKSCooldown = 5;				//Maximum rate of kill-squad creation (minutes)
+maxAISpawned = 20;					//Maximum number of building or randomly-spawned AI
+maxKSSpawned = 5;					//Maximum number of kill-squad AI units
 
 //disable greeting menu 
 player setVariable ["BIS_noCoreConversations", true];
@@ -27,12 +32,16 @@ call compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\setup_functi
 progressLoadingScreen 0.4;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";				//Compile regular functions
 //Load AI Bandit Module
-if (!isServer) then {
-	call compile preprocessFileLineNumbers "scripts\init\dayz_ai_functions.sqf";
-	progressLoadingScreen 0.6;
-	call compile preprocessFileLineNumbers "scripts\mission\mission_functions.sqf";
-	progressLoadingScreen 0.8;
-};
+call compile preprocessFileLineNumbers "scripts\init\dayz_ai_functions.sqf";
+progressLoadingScreen 0.6;
+call compile preprocessFileLineNumbers "scripts\mission\mission_functions.sqf";
+progressLoadingScreen 0.8;
+killSquadHQ = createCenter resistance;
+resistance setFriend [east, 0];
+resistance setFriend [west, 0];
+resistance setFriend [civilian, 0];
+killSquadGrp = createGroup resistance;
+progressLoadingScreen 0.9;
 zombie_generate = compile preprocessFileLineNumbers "scripts\compile\zombie_generate.sqf";
 progressLoadingScreen 1.0;
 
