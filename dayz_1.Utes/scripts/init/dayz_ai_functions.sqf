@@ -24,5 +24,7 @@
 	getBuildingPosition = compile preprocessFileLineNumbers "scripts\compile\fn_getBuildingPosition.sqf";
 	fnc_setBehaviourKS = compile preprocessFileLineNumbers "scripts\compile\fn_setBehaviourKS.sqf";
 	fnc_setSkillsKS = compile preprocessFileLineNumbers "scripts\compile\fn_setSkillsKS.sqf";
+	fnc_killSquadKilled = compile preprocessFileLineNumbers "scripts\compile\fn_killSquadKilled.sqf";
+	fnc_banditAIKilled = compile preprocessFileLineNumbers "scripts\compile\fn_banditAIKilled.sqf";
 
 initialized = true;
