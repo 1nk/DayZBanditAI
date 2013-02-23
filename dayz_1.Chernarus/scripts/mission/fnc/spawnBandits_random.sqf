@@ -5,10 +5,11 @@
 
 private ["_testmode", "_totalAI","_minAI","_addAI", "_minspawnd", "_maxspawnd", "_patrold","_weapongrade","_spawnchance"];
 
-	if ( ({(side _x) == east} count allUnits) >= maxAISpawned ) exitWith {titleText["Maximum number of AI exceeded!","PLAIN DOWN"];};	
+	if ( ({alive _x && side _x == east} count allUnits) >= maxAISpawned ) exitWith {titleText["Maximum number of AI exceeded!","PLAIN DOWN"];};	
 	_curTime = (DateToNumber date);
 	_timePassed = (_curTime - lastAISpawnRndm) * 525948;
-	if (_timePassed < 10) exitWith {titleText["Wait for AI spawn cooldown! (2 minutes)","PLAIN DOWN"];};
+	if (_timePassed < spawnRndmCooldown) exitWith {titleText["Wait for AI spawn cooldown! (5 minutes)","PLAIN DOWN"];};
+	_x setVariable ["lastAISpawnRndm",_curTime,true];
 
 		
 	_testmode = 0; //Default: 0, Test Mode: 1
@@ -59,7 +60,6 @@ private ["_testmode", "_totalAI","_minAI","_addAI", "_minspawnd", "_maxspawnd", 
 	};
 	
 	if (_totalAI > 0) then {						// Only run script if there is at least one bandit to spawn
-		_x setVariable ["lastAISpawnRndm",_curTime,true];
 		for "_i" from 1 to _totalAI do {
 			_pos = [getpos player, random 360, [_minspawnd,_maxspawnd], false, 2] call fnc_randomPos;
 			_eastGrp = createGroup east;

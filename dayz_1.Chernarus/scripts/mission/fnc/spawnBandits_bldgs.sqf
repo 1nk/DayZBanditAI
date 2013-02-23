@@ -5,10 +5,11 @@
 
 private ["_totalAI","_minAI","_addAI","_spawnd","_maxspawnd","_patrold","_weapongrade","_bldgpos","_nearbldgs","_radfactor","_spawnchance","_isHVB","_bldglist","_curTime","_timePassed"];
 
-	if ( ({(side _x) == east} count allUnits) >= maxAISpawned ) exitWith {titleText["Maximum number of AI exceeded!","PLAIN DOWN"];};	
+	if ( ({alive _x && side _x == east} count allUnits) >= maxAISpawned ) exitWith {titleText["Maximum number of AI exceeded!","PLAIN DOWN"];};	
 	_curTime = (DateToNumber date);
 	_timePassed = (_curTime - lastAISpawnBldg) * 525948;
-	if (_timePassed < 5) exitWith {titleText["Wait for AI spawn cooldown! (2 minutes)","PLAIN DOWN"];};
+	if (_timePassed < spawnBldgCooldown) exitWith {titleText["Wait for AI spawn cooldown!","PLAIN DOWN"];};
+	_x setVariable ["lastAISpawnBldg",_curTime,true];
 	
 
 	/* Variables:
@@ -60,7 +61,6 @@ private ["_totalAI","_minAI","_addAI","_spawnd","_maxspawnd","_patrold","_weapon
 	_bldgpos = [_nearbldgs] call getBuildingPosition;
 	
 	if (_totalAI > 0) then {						// Only run script if there is at least one bandit to spawn
-		_x setVariable ["lastAISpawnBldg",_curTime,true];
 		for "_i" from 1 to _totalAI do {
 			_p = _bldgpos call BIS_fnc_selectRandom;
 			_pos = [_p, 0, 100, 0, 0, 20, 0] call BIS_fnc_findSafePos;
