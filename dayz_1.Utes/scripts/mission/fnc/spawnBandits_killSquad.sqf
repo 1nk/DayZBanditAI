@@ -3,12 +3,13 @@
 	Note: Called through mission.sqm
 */
 
-private ["_totalAI","_minAI","_addAI","_spawnd","_maxspawnd","_patrold","_weapongrade","_bldgpos","_nearbldgs","_radfactor","_spawnchance","_isHVB","_bldglist","_curTime","_timePassed"];
-
-	if ( ({(side _x) == resistance} count allUnits) >= maxKSSpawned ) exitWith {titleText["Maximum number of Kill Squad AI exceeded!","PLAIN DOWN"];};	
+private ["_totalAI","_minAI","_addAI","_spawnd","_maxspawnd","_patrold","_weapongrade","_bldgpos","_nearbldgs","_radfactor","_spawnchance","_isHVB","_bldglist","_curTime","_timePassed","_bldgKS"];
+	
+	if (( {alive _x && side _x == resistance} count allUnits) >= maxKSSpawned ) exitWith {titleText["Maximum number of Kill Squad AI exceeded!","PLAIN DOWN"];};	
 	_curTime = (DateToNumber date);
 	_timePassed = (_curTime - lastAISpawnKS) * 525948;
 	if (_timePassed < spawnKSCooldown) exitWith {titleText["Wait for AI spawn cooldown!","PLAIN DOWN"];};
+	_x setVariable ["lastAISpawnKS",_curTime,true];
 	
 
 	/* Variables:
@@ -58,13 +59,12 @@ private ["_totalAI","_minAI","_addAI","_spawnd","_maxspawnd","_patrold","_weapon
 
 	_nearbldgs = nearestObjects [getpos player, _bldglist, _spawnd];
 	_bldgpos = [_nearbldgs] call getBuildingPosition;
+	_p = _bldgpos call BIS_fnc_selectRandom;
 	
 	if (_totalAI > 0) then {						// Only run script if there is at least one bandit to spawn
-		_x setVariable ["lastAISpawnKS",_curTime,true];
 		for "_i" from 1 to _totalAI do {
-			_p = _bldgpos call BIS_fnc_selectRandom;
+			//_p = _bldgpos call BIS_fnc_selectRandom;
 			_pos = [_p, 0, 100, 0, 0, 20, 0] call BIS_fnc_findSafePos;
-		
 			_types = ["Soldier1_DZ", "Sniper1_DZ"];	// AI Bandit types
 			_type = _types call BIS_fnc_selectRandom;
 			
