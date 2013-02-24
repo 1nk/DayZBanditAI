@@ -5,13 +5,6 @@
 
 	waituntil {!isnil "bis_fnc_init"};
 	// [] call BIS_fnc_help;
-	//fnc_addRating = compile preprocessFileLineNumbers "scripts\compile\fn_addRating.sqf";
-	//fnc_createGroup = compile preprocessFileLineNumbers "scripts\compile\fn_createGroup.sqf";
-	//fnc_createUnit = compile preprocessFileLineNumbers "scripts\compile\fn_createUnit.sqf";
-	//fnc_createUnit_Array = compile preprocessFileLineNumbers "scripts\compile\fn_createUnit_Array.sqf";
-	//fnc_deleteGroup = compile preprocessFileLineNumbers "scripts\compile\fn_deleteGroup.sqf";
-	//fnc_patrolScript = compile preprocessFileLineNumbers "scripts\compile\fn_patrolScript.sqf";
-	//fnc_randomPos = compile preprocessFile "scripts\compile\fn_randomPos.sqf";
 	fnc_setBehaviour = compile preprocessFileLineNumbers "scripts\compile\fn_setBehaviour.sqf";
 	fnc_setSkills = compile preprocessFileLineNumbers "scripts\compile\fn_setSkills.sqf";
 	fnc_spawn_deathFlies = compile preprocessFileLineNumbers "scripts\compile\fn_spawn_deathFlies.sqf";
