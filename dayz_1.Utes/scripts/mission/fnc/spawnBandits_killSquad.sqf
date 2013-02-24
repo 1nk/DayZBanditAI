@@ -3,39 +3,43 @@
 	Note: Called through mission.sqm
 */
 
-private ["_totalAI","_minAI","_addAI","_spawnd","_maxspawnd","_patrold","_weapongrade","_bldgpos","_nearbldgs","_radfactor","_spawnchance","_isHVB","_bldglist","_curTime","_timePassed","_bldgKS"];
+private ["_totalAI","_minAI","_addAI","_spawnd","_maxspawnd","_patrold","_weapongrade","_bldgpos","_nearbldgs","_radfactor","_spawnchance","_isHVB","_bldglist","_curTime","_timePassed"];
 	
-	/*if (( {alive _x && side _x == resistance} count allUnits) >= maxKSSpawned ) exitWith {titleText["Maximum number of Kill Squad AI exceeded!","PLAIN DOWN"];};	
-	_curTime = (DateToNumber date);
-	_timePassed = (_curTime - lastAISpawnKS) * 525948;
-	if (_timePassed < spawnKSCooldown) exitWith {titleText["Wait for AI spawn cooldown!","PLAIN DOWN"];};
-	_x setVariable ["lastAISpawnKS",_curTime,true];*/
-	
-	if (isNil 'numKillSquads') then {
-		numKillSquads = 0;
-	};
-	if (numKillSquads > minKillSquad) exitWith {titleText["Minimum threshold of Kill Squad members not reached!","PLAIN DOWN"];};	
-	
-	/*if (isServer && (isNil 'lastKillSquad')) then {
-		lastKillSquad = (DateToNumber date);
-	} else {
-	};*/
-	
-
 	/* Variables:
-		
+	(Public)
+	numKillSquads: Current number of live Kill Squad units.
+	lastKillSquad: Time of last AI spawned by this script.
+	
+	(Global)
+	minKillSquad: Minimum number of surviving Kill Squad members before reinforcements may be spawned in.
+	
+	(Local)
 	_radfactor: Spawn radius factor. Default: 1.0. Higher value: larger spawn radius. Smaller value: smaller spawn radius.
 	_patrold = Maximum distance between patrol waypoints.
 	_spawnchance: Chance to add a specified number of AI to spawn (Default 5%)
-		
 	_minAI: Minimum number of AI bandits to spawn.
 	_addAI: Additional random number of AI bandits to spawn.
 	_maxspawnd: Maximum distance to select buildings to spawn AI bandit.
 	_weapongrade: Weapon grade of bandit. 0: Civilian Grade Weapons, 1: Low Grade Military, 2: Medium Grade Military, 3: High Grade Military
 	_totalAI: Total number of AI to spawn. Script does not proceed if zero value.
 	_spawnd: Calculated distance to select buildings to spawn AI bandit.
+	_curTime: Current date in numerical format (0-1)
+	_timePassed: Minutes elapsed since last AI spawned by this script.
+	_isHVB: Possible values: 0 or 1. 0: Script selects any building to use as an AI spawn point. 1: Script selects from a specified list of "high-value" buildings to use instead.
 	*/
-		
+	
+	if (isNil 'numKillSquads') then {
+		numKillSquads = 0;
+	};
+	if (numKillSquads > minKillSquad) exitWith {titleText["Minimum threshold of Kill Squad units not reached!","PLAIN DOWN"];};	
+	
+	if (isNil "lastKillSquad") then {
+		lastKillSquad = 0;
+	};
+	_curTime = (DateToNumber date);
+	_timePassed = (_curTime - lastKillSquad) * 525948;
+	if (_timePassed < maxKSRate) exitWith {titleText["Wait for AI spawn cooldown!","PLAIN DOWN"];};
+
 	//Editables
 	_radfactor = 1.0;
 	_patrold = 500;
@@ -60,6 +64,8 @@ private ["_totalAI","_minAI","_addAI","_spawnd","_maxspawnd","_patrold","_weapon
 	_totalAI = (_minAI + round(random _addAI));		
 	numKillSquads = numKillSquads + _totalAI;
 	publicVariable "numKillSquads";
+	lastKillSquad = (DateToNumber date);
+	publicVariable "lastKillSquad";
 	_spawnd = (_radfactor * _maxspawnd);
 	
 	// Generate a list of useable building positions within a distance of _maxspawnd meters.

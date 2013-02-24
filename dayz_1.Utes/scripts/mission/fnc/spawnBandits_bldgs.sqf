@@ -5,11 +5,30 @@
 
 private ["_totalAI","_minAI","_addAI","_spawnd","_maxspawnd","_patrold","_weapongrade","_bldgpos","_nearbldgs","_radfactor","_spawnchance","_isHVB","_bldglist","_curTime","_timePassed"];
 
-	/*if ( ({alive _x && side _x == east} count allUnits) >= maxAISpawned ) exitWith {titleText["Maximum number of AI exceeded!","PLAIN DOWN"];};	
-	_curTime = (DateToNumber date);
-	_timePassed = (_curTime - lastAISpawnBldg) * 525948;
-	if (_timePassed < spawnBldgCooldown) exitWith {titleText["Wait for AI spawn cooldown!","PLAIN DOWN"];};
-	_x setVariable ["lastAISpawnBldg",_curTime,true];*/
+/* 	Variables:
+		
+	(Public)
+	numAIUnits: Current number of spawned AI bandits.
+	lastAI2: Time of last AI spawned by this script.
+	
+	(Global)
+	maxAIUnits: Global maximum number of spawned AI bandits.
+	maxAI2Rate: Global maximum spawn rate AI bandits (minutes).
+	
+	(Local)
+	_radfactor: Spawn radius factor. Default: 1.0. Higher value: larger spawn radius. Smaller value: smaller spawn radius.
+	_patrold: Maximum distance between patrol waypoints.
+	_spawnchance: Chance to add a specified number of AI to spawn (Default 5%)	
+	_minAI: Minimum number of AI bandits to spawn.
+	_addAI: Additional random number of AI bandits to spawn.
+	_maxspawnd: Maximum distance to select buildings to spawn AI bandit.
+	_weapongrade: Weapon grade of bandit. 0: Civilian Grade Weapons, 1: Low Grade Military, 2: Medium Grade Military, 3: High Grade Military
+	_totalAI: Total number of AI to spawn. Script does not proceed if zero value.
+	_spawnd: Calculated distance to select buildings to spawn AI bandit.
+	_curTime: Current date in numerical format (0-1)
+	_timePassed: Minutes elapsed since last AI spawned by this script.
+	_isHVB: Possible values: 0 or 1. 0: Script selects any building to use as an AI spawn point. 1: Script selects from a specified list of "high-value" buildings to use instead.
+	*/
 	
 	//AI Quantity Limiter
 	if (isNil "numAIUnits") then {
@@ -18,25 +37,13 @@ private ["_totalAI","_minAI","_addAI","_spawnd","_maxspawnd","_patrold","_weapon
 	if (numAIUnits >= maxAIUnits) exitWith {titleText["Maximum number of AI exceeded!","PLAIN DOWN"];};	
 	
 	//AI Spawn Rate Limiter
-	/*if (isNil 'lastBldgUnit') then {
-		lastBldgUnit = (DateToNumber date);
-		publicVariable "lastBldgUnit";
-	};*/
-
-	/* Variables:
-		
-	_radfactor: Spawn radius factor. Default: 1.0. Higher value: larger spawn radius. Smaller value: smaller spawn radius.
-	_patrold = Maximum distance between patrol waypoints.
-	_spawnchance: Chance to add a specified number of AI to spawn (Default 5%)
-		
-	_minAI: Minimum number of AI bandits to spawn.
-	_addAI: Additional random number of AI bandits to spawn.
-	_maxspawnd: Maximum distance to select buildings to spawn AI bandit.
-	_weapongrade: Weapon grade of bandit. 0: Civilian Grade Weapons, 1: Low Grade Military, 2: Medium Grade Military, 3: High Grade Military
-	_totalAI: Total number of AI to spawn. Script does not proceed if zero value.
-	_spawnd: Calculated distance to select buildings to spawn AI bandit.
-	*/
-		
+	if (isNil "lastAI2") then {
+		lastAI2 = 0;
+	};
+	_curTime = (DateToNumber date);
+	_timePassed = (_curTime - lastAI2) * 525948;
+	if (_timePassed < maxAI2Rate) exitWith {titleText["Wait for AI spawn cooldown!","PLAIN DOWN"];};
+	
 	//Editables
 	_radfactor = 1.0;
 	_patrold = 250;
@@ -61,6 +68,8 @@ private ["_totalAI","_minAI","_addAI","_spawnd","_maxspawnd","_patrold","_weapon
 	_totalAI = (_minAI + round(random _addAI));	
 	numAIUnits = numAIUnits + _totalAI;
 	publicVariable "numAIUnits";
+	lastAI2 = (DateToNumber date);
+	publicVariable "lastAI2";
 	_spawnd = (_radfactor * _maxspawnd);
 	
 	// Generate a list of useable building positions within a distance of _maxspawnd meters.
