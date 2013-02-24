@@ -11,7 +11,11 @@ The AI Bandit Module may be ported into any DayZ map with quick changes to loot 
 
 DayZ Versions Supported:
 ------------------------------------
-DayZ (Base): 1.7.5.1 (Current version)
+DayZ (Base): 1.7.5.1 (Up to date)
+
+DayZ Utes: 1.7.5.1 (Up to date)
+
+DayZ Oring: 1.0.7 (Up to date)
 
 DayZ Namalsk: 0.7.3 (0.7.4 compatibility coming soon)
 
@@ -35,6 +39,16 @@ Features of the DayZ AI Bandit Module:
 * AI bandit weapon loadout is categorized based on type of loot spawn (ie: Residential, Military, Heli Crash, etc.)
 * Long-lasting single player fun - you will die many, many times.
 * Continually balanced for fair and fun gameplay - killing a single bandit will not immediately yield full endgame gear, but maybe enough supplies to help you on your next encounter with an AI bandit.
+* New "Kill Squad" AI type - A deadly and well-equipped patrolling military team that works together to exterminate players, AI bandits, and zombies.
+
+How It Works:
+---------------------------------------
+
+Descriptions of Important Script Files:
+---------------------------------------
+
+Modifying AI Bandit Module for New Maps:
+---------------------------------------
 
 Limitations of the DayZ AI Bandit Module:
 -----------------------------------------
@@ -47,7 +61,7 @@ Limitations of the DayZ AI Bandit Module:
 * Zombies cannot attack or damage AI bandits, but will chase and follow them.
 * Zombie corpses tend to build up in large cities as AI bandits continuously hunt them down, causing noticeable lag if left to hunt zombies.
 * AI bandits tend to "forget" about the player after their initial encounter, and do not chase the player.
-* AI bandits do not work together or use vehicles
+* AI bandits do not use vehicles
 * AI bandits have no sense of self-preservation, and do not run when surrounded by zombies
 * Cannot fully replicate the experience of online gameplay with human players.
 
