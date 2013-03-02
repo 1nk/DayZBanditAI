@@ -10,18 +10,11 @@ dayZ_instance = 1;					//The instance
 dayzHiveRequest = [];
 initialized = false;
 dayz_previousID = 0;
-lastAISpawnBldg = 0;				//Stores time last building-spawned AI was created
-lastAISpawnKS = 0;					//Stores time last kill-squad AI was created
-lastAISpawnRndm = 0;				//Stores time last randomly-spawned AI was created
-spawnBldgCooldown = 5;				//Maximum rate of building-spawned AI creation (minutes)
-spawnRndmCooldown = 5;				//Maximum rate of randomly-spawned AI creation (minutes)
-spawnKSCooldown = 5;				//Maximum rate of kill-squad creation (minutes)
-maxAISpawned = 20;					//Maximum number of building or randomly-spawned AI
-maxKSSpawned = 5;					//Maximum number of kill-squad AI units
 
 //disable greeting menu 
 player setVariable ["BIS_noCoreConversations", true];
 //disable radio messages to be heard and shown in the left lower corner of the screen
+enableRadio false;
 
 //Load in compiled functions
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";				//Initilize the Variables (IMPORTANT: Must happen very early)
@@ -31,18 +24,20 @@ progressLoadingScreen 0.2;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\setup_functions_med.sqf";	//Functions used by CLIENT for medical
 progressLoadingScreen 0.4;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";				//Compile regular functions
-//Load AI Bandit Module
-call compile preprocessFileLineNumbers "scripts\init\dayz_ai_functions.sqf";
 progressLoadingScreen 0.6;
+//Load AI Bandit Module
+if (!isDedicated) then {
+call compile preprocessFileLineNumbers "scripts\init\dayz_ai_variables.sqf";
+call compile preprocessFileLineNumbers "scripts\init\dayz_ai_functions.sqf";
 call compile preprocessFileLineNumbers "scripts\mission\mission_functions.sqf";
-progressLoadingScreen 0.8;
+zombie_generate = compile preprocessFileLineNumbers "scripts\compile\zombie_generate.sqf";
+};
 killSquadHQ = createCenter resistance;
+killSquadGrp = createGroup resistance;
 resistance setFriend [east, 0];
 resistance setFriend [west, 0];
-resistance setFriend [civilian, 0];
-killSquadGrp = createGroup resistance;
-progressLoadingScreen 0.9;
-zombie_generate = compile preprocessFileLineNumbers "scripts\compile\zombie_generate.sqf";
+EAST setFriend [WEST, 0];
+WEST setFriend [EAST, 0];
 progressLoadingScreen 1.0;
 
 "filmic" setToneMappingParams [0.153, 0.357, 0.231, 0.1573, 0.011, 3.750, 6, 4]; setToneMapping "Filmic";
