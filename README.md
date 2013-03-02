@@ -40,6 +40,7 @@ Features of the DayZ AI Bandit Module:
 * Long-lasting single player fun - you will die many, many times.
 * Continually balanced for fair and fun gameplay - killing a single bandit will not immediately yield full endgame gear, but maybe enough supplies to help you on your next encounter with an AI bandit.
 * New "Kill Squad" AI type - A deadly and well-equipped patrolling military team that works together to exterminate players, AI bandits, and zombies (In testing and not added by default except to Utes airfield).
+* Bandits have a chance of respawning randomly around the player after they are killed (Further testing is required).
 
 How It Works:
 ---------------------------------------
@@ -53,17 +54,17 @@ Modifying AI Bandit Module for New Maps:
 Limitations of the DayZ AI Bandit Module:
 -----------------------------------------
 * Hand-coded by a novice scripter in Notepad++, tested by trial-and-error (there may be many errors or instances of less-than-perfect coding).
-* Inefficient coding methods (most variables used are local variables)
+* Possibly inefficient coding methods
 * No BE exceptions provided - it is assumed that the server will run with BattlEye disabled.
 * AI Bandit Module may exhibit unintended behavior when more than 1 player is present. Therefore, it is not recommended for use in a publicly-accessible private hive.
 * AI bandits tend to give away their positions by firing at *all* zombies in sight (they cannot decide to hold fire until necessary)
 * Zombies can only detect AI bandit from their gunfire. They cannot detect AI bandits through sight or sound.
 * Zombies cannot attack or damage AI bandits, but will chase and follow them.
 * Zombie corpses tend to build up in large cities as AI bandits continuously hunt them down, causing noticeable lag if left to hunt zombies.
-* AI bandits tend to "forget" about the player after their initial encounter, and do not chase the player.
-* AI bandits do not use vehicles
-* AI bandits have no sense of self-preservation, and do not run when surrounded by zombies
-* Cannot fully replicate the experience of online gameplay with human players.
+* AI bandits tend to "forget" about the player after their initial encounter, and do not chase the player. (Recommendation: use additional AI-enhancing scripts)
+* AI bandits do not use vehicles (yet)
+* AI bandits have no sense of self-preservation, and do not run when surrounded by zombies. Sometimes a bandit may engage a distant zombie while ignoring the ones beside itself.
+* Cannot fully replicate the experience of online gameplay with human players. In the best case scenario, it may provide the experience of a low population server.
 
 Future Goals of the DayZ AI Bandit Module:
 -----------------------------------------
