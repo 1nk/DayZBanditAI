@@ -4,10 +4,10 @@
 	private ["_unit","_edibles","_medicals1","_medicals2","_miscs","_i","_bpmedicals","_bpedibles","_nbpedibles","_invmedicals","_invedibles","_ninmedicals","_ninedibles","_nbpmedicals"];
 	_unit = _this select 0;
 
-	_edibles = ["ItemSodaCoke", "ItemSodaPepsi", "ItemWaterbottle", "FoodCanSardines", "FoodCanBakedBeans", "FoodCanFrankBeans", "FoodCanPasta", "ItemWaterbottleUnfilled","ItemWaterbottleBoiled","FoodmuttonCooked","FoodchickenCooked","FoodBaconCooked","FoodRabbitCooked","FoodbaconRaw","FoodchickenRaw","FoodmuttonRaw","foodrabbitRaw"];
+	_edibles = ["ItemSodaCoke", "ItemSodaPepsi", "ItemWaterbottle", "FoodCanSardines", "FoodCanBakedBeans", "FoodCanFrankBeans", "FoodCanPasta", "ItemWaterbottleUnfilled","ItemWaterbottleBoiled","FoodmuttonCooked","FoodchickenCooked","FoodBaconCooked","FoodRabbitCooked","FoodbaconRaw","FoodchickenRaw","FoodmuttonRaw","foodrabbitRaw","FoodCanUnlabeled","FoodPistachio","FoodNutmix","FoodMRE"];
 	_medicals1 = ["ItemBandage", "ItemPainkiller"]; //Common Medical Items
 	_medicals2 = ["ItemMorphine", "ItemBandage", "ItemBloodbag", "ItemPainkiller", "ItemAntibiotic","ItemEpinephrine"]; //All Medical Items
-	_miscs = ["ItemSandbag", "ItemTent", "ItemJerrycan", "PartWheel", "PartEngine", "PartFueltank", "ItemTankTrap", "ItemWire", "PartGlass", "PartVRotor", "TrapBear", "Skin_Camo1_DZ", "Skin_Sniper1_DZ", "ItemHeatpack", "HandRoadFlare", "HandChemBlue", "HandChemRed", "HandChemGreen","PartWoodPile","SmokeShell","SmokeShellGreen","SmokeShellGreen","PipeBomb","HandGrenade_West","FlareGreen_M203","FlareWhite_M203","1Rnd_HE_M203","1Rnd_Smoke_M203"];
+	_miscs = ["ItemSandbag", "ItemTent", "ItemJerrycan", "PartWheel", "PartEngine", "PartFueltank", "ItemTankTrap", "ItemWire", "PartGlass", "PartVRotor", "Skin_Camo1_DZ", "Skin_Sniper1_DZ", "ItemHeatpack", "HandRoadFlare", "HandChemBlue", "HandChemRed", "HandChemGreen","PartWoodPile","SmokeShell","SmokeShellGreen","SmokeShellGreen","PipeBomb","HandGrenade_West","FlareGreen_M203","FlareWhite_M203","1Rnd_HE_M203","1Rnd_Smoke_M203"];
 	
 	_invmedicals = 1; 	//Number of selections of medical items (Inventory)
 	_ninmedicals = 1;	//Maximum amount of each medical item, minimum of zero (Inventory)
@@ -19,7 +19,7 @@
 	_nbpmedicals = 1;	//Maximum amount of each medical item, minimum of zero (Backpack)
 	
 	_bpedibles = 2;		//Number of selections of edible items (Backpack)
-	_nbpedibles = 2;	//Maximum amount of each edible item, minimum of zero (Backpack)
+	_nbpedibles = 1;	//Maximum amount of each edible item, minimum of zero (Backpack)
 
 	//Add one guaranteed Bandage and Painkiller to inventory
 	_unit addMagazine "ItemBandage";
