@@ -1,24 +1,22 @@
 /*
         Usage: [_unit] call fnc_unitBackpack_adjustable;
 */
-        private ["_unit","_bag","_bags","_rnd","_chance","_chance2","_gadgets","_gadget","_rgadget"];
+        private ["_unit","_bag","_bags","_chance","_chance2","_gadgets","_gadget","_rgadget","_newbag"];
         _unit = _this select 0;
 
-      _chance = (floor(random 10)) + 1;			// Generate a random number between 1-10 used to assign a random gadget
-      _chance2 = (floor(random 10)) + 1;		// Generate a random number between 1-10 used to assign a random tool
+		_chance = (floor(random 10)) + 1;		// Generate a random number between 1-10 used to assign a random gadget
+		_chance2 = (floor(random 10)) + 1;		// Generate a random number between 1-10 used to assign a random tool set
+		_newbag = 0.85;							// Probability to assign a backpack other than the default one.
         
-		//DayZ
+		_bag = "DZ_Patrol_Pack_EP1";
 		_bags = ["CZ_VestPouch_EP1","DZ_Patrol_Pack_EP1", "DZ_Assault_Pack_EP1", "DZ_CivilBackpack_EP1", "DZ_ALICE_Pack_EP1", "DZ_Backpack_EP1", "DZ_British_ACU", "DZ_TK_Assault_Pack_EP1"]; //Possible types of backpacks to assign
 		_gadgets = ["ItemGPS","NVGoggles","binocular_vector","ItemFlashlightRed"]; //Possible gadgets to assign
 		
-		/*DayZ 2017
-		_bags = ["ice_apo_pack1","ice_apo_pack2","ice_apo_pack3","ice_apo_pack4"]; //Possible types of backpacks to assign
-		_gadgets = ["ItemFlashlightRed"]; //Possible gadgets to assign
-		*/
-		
 		//Generate random backpack
-        _rnd = floor random (count _bags);
-		_bag = _bags select _rnd;
+		if ((random 1) < _newbag) then {		//Decide whether to select a non-default backpack.
+			//_rnd = floor random (count _bags);
+			_bag = _bags select (floor random (count _bags));
+		};
 		_unit addBackpack _bag;							// Add backpack
 				
 		//Generate random gadget or binoculars
@@ -33,7 +31,6 @@
 			_unit addWeapon "binocular";				// Add binoculars
 		  };
 		};
-		
 		
 		//Generate a set of tools
 		switch (_chance2) do {
@@ -66,9 +63,15 @@
 			_unit addWeapon "ItemHatchet";
 			_unit addWeapon "ItemFlashlight";
 		  };
-		  default {		// Add Tool set 5 (Default)
-			_unit addWeapon "ItemWatch";
+		  case 5: {		// Add Tool set 5
 			_unit addWeapon "ItemKnife";
+			_unit addWeapon "ItemFlashlight";
+		  };
+		  case 6: {		// Add Tool set 6
+			_unit addWeapon "ItemWatch";
+			_unit addWeapon "ItemFlashlight";
+		  };
+		  default {		// Default tool set
 			_unit addWeapon "ItemFlashlight";
 		  };
 		};
