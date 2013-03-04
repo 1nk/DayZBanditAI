@@ -50,6 +50,70 @@ Descriptions of Script Files:
 
 Modifying AI Bandit Module for New Maps:
 ---------------------------------------
+The essential files that need to be changed in your mission folder: 
+* mission.sqm, ini.sqf
+* \scripts\mission\fnc: all spawnBandits_(name).files files
+* \scripts\compile: fn_unitBackpackTools.sqf, fn_unitConsumables.sqf, fn_unitSelectPistol.sqf, fn_unitSelectRifle.sqf
+
+ini.sqf:
+
+The following lines need to be inserted directly before "progressLoadingScreen 1.0;":
+
+<code>
+//Load AI Bandit Module
+if (!isDedicated) then {  
+call compile preprocessFileLineNumbers "scripts\init\dayz_ai_variables.sqf";  
+call compile preprocessFileLineNumbers "scripts\init\dayz_ai_functions.sqf";  
+call compile preprocessFileLineNumbers "scripts\mission\mission_functions.sqf";  
+zombie_generate = compile preprocessFileLineNumbers "scripts\compile\zombie_generate.sqf";  
+};  
+killSquadHQ = createCenter resistance;  
+killSquadGrp = createGroup resistance;  
+resistance setFriend [east, 0];  
+resistance setFriend [west, 0];  
+EAST setFriend [WEST, 0];  
+WEST setFriend [EAST, 0];></code>
+
+mission.sqm:
+
+Use the Single Player Editor to insert triggers to activate bandit spawns. You may need to temporarily remove dayz_code.pbo from your @(mod name) folder to access the Single Player menu.  
+Example trigger entry:
+
+<code>
+class Sensors {  
+	class Item0  
+		{  
+			position[]={4718.1274,17.973492,2601.1614};  
+			a=200;  
+			b=200;  
+			activationBy="ANY";  
+			repeating=1;  
+			timeoutMin=30;  
+			timeoutMid=60;  
+			timeoutMax=120;  
+			interruptable=1;  
+			age="UNKNOWN";  
+			text="Balota AF HVB";  
+			expCond="(vehicle player in thislist) OR (player in thislist)";  
+			expActiv="_nul = [1,2,50,300,1,1] call fnc_spawnBandits_bldgs;";
+			class Effects  
+			{  
+			};  
+		};  
+};  
+</code>
+
+Explanation:
+* position: coordinates where the trigger is located
+* a, b: dimensions of the (circular) trigger
+* activationBy: anyone can activate the trigger (AI units do not seem to be able to activate triggers themselves)
+* timeoutMin/Mid/Max: the minimum, average, and maximum amount of time that the player must remain within the trigger area to trigger the spawn script to activate. Nothing happens if the player leaves before the countdown ends.
+* text: A basic description of where the trigger is located, to help with future editing.
+* expCond: trigger will activate whether the player is in a vehicle or on foot
+* expActiv: the script that activates when the timeout is finished. Possible scripts: fnc_spawnBandits_bldgs or fnc_spawnBandits_random
+** fnc_spawnBandits_bldgs: to be used when there are buildings within the trigger area and you want the bandit to spawn near them
+** fnc_spawnBandits_random: uses the player's position as a reference point for spawning bandits
+** Further explanation of the parameters used by each spawnBandits script is explained in detail inside the comments area
 
 Limitations of the DayZ AI Bandit Module:
 -----------------------------------------
