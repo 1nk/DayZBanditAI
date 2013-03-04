@@ -52,7 +52,7 @@ Modifying AI Bandit Module for New Maps:
 ---------------------------------------
 The essential files that need to be changed in your mission folder: 
 * mission.sqm, ini.sqf
-* \scripts\mission\fnc: all spawnBandits_(name).files files
+* \scripts\mission\fnc: all spawnBandits_(name).sqf files
 * \scripts\compile: fn_unitBackpackTools.sqf, fn_unitConsumables.sqf, fn_unitSelectPistol.sqf, fn_unitSelectRifle.sqf
 
 ini.sqf:
@@ -72,7 +72,7 @@ killSquadGrp = createGroup resistance;
 resistance setFriend [east, 0];  
 resistance setFriend [west, 0];  
 EAST setFriend [WEST, 0];  
-WEST setFriend [EAST, 0];></code>
+WEST setFriend [EAST, 0];</code>
 
 mission.sqm:
 
@@ -95,7 +95,7 @@ class Sensors {
 			age="UNKNOWN";  
 			text="Balota AF HVB";  
 			expCond="(vehicle player in thislist) OR (player in thislist)";  
-			expActiv="_nul = [1,2,50,300,1,1] call fnc_spawnBandits_bldgs;";
+			expActiv="_nul = [1,2,50,300,1,1] call fnc_spawnBandits_bldgs;";  
 			class Effects  
 			{  
 			};  
@@ -111,9 +111,9 @@ Explanation:
 * text: A basic description of where the trigger is located, to help with future editing.
 * expCond: trigger will activate whether the player is in a vehicle or on foot
 * expActiv: the script that activates when the timeout is finished. Possible scripts: fnc_spawnBandits_bldgs or fnc_spawnBandits_random
-** fnc_spawnBandits_bldgs: to be used when there are buildings within the trigger area and you want the bandit to spawn near them
-** fnc_spawnBandits_random: uses the player's position as a reference point for spawning bandits
-** Further explanation of the parameters used by each spawnBandits script is explained in detail inside the comments area
+* fnc_spawnBandits_bldgs: to be used when there are buildings within the trigger area and you want the bandit to spawn near them
+* fnc_spawnBandits_random: uses the player's position as a reference point for spawning bandits
+* Further explanation of the parameters used by each spawnBandits script is explained in detail inside the comments area
 
 Limitations of the DayZ AI Bandit Module:
 -----------------------------------------
