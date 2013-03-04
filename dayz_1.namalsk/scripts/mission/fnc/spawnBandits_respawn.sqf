@@ -3,7 +3,7 @@
 	Note: Called through mission.sqm
 */
 
-private ["_totalAI","_minAI","_addAI", "_minspawnd", "_maxspawnd", "_patrold","_weapongrade","_spawnchance","_curTime","_timePassed","_playerpos"];
+private ["_totalAI","_minAI","_addAI", "_minspawnd", "_maxspawnd", "_patrold","_weapongrade","_spawnchance","_curTime","_timePassed","_killerpos"];
 
 	/*Variables:
 		
@@ -25,7 +25,6 @@ private ["_totalAI","_minAI","_addAI", "_minspawnd", "_maxspawnd", "_patrold","_
 	_totalAI: (Calculated) Total number of AI to spawn. Script does not proceed if zero value.
 	_curTime: Current date in numerical format (0-1)
 	_timePassed: Minutes elapsed since last AI spawned by this script.
-	_isHVB: Possible values: 0 or 1. 0: Script selects any building to use as an AI spawn point. 1: Script selects from a specified list of "high-value" buildings to use instead.
 	*/
 	
 	//AI Quantity Limiter
@@ -35,20 +34,17 @@ private ["_totalAI","_minAI","_addAI", "_minspawnd", "_maxspawnd", "_patrold","_
 	if (numAIUnits >= maxAIUnits) exitWith {titleText["Maximum number of AI exceeded!","PLAIN DOWN"];};		
 	
 	//AI Spawn Rate Limiter
-	if (isNil "lastAI1") then {
-		lastAI1 = 0;
+	if (isNil "lastAI3") then {
+		lastAI3 = 0;
 	};
 	_curTime = (DateToNumber date);
 	_timePassed = (_curTime - lastAI1) * 525948;
-	if (_timePassed < maxAI1Rate) exitWith {titleText["Wait for AI spawn cooldown!","PLAIN DOWN"];};
+	if (_timePassed < maxAI3Rate) exitWith {titleText["Wait for AI respawn cooldown!","PLAIN DOWN"];};
 		
 	// Values taken from mission.sqm. If not present, use preset values. 
-	_playerpos = (getpos player);
 	_minAI = 0;
-	_spawnchance = 0.10;
-	if ((random 1) < _spawnchance) then {
-		_minAI = _this select 0;
-	};
+	_spawnchance = 1.0;
+	if ((random 1) < _spawnchance) then {_minAI = _this select 0;};
 	_addAI = 0;
 	if(count _this > 1) then {_addAI = _this select 1;};
 	_minspawnd = 75;
@@ -59,17 +55,18 @@ private ["_totalAI","_minAI","_addAI", "_minspawnd", "_maxspawnd", "_patrold","_
 	if(count _this > 4) then {_patrold = _this select 4;};
 	_weapongrade = floor(random 3);
 	if(count _this > 5) then {_weapongrade = _this select 5;};
-		
+	if(count _this > 6) then {_killerpos = _this select 6;};
+	
 	//Calculate values
 	_totalAI = (_minAI + round(random _addAI));
 	numAIUnits = numAIUnits + _totalAI;
 	publicVariable "numAIUnits";
-	lastAI1 = (DateToNumber date);
-	publicVariable "lastAI1";
+	lastAI3 = (DateToNumber date);
+	publicVariable "lastAI3";
 	
 	if (_totalAI > 0) then {						// Only run script if there is at least one bandit to spawn
 		for "_i" from 1 to _totalAI do {
-			_pos = [_playerpos, random 360, [_minspawnd,_maxspawnd], false, 2] call fnc_randomPos;
+			_pos = [_killerpos, random 360, [_minspawnd,_maxspawnd], false, 2] call fnc_randomPos;
 			_eastGrp = createGroup east;
 			_SideHQ = createCenter east;
 			
@@ -83,9 +80,8 @@ private ["_totalAI","_minAI","_addAI", "_minspawnd", "_maxspawnd", "_patrold","_
 			_unit addEventHandler ["Killed",{[_this,"banditKills"] call local_eventKill;}]; // Credit player for killing the AI bandit
 			//_unit addEventHandler ["Killed",{["banditKilled"] call fnc_humanity;}];
 			_unit addEventHandler ["Killed",{_this call fnc_spawn_deathFlies;}];			// Spawn flies for AI bandit corpse
-			_unit addEventHandler ["Killed",{_this call fnc_banditAIKilled;}];				// 
-			_unit addEventHandler ["Killed",{_this call fnc_banditAIRespawn;}];				// 
-			_unit addEventHandler ["Killed",{_this setDamage 1;}];							//
+			_unit addEventHandler ["Killed",{_this spawn fnc_banditAIKilled;}];				// 
+			_unit addEventHandler ["Killed",{_this setDamage 1;}];							// New
 			
 			//EAST setFriend [WEST, 0];														// Two-way hostility with player
 			//WEST setFriend [EAST, 0];
@@ -99,7 +95,7 @@ private ["_totalAI","_minAI","_addAI", "_minspawnd", "_maxspawnd", "_patrold","_
 			null = [_eastGrp,_pos,_patrold] execVM "BIN_taskPatrol.sqf";
 			{ _x addRating -20000; } forEach allMissionObjects "zZombie_Base";				// Spawned unit should be immediately hostile to existing zombies
 			//hint format["Last created AI unit: %1 (%2 of %3). Weapon Grade %4",_type,_i,_totalAI,_weapongrade];			// Report total number of AI spawned (for testing)
-			titleText["Triggered spawnBandits_random","PLAIN DOWN"];						// Report trigger activation (basic)
+			titleText["Triggered spawnBandits_respawn","PLAIN DOWN"];						// Report trigger activation (basic)
 		};
 	};
 	//sleep 1.5;

@@ -675,7 +675,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=15;
+		items=7;
 		class Item0
 		{
 			position[]={5406.9092,30.012478,8796.7354};
@@ -718,54 +718,6 @@ class Mission
 			name="spawn4";
 			type="Empty";
 		};
-		class Item7
-		{
-			position[]={7974.7568,13.225393,7169.4688};
-			name="spawn5";
-			type="Empty";
-		};
-		class Item8
-		{
-			position[]={7240.1138,3.5958283,5552.9463};
-			name="spawn6";
-			type="Empty";
-		};
-		class Item9
-		{
-			position[]={4711.5078,3.8458812,4979.6143};
-			name="spawn7";
-			type="Empty";
-		};
-		class Item10
-		{
-			position[]={4851.4604,6.6733789,9761.1621};
-			name="spawn9";
-			type="Empty";
-		};
-		class Item11
-		{
-			position[]={5766.8267,10.227316,11590.905};
-			name="spawn10";
-			type="Empty";
-		};
-		class Item12
-		{
-			position[]={8700.1602,11.976458,9950.3789};
-			name="spawn11";
-			type="Empty";
-		};
-		class Item13
-		{
-			position[]={7311.9805,8.1548901,10054.449};
-			name="spawn12";
-			type="Empty";
-		};
-		class Item14
-		{
-			position[]={6507.2759,4.9100995,7056.5996};
-			name="spawn13";
-			type="Empty";
-		};
 	};
 	class Sensors
 	{
@@ -778,13 +730,13 @@ class Mission
 			activationBy="ANY";
 			repeating=1;
 			timeoutMin=30;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Southern Army Base";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,2,40,300,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,2,40,300,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -797,14 +749,14 @@ class Mission
 			angle=130;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=40;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Norinsk";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,40,250,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,40,0,250,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -816,14 +768,14 @@ class Mission
 			b=260;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=50;
-			timeoutMid=120;
-			timeoutMax=300;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Old Yard 2";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,75,300,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,75,300,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -837,13 +789,13 @@ class Mission
 			activationBy="ANY";
 			repeating=1;
 			timeoutMin=30;
-			timeoutMid=90;
-			timeoutMax=180;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Sebjan Warehouse Forest";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,2,50,500,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,2,50,500,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -857,13 +809,13 @@ class Mission
 			activationBy="ANY";
 			repeating=1;
 			timeoutMin=30;
-			timeoutMid=90;
-			timeoutMax=180;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Western Army Checkpoint";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,30,300,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,30,300,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -876,13 +828,13 @@ class Mission
 			activationBy="ANY";
 			repeating=1;
 			timeoutMin=30;
-			timeoutMid=90;
-			timeoutMax=360;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Lubjansk Bay";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,50,400,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,50,400,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -895,13 +847,13 @@ class Mission
 			activationBy="ANY";
 			repeating=1;
 			timeoutMin=30;
-			timeoutMid=120;
-			timeoutMax=240;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Old Hospital";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,2,50,400,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,2,50,400,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -913,14 +865,14 @@ class Mission
 			b=200;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Nitija Army Base Building";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,500,250,1] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,500,0,1] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -932,14 +884,14 @@ class Mission
 			b=200;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Object A2 Building";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,500,250,2] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,500,0,2] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -951,14 +903,14 @@ class Mission
 			b=200;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Jalovisko Building";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,500,250,0] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,500,0,0] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -971,13 +923,13 @@ class Mission
 			activationBy="ANY";
 			repeating=1;
 			timeoutMin=30;
-			timeoutMid=90;
-			timeoutMax=180;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Gray Forest";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,50,400,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,50,400,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -991,13 +943,13 @@ class Mission
 			activationBy="ANY";
 			repeating=1;
 			timeoutMin=30;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Northern Army Base";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,50,250,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,50,0,250,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1010,13 +962,13 @@ class Mission
 			activationBy="ANY";
 			repeating=1;
 			timeoutMin=30;
-			timeoutMid=120;
-			timeoutMax=210;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Lubjansk North";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,75,400,250,2] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,75,400,0,2] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1030,13 +982,13 @@ class Mission
 			activationBy="ANY";
 			repeating=1;
 			timeoutMin=30;
-			timeoutMid=120;
-			timeoutMax=210;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Seraja Army Base 1";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,40,350,250,2] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,40,350,0,2] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1051,12 +1003,12 @@ class Mission
 			repeating=1;
 			timeoutMin=30;
 			timeoutMid=60;
-			timeoutMax=120;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Crashed C130";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,0,65,350,250,3] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,0,65,350,0,3] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1068,14 +1020,14 @@ class Mission
 			b=300;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=540;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Vorkuta Main";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,40,400,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,40,400,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1087,14 +1039,14 @@ class Mission
 			b=200;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Vorkuta Firestation (Buildings)";
+			text="Vorkuta Firestation (bldgs)";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,1] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,2,50,500,0,1] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -1106,14 +1058,14 @@ class Mission
 			b=200;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Vorkuta Residential (Buildings)";
+			text="Vorkuta Residential (bldgs)";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,0] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,2,50,500,0,0] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -1127,13 +1079,13 @@ class Mission
 			activationBy="ANY";
 			repeating=1;
 			timeoutMin=20;
-			timeoutMid=40;
+			timeoutMid=60;
 			timeoutMax=60;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Norinsk to A2";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,2,40,225,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,2,40,225,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1145,14 +1097,14 @@ class Mission
 			b=150;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=40;
-			timeoutMid=90;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Forest (080 015)";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,2,50,500,250,0] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,2,50,500,0,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1165,14 +1117,14 @@ class Mission
 			angle=135;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Tara Railway Station";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,60,425,250,0] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,2,60,425,0,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1186,13 +1138,13 @@ class Mission
 			activationBy="ANY";
 			repeating=1;
 			timeoutMin=30;
-			timeoutMid=90;
-			timeoutMax=180;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Norinsk Forest NE";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,3,50,450,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,3,50,450,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1205,14 +1157,14 @@ class Mission
 			angle=20;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=40;
-			timeoutMid=120;
-			timeoutMax=300;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Old Yard 1";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,75,300,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,75,300,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1226,13 +1178,13 @@ class Mission
 			activationBy="ANY";
 			repeating=1;
 			timeoutMin=30;
-			timeoutMid=90;
-			timeoutMax=180;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="North Vorkuta Forest 2";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,2,50,400,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,2,50,400,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1247,12 +1199,12 @@ class Mission
 			repeating=1;
 			timeoutMin=30;
 			timeoutMid=60;
-			timeoutMax=180;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Crashed Helicopter";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,75,300,250,2] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,75,300,0,2] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1266,12 +1218,12 @@ class Mission
 			repeating=1;
 			timeoutMin=30;
 			timeoutMid=60;
-			timeoutMax=180;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Crashed Helicopter";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,75,300,250,2] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,75,300,0,2] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1285,12 +1237,12 @@ class Mission
 			repeating=1;
 			timeoutMin=30;
 			timeoutMid=60;
-			timeoutMax=180;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Crashed Helicopter";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,75,300,250,2] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,75,300,0,2] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1304,12 +1256,12 @@ class Mission
 			repeating=1;
 			timeoutMin=30;
 			timeoutMid=60;
-			timeoutMax=200;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Crashed Helicopter";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,75,300,250,2] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,75,300,0,2] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1323,12 +1275,12 @@ class Mission
 			repeating=1;
 			timeoutMin=30;
 			timeoutMid=60;
-			timeoutMax=180;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Crashed Helicopter";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,75,300,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,75,300,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1343,12 +1295,12 @@ class Mission
 			repeating=1;
 			timeoutMin=30;
 			timeoutMid=60;
-			timeoutMax=180;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Crashed Helicopter";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,75,300,250,2] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,75,300,0,2] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1363,12 +1315,12 @@ class Mission
 			repeating=1;
 			timeoutMin=30;
 			timeoutMid=60;
-			timeoutMax=180;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Crashed Helicopter";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,75,300,250,2] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,75,300,0,2] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1382,12 +1334,12 @@ class Mission
 			repeating=1;
 			timeoutMin=30;
 			timeoutMid=60;
-			timeoutMax=180;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Crashed Helicopter";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,75,300,250,2] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,75,300,0,2] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1400,14 +1352,14 @@ class Mission
 			angle=-30;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=300;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="East of Brensk Railway";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,2,40,350,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,2,40,350,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1421,13 +1373,13 @@ class Mission
 			activationBy="ANY";
 			repeating=1;
 			timeoutMin=30;
-			timeoutMid=90;
-			timeoutMax=180;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="North Vorkuta Forest 1";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,2,50,400,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,2,50,400,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1441,13 +1393,13 @@ class Mission
 			activationBy="ANY";
 			repeating=1;
 			timeoutMin=30;
-			timeoutMid=90;
-			timeoutMax=180;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Norinsk Forest NW";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,3,50,450,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,3,50,450,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1460,14 +1412,14 @@ class Mission
 			angle=20;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Lubjansk West";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,2,75,400,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,2,75,400,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1479,14 +1431,14 @@ class Mission
 			b=150;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=240;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Tara Harbor";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,3,40,400,250,0] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,3,40,400,0,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1499,14 +1451,14 @@ class Mission
 			angle=135;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Vorkuta Outskirts";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,75,300,250,0] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,75,300,0,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1518,14 +1470,14 @@ class Mission
 			b=200;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Vorkuta Central (Buildings)";
+			text="Vorkuta Central (bldgs)";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,1] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,2,50,500,0,1] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -1539,13 +1491,13 @@ class Mission
 			activationBy="ANY";
 			repeating=1;
 			timeoutMin=30;
-			timeoutMid=120;
-			timeoutMax=300;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Tara Bridge";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,2,50,500,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,2,50,500,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1557,14 +1509,14 @@ class Mission
 			b=150;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=50;
-			timeoutMid=120;
-			timeoutMax=300;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Alakit";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,75,300,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,75,300,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1578,13 +1530,13 @@ class Mission
 			activationBy="ANY";
 			repeating=1;
 			timeoutMin=30;
-			timeoutMid=90;
-			timeoutMax=240;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Sebjan Mine";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,50,500,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,50,500,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1596,14 +1548,14 @@ class Mission
 			b=200;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=360;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Tara Buildings";
+			text="Tara bldgs";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,500,250,0] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,500,0,0] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -1615,14 +1567,14 @@ class Mission
 			b=200;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Old Sawmill";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,500,250,0] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,500,0,0] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -1636,13 +1588,13 @@ class Mission
 			activationBy="ANY";
 			repeating=1;
 			timeoutMin=30;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Seraja Army Base 2";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,40,300,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,40,300,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1656,13 +1608,13 @@ class Mission
 			activationBy="ANY";
 			repeating=1;
 			timeoutMin=30;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Seraja Army Base 3";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,40,300,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,40,300,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1674,14 +1626,14 @@ class Mission
 			b=175;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=300;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Brensk Railway Station";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,40,300,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,40,300,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1694,14 +1646,14 @@ class Mission
 			angle=135;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=300;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Object A1";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,2,50,400,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,2,50,400,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1715,12 +1667,12 @@ class Mission
 			repeating=1;
 			timeoutMin=30;
 			timeoutMid=60;
-			timeoutMax=120;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Sebjan Landbridge";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,3,125,400,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,3,125,400,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1735,12 +1687,12 @@ class Mission
 			repeating=1;
 			timeoutMin=30;
 			timeoutMid=60;
-			timeoutMax=120;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Tara Strait Landbridge";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,3,125,500,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [0,3,125,500,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1754,13 +1706,13 @@ class Mission
 			activationBy="ANY";
 			repeating=1;
 			timeoutMin=30;
-			timeoutMid=90;
-			timeoutMax=180;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Gray Forest 2";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,2,50,500,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,2,50,500,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1774,13 +1726,13 @@ class Mission
 			activationBy="ANY";
 			repeating=1;
 			timeoutMin=30;
-			timeoutMid=90;
-			timeoutMax=240;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Sebjan Chemical Factory";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,50,300,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,50,300,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1792,14 +1744,14 @@ class Mission
 			b=250;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=50;
-			timeoutMid=120;
-			timeoutMax=600;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Jalovisko";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,3,50,500,250,0] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,3,50,500,0,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -1811,14 +1763,14 @@ class Mission
 			b=200;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Old Yard 1 Building";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,500,250,1] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,500,0,1] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -1830,14 +1782,14 @@ class Mission
 			b=200;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Northern Army Base Building";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,500,250,2] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,500,0,2] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -1849,14 +1801,14 @@ class Mission
 			b=200;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Lubjansk Building";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,2] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,2,50,500,0,2] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -1870,12 +1822,12 @@ class Mission
 			repeating=1;
 			timeoutMin=30;
 			timeoutMid=60;
-			timeoutMax=120;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Sebjan Landbridge Buildings";
+			text="Sebjan Landbridge bldgs";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,500,250,1] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,500,0,1] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -1887,14 +1839,14 @@ class Mission
 			b=200;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Sebjan Factory Building";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,500,250,1] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,500,0,1] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -1906,14 +1858,14 @@ class Mission
 			b=200;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Sebjan Warehouse Building";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,500,250,1] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,500,0,1] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -1926,14 +1878,14 @@ class Mission
 			angle=130;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Western Army Building";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,500,250,1] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,500,0,1] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -1946,14 +1898,14 @@ class Mission
 			angle=130;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Norinsk Buildings";
+			text="Norinsk bldgs";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,1] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,2,50,500,0,1] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -1966,14 +1918,14 @@ class Mission
 			angle=30;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Seraja Army Base Buildings";
+			text="Seraja Army Base bldgs";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,2,50,500,250,2] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,2,50,500,0,2] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -1985,14 +1937,14 @@ class Mission
 			b=200;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Southern Army Base Building";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,500,250,2] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,500,0,2] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -2004,14 +1956,14 @@ class Mission
 			b=200;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Sebjan Mine Building";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,500,250,1] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,500,0,1] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -2023,14 +1975,14 @@ class Mission
 			b=200;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Nemsk Factory Building";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,500,250,0] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,500,0,0] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -2042,14 +1994,14 @@ class Mission
 			b=200;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Tara Harbor Buildings";
+			text="Tara Harbor bldgs";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,500,250,0] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,500,0,0] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -2062,14 +2014,14 @@ class Mission
 			angle=135;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Tara Railway Station";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,500,250,0] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,500,0,0] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -2081,14 +2033,14 @@ class Mission
 			b=200;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Old Hospital Buildings";
+			text="Old Hospital bldgs";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,500,250,1] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,500,0,1] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -2100,14 +2052,14 @@ class Mission
 			b=85;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=360;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Old Sawmill";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,1,140,400,250,0] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,1,140,400,0,0] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2120,13 +2072,13 @@ class Mission
 			activationBy="ANY";
 			repeating=1;
 			timeoutMin=30;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Nitija Army Base";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,2,50,175,250,1] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,2,50,175,0,1] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2140,12 +2092,12 @@ class Mission
 			repeating=1;
 			timeoutMin=25;
 			timeoutMid=60;
-			timeoutMax=120;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Object A2";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [1,2,40,350,250,2] call fnc_spawnBandits_random;";
+			expActiv="_nul = [1,2,40,350,0,2] call fnc_spawnBandits_random;";
 			class Effects
 			{
 			};
@@ -2157,14 +2109,14 @@ class Mission
 			b=200;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Brensk Railway Building";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,500,250,1] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,500,0,1] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -2176,14 +2128,14 @@ class Mission
 			b=200;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Lubjansk South Buildings";
+			text="Lubjansk South bldgs";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,500,250,1] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,500,0,1] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -2195,14 +2147,14 @@ class Mission
 			b=200;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
-			text="Tara Marsh Buildings";
+			text="Tara Marsh bldgs";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,500,250,0] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,500,0,0] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
@@ -2214,14 +2166,14 @@ class Mission
 			b=200;
 			activationBy="ANY";
 			repeating=1;
-			timeoutMin=60;
-			timeoutMid=120;
-			timeoutMax=180;
+			timeoutMin=30;
+			timeoutMid=60;
+			timeoutMax=90;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Sebjan Building";
 			expCond="(vehicle player in thislist) OR (player in thislist)";
-			expActiv="_nul = [0,1,50,500,250,1] call fnc_spawnBandits_buildings;";
+			expActiv="_nul = [0,1,50,500,0,1] call fnc_spawnBandits_bldgs;";
 			class Effects
 			{
 			};
