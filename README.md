@@ -1,6 +1,8 @@
 DayZBanditAI
 ============
 
+March 13, 2013 Update: The DayZ AI Bandit Module is being reworked to improve MP compatibility and flexibility. Since I'm only able to devote less than an hour to work on this package, the next release will take a while.
+
 The DayZ AI Bandit Module is a personal project built from a heavily stripped-down version DaiZy (DayZ SP), intended to simulate multiplayer gameplay in a singleplayer environment using AI Bandits to simulate the threat of hostile human players. 
 
 The AI Bandit Module may be used in a multiplayer environment, but unpredictable events may occur due to variable locality issues. The AI Bandit Module is intended for use with Reality DayZ, Lite DayZ, or any other private hive server files in a lone player environment, but 
@@ -13,17 +15,7 @@ DayZ Versions Supported:
 ------------------------------------
 DayZ (Base): 1.7.6.1 (Up to date as of March 2, 2013)
 
-DayZ Utes: 1.2(Out of date)
-
-DayZ Oring: 1.0.7 (Up to date)
-
-DayZ Namalsk: 0.7.3 (Out of date)
-
-DayZ Lingor: 1.2 (Out of date)
-
-DayZ Isla Duala: 1.1 (Out of date)
-
-DayZ Taviana: 2.0/1.5.0 (Out of date)
+* Note: The AI Bandit Module can be adapted to "non-supported" maps. For more information, see section "Modifying AI Bandit Module for New Maps" below.
 
 Features of the DayZ AI Bandit Module:
 ---------------------------------------
