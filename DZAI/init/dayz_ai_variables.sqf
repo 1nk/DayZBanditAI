@@ -47,7 +47,7 @@ DZAI_BanditTypesDefault = ["Survivor2_DZ", "SurvivorW2_DZ", "Bandit1_DZ", "Bandi
 DZAI_PistolsDefault0 = ["Colt1911", "revolver_EP1", "Makarov"];
 DZAI_PistolsDefault1 = ["M9", "glock17_EP1", "Colt1911", "UZI_EP1", "M9SD", "revolver_EP1"];
 DZAI_PistolsDefault2 = ["M9", "glock17_EP1", "UZI_EP1", "M9SD"];
-//DZAI_PistolsDefault3 = [];
+DZAI_PistolsDefault3 = ["M9", "glock17_EP1", "UZI_EP1", "M9SD"];
 //DZAI_PistolsDefault4 = [];
 DZAI_RiflesDefault0 = ["Winchester1866", "LeeEnfield", "huntingrifle","M1014"];
 DZAI_RiflesDefault1 = ["M16A2","M16A2GL","AK_74","M4A1_Aim","AKS_74_kobra","AKS_74_U","AK_47_M","M24","M1014","DMR","M4A1","M14_EP1","Remington870_lamp","MP5A5","MP5SD","M4A3_CCO_EP1","Sa58P_EP1","Sa58V_EP1","BAF_L85A2_RIS_Holo"];
@@ -59,7 +59,7 @@ DZAI_DefaultBackpacks = ["CZ_VestPouch_EP1","DZ_Patrol_Pack_EP1", "DZ_Assault_Pa
 DZAI_DefaultGadgets = ["ItemGPS","NVGoggles","binocular_vector","ItemFlashlightRed"];
 DZAI_DefaultEdibles = ["ItemSodaCoke", "ItemSodaPepsi", "ItemWaterbottle", "FoodCanSardines", "FoodCanBakedBeans", "FoodCanFrankBeans", "FoodCanPasta", "ItemWaterbottleUnfilled","ItemWaterbottleBoiled","FoodmuttonCooked","FoodchickenCooked","FoodBaconCooked","FoodRabbitCooked","FoodbaconRaw","FoodchickenRaw","FoodmuttonRaw","foodrabbitRaw","FoodCanUnlabeled","FoodPistachio","FoodNutmix","FoodMRE"];
 DZAI_DefaultMedicals1 = ["ItemBandage", "ItemPainkiller"];
-DZAI_DefaultMedicals2 = ["ItemMorphine", "ItemMorphine", "ItemBandage", "ItemBloodbag", "ItemPainkiller", "ItemAntibiotic","ItemEpinephrine"]; //Note: Morphine is added to the list more than once intentionally.
+DZAI_DefaultMedicals2 = ["ItemMorphine", "ItemMorphine", "ItemMorphine", "ItemBandage", "ItemBloodbag", "ItemPainkiller", "ItemAntibiotic","ItemEpinephrine"]; //Note: Morphine is added to the list more than once intentionally.
 DZAI_DefaultMiscs = ["ItemSandbag", "ItemTent", "ItemJerrycan", "PartWheel", "PartEngine", "PartFueltank", "ItemTankTrap", "ItemWire", "PartGlass", "PartVRotor", "ItemHeatpack", "HandRoadFlare", "HandChemBlue", "HandChemRed", "HandChemGreen","PartWoodPile","SmokeShell","SmokeShellGreen","SmokeShellGreen","PipeBomb","HandGrenade_West","FlareGreen_M203","FlareWhite_M203","1Rnd_HE_M203","1Rnd_Smoke_M203"];
 DZAI_DefaultSkinLoot = ["Skin_Camo1_DZ", "Skin_Sniper1_DZ"];
 
