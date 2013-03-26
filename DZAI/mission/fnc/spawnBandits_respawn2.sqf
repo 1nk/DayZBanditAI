@@ -14,7 +14,7 @@ private ["_totalAI","_minAI","_addAI", "_minspawnd", "_maxspawnd", "_patrold","_
 	};		
 		
 	//Editables
-	_patrold = 150;
+	_patrold = 100;
 	_totalAI = 0;
 	_minAI = 0;
 	_addAI = 0;

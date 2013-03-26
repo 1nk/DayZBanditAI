@@ -31,7 +31,7 @@ if (!isServer) exitWith {};
 	};
 	
 	//Editables
-	_patrold = 150;
+	_patrold = 100;
 
 	//Values taken from mission.sqm. If not present, use preset values. 
 	_minAI = 0;
