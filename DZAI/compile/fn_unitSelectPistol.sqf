@@ -23,7 +23,7 @@
 		_pistols = DZAI_PistolsDefault2;
 	  };
 	  case 3: {		//Military Only
-		_pistols = DZAI_PistolsDefault2;
+		_pistols = DZAI_PistolsDefault3;
 	  };
 	  default {		//Default - Give a Revolver if weapongrade is not within 0-3 or not declared.
 	    _pistols = ["revolver_EP1"];
