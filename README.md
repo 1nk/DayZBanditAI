@@ -1,5 +1,10 @@
 DayZBanditAI
 ============
+March 25, 2013 Update: Revision 1 of AI package (now named DZAI for DayZ AI) has been uploaded. This new package is MP-compatible and works out of the box for any supported DayZ map. Simply add the line to your init.sqf file: 
+
+<code>call compile preprocessFileLineNumbers "DZAI\init\dayz_ai_initialize.sqf";				//Load DayZ AI Bandit Module</code>
+
+Detailed documentation for the DZAI package is coming.
 
 March 13, 2013 Update: The DayZ AI Bandit Module is being reworked to improve MP compatibility and flexibility. Since I'm only able to devote less than an hour to work on this package, the next release will take a while.
 
