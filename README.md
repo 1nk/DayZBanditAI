@@ -1,6 +1,7 @@
 DZAI - DayZ AI Addon (Current version: 0.02)
 ============
 April 3, 2013 Update: DZAI updated to version 0.02
+
 March 25, 2013 Update: Revision 1 of AI package (now named DZAI for DayZ AI) has been uploaded. 
 
 This new package is MP-compatible and works out of the box for any supported DayZ map. Currently supported DayZ maps:
