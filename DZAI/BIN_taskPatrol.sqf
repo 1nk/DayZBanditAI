@@ -35,7 +35,9 @@ ArmaIIholic
 -- changed numbers for waypoints to match previous waypoints
 -- randomized initial direction -- Wolffy.au added only the offset which had to be reduced to 180 
            - however this script is making full circle from wherever it starts
-
+		   
+-----------------------------------------------------------------------------------------------------------------------
+Slightly modified for DZAI Package
 =======================================================================================================================
 */
 
@@ -48,9 +50,11 @@ ArmaIIholic
 	waitUntil {!isNil "bis_fnc_init"}; 
 	_mode = ["YELLOW", "RED"] call BIS_fnc_selectRandom;
 	_formation = ["STAG COLUMN", "WEDGE", "ECH LEFT", "ECH RIGHT", "VEE", "DIAMOND"] call BIS_fnc_selectRandom;
-
-	_grp setBehaviour "AWARE";
-	_grp setSpeedMode "LIMITED";
+	_dzai_behavior = ["AWARE","COMBAT"] call BIS_fnc_selectRandom;
+	_dzai_speedmode =  ["LIMITED","NORMAL"] call BIS_fnc_selectRandom;
+	
+	_grp setBehaviour _dzai_behavior;
+	_grp setSpeedMode _dzai_speedmode;
 	_grp setCombatMode _mode;
 	_grp setFormation _formation;
 

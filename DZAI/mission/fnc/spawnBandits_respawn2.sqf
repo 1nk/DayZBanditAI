@@ -1,9 +1,10 @@
+//DayZ AI Module Revision 1 (DZAI) Version 0.02
 /*
 	Usage: [_minAI, _addAI, _minspawnd, _maxspawnd, _patrold, _weapongrade (optional)] call fnc_doSomething_bandits
 	Note: Called through mission.sqm
 */
 if (!isServer) exitWith {};
-private ["_totalAI","_minAI","_addAI", "_minspawnd", "_maxspawnd", "_patrold","_weapongrade","_spawnchance","_killerpos","_respawnpos"];
+private ["_totalAI","_minAI", "_minspawnd", "_maxspawnd", "_patrold","_weapongrade","_killerpos","_respawnpos"];
 
 	//AI Quantity Limiter
 	if (isNil "numAIUnits") then {
@@ -14,38 +15,33 @@ private ["_totalAI","_minAI","_addAI", "_minspawnd", "_maxspawnd", "_patrold","_
 	};		
 		
 	//Editables
-	_patrold = 100;
+	_patrold = 90;
 	_totalAI = 0;
 	_minAI = 0;
-	_addAI = 0;
 	_maxspawnd = 400;
 	
 	if(count _this > 0) then {_minAI = _this select 0;};
-	if(count _this > 1) then {_addAI = _this select 1;};	
-	if(count _this > 2) then {_maxspawnd = _this select 2;};
-	//if(count _this > 3) then {_weapongrade = _this select 3;};
-	if(count _this > 4) then {_respawnpos = _this select 4;};
+	if(count _this > 1) then {_maxspawnd = _this select 1;};
+	if(count _this > 2) then {_respawnpos = _this select 2;};
 	
-	_totalAI = (_minAI + round(random _addAI));
+	_totalAI = _minAI;
+	if (_totalAI == 0) exitWith {};
 	numAIUnits = numAIUnits + _totalAI;
-	lastAI3 = (DateToNumber date);
-	
-	
+
 	_nearbldgs = nearestObjects [_respawnpos, ["Building"], _maxspawnd];
-	if ((count _nearbldgs) == 0) exitWith {_nul = [1,0,75,400,300,0,_respawnpos] call fnc_spawnBandits_respawn;};
+	if ((count _nearbldgs) == 0) exitWith {
+		_nul = [1,1000,_respawnpos] call fnc_spawnBandits_respawn2; //Extend range to 1km if no buildings immediately nearby
+		diag_log format["DZAI Warning: No buildings found within predefined radius. Extending respawn radius to 1000 units."]; 
+	};	
 	_bldgpos = [_nearbldgs] call getBuildingPosition;
 	
-	if (_totalAI == 0) exitWith {};
 	if (DZAI_debug) then {diag_log format["DZAI Debug: Respawn AI (Building Spawn) started."];};
 	for "_i" from 1 to _totalAI do {
-		private ["_banditGrp","_SideHQ","_p","_pos","_types","_type","_unit"];
-		//_SideHQ = createCenter east;
-		//_eastGrp = createGroup east;
+		private ["_banditGrp","_p","_pos","_type","_unit"];
 		_banditGrp = createGroup resistance;
 		_p = _bldgpos call BIS_fnc_selectRandom;
-		_pos = [_p, 0, 50, 0, 0, 20, 0] call BIS_fnc_findSafePos;
-		_types = DZAI_BanditTypesDefault;
-		_type = _types call BIS_fnc_selectRandom;
+		_pos = [_p, 10, 85, 0, 0, 20, 0] call BIS_fnc_findSafePos;
+		_type = DZAI_BanditTypesDefault call BIS_fnc_selectRandom;
 		_unit = _banditGrp createUnit [_type, _pos, [], 0, "FORM"];						// Spawn the AI bandit unit
 		
 		_unit addEventHandler ["Fired", {_this call ai_fired;}];						// Unit firing causes zombie aggro in the area, like player
@@ -60,10 +56,10 @@ private ["_totalAI","_minAI","_addAI", "_minspawnd", "_maxspawnd", "_patrold","_
 		_weapongrade = call fnc_selectRandomGrade;		
 		[_unit] call fnc_setBehaviour;													// Set AI behavior
 		[_unit] call fnc_setSkills;														// Set AI skill
-		[_unit] call fnc_unitBackpackTools;												// Assign backpack, tools, gadgets 
+		[_unit, _weapongrade] call fnc_unitBackpackTools;								// Assign backpack, tools, gadgets 
 		[_unit, _weapongrade] call fnc_unitSelectPistol;								// Assign sidearm
 		[_unit, _weapongrade] call fnc_unitSelectRifle;									// Assign rifle
-		[_unit] call fnc_unitConsumables;												// Generate loot: food, medical, misc, skin
+		[_unit, _weapongrade] call fnc_unitConsumables;									// Generate loot: food, medical, misc, skin
 		null = [_banditGrp,_pos,_patrold] execVM "DZAI\BIN_taskPatrol.sqf";
 		if (DZAI_debug) then {diag_log format["DZAI Debug: Respawned AI Type %1 %2 of %3. (Building)",_type,_i, _totalAI];};
 	};

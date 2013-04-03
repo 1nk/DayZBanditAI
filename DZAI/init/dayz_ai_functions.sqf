@@ -1,4 +1,4 @@
-//DayZ AI Bandit Module Revision 1
+//DayZ AI Bandit Module Version 0.02
 /*
 	if ((Player getVariable "SpareTime") > 0) then {...
 	Usage: call compile preprocessFileLineNumbers "dayz_ai_functions.sqf";

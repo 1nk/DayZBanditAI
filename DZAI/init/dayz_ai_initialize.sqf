@@ -1,4 +1,4 @@
-//DayZ AI Bandit Module Revision 1
+//DayZ AI Bandit Module Version 0.02
 
 if (!isDedicated) then { //Handle client-side zombie spawns
 zombie_generate = compile preprocessFileLineNumbers "DZAI\compile\zombie_generate.sqf";

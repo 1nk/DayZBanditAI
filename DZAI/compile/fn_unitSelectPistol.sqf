@@ -8,10 +8,6 @@
 	
 	_nmags = (floor (random DZAI_maxPistolMags)) + 1;						// Number of mags to generate for selected weapon.
 	
-	/*if (_weapongrade > 2) then {  	//For pistols, any weapon grade higher than zero ("Civilian") is "Military". Set maximum allowed weapon grade here.
-		_weapongrade = 2;
-	};*/
-
 	switch (_weapongrade) do {
 	  case 0: {		//Farm / Residential / Supermarket
 		_pistols = DZAI_PistolsDefault0;

@@ -1,3 +1,4 @@
+//DayZ AI Module Revision 1 (DZAI) Version 0.02
 /*
 	Usage: 
 */
@@ -31,38 +32,34 @@ if (!isServer) exitWith {};
 	};
 	
 	//Editables
-	_patrold = 100;
+	_patrold = 90;
 
 	//Values taken from mission.sqm. If not present, use preset values. 
 	_minAI = 0;
 	_addAI = 0;
 	_maxspawnd = 400;
-	_weapongrade = call fnc_selectRandomGrade;
 	if(count _this > 0) then {_minAI = _this select 0;};
 	if(count _this > 1) then {_addAI = _this select 1;};
 	if(count _this > 2) then {_maxspawnd = _this select 2;};
 	if(count _this > 3) then {_trigger = _this select 3;};
 		
 	//Calculate values
-	_totalAI = (DZAI_spawnMultiplier * (_minAI + round(random _addAI)));
+	_totalAI = (DZAI_spawnExtra + _minAI + round(random _addAI));
+	if (_totalAI == 0) exitWith {};	// Only run script if there is at least one bandit to spawn
 	_triggerpos = getpos _trigger;	
 	numAIUnits = numAIUnits + _totalAI;
 	//publicVariable "numAIUnits";
 	
 	_nearbldgs = nearestObjects [_triggerpos, ["Building"], _maxspawnd];
 	_bldgpos = [_nearbldgs] call getBuildingPosition;
-	
-	if (_totalAI == 0) exitWith {};						// Only run script if there is at least one bandit to spawn
+				
 	if (DZAI_debug) then {diag_log format["DZAI Debug: %1 new AI spawns triggered using Building location as spawn point.",_totalAI];};
 	for "_i" from 1 to _totalAI do {
-		private ["_banditGrp","_SideHQ","_p","_pos","_types","_type","_unit"];
-		//_SideHQ = createCenter east;
-		//_eastGrp = createGroup east;
+		private ["_banditGrp","_p","_pos","_type","_unit"];
 		_banditGrp = createGroup resistance;
 		_p = _bldgpos call BIS_fnc_selectRandom;
-		_pos = [_p, 0, 50, 0, 0, 20, 0] call BIS_fnc_findSafePos;
-		_types = DZAI_BanditTypesDefault;
-		_type = _types call BIS_fnc_selectRandom;
+		_pos = [_p, 10, 85, 0, 0, 20, 0] call BIS_fnc_findSafePos;
+		_type = DZAI_BanditTypesDefault call BIS_fnc_selectRandom;
 		_unit = _banditGrp createUnit [_type, _pos, [], 0, "FORM"];						// Spawn the AI bandit unit
 		
 		_unit addEventHandler ["Fired", {_this call ai_fired;}];						// Unit firing catches zombies attention, like player
@@ -73,13 +70,14 @@ if (!isServer) exitWith {};
 		_unit addEventHandler ["Killed",{_this call fnc_banditAIKilled;}];				// Update current AI count
 		_unit addEventHandler ["Killed",{_this spawn fnc_banditAIRespawn2;}];			// Respawn AI near nearby buildings
 		_unit addEventHandler ["Killed",{(_this select 0) setDamage 1;}];				
-			
+		
+		_weapongrade = call fnc_selectRandomGrade;
 		[_unit] call fnc_setBehaviour;													// Set AI behavior
 		[_unit] call fnc_setSkills;														// Set AI skill
-		[_unit] call fnc_unitBackpackTools;												// Assign backpack, tools, gadgets 
+		[_unit, _weapongrade] call fnc_unitBackpackTools;								// Assign backpack, tools, gadgets 
 		[_unit, _weapongrade] call fnc_unitSelectPistol;								// Assign sidearm
 		[_unit, _weapongrade] call fnc_unitSelectRifle;									// Assign rifle
-		[_unit] call fnc_unitConsumables;												// Generate loot: food, medical, misc, skin
+		[_unit, _weapongrade] call fnc_unitConsumables;									// Generate loot: food, medical, misc, skin
 		null = [_banditGrp,_pos,_patrold] execVM "DZAI\BIN_taskPatrol.sqf";
 		if (DZAI_debug) then {diag_log format["DZAI Debug: Spawned AI Type %1 %2 of %3. (Building)",_type,_i, _totalAI];};
 	};

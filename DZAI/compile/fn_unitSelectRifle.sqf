@@ -10,20 +10,6 @@
 	
 	_nmags = (floor (random DZAI_maxRifleMags)) + 1;						// Number of mags to generate for selected weapon.
     
-	//Old way of generating variance in preset weapon grade
-	/*_chance = random 1; 													// Generate a random number between 0-1 to determine whether to increase weapon grade by 1.
-	switch (true) do {
-		case ((_chance < DZAI_heliCrashChance) && (_weapongrade < 3)): {	// Decide whether to assign helicrash gear
-			_weapongrade = 3;
-		};
-		case ((_chance < DZAI_betterWeapon) && (_weapongrade < 2)): {		// Decide whether to increment weapon grade by 1.
-			_weapongrade = _weapongrade + 1;
-		};
-		case (weapongrade > 3): {
-			_weapongrade = 2;
-		};
-	};*/
-
 	switch (_weapongrade) do {
 	  case 0: {		//Farm / Residential / Supermarket
 		_rifles = DZAI_RiflesDefault0;

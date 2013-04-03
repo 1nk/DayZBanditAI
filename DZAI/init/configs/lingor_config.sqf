@@ -1,19 +1,19 @@
-//Reconfiguration for Lingor (Incomplete)
+//Lingor Configuration 0.02
 
 DZAI_PistolsDefault3 = DZAI_PistolsDefault3 + ["MakarovSD"];
 DZAI_RiflesDefault1 = DZAI_RiflesDefault1 + ["RPK_74"];
 DZAI_RiflesDefault2 = DZAI_RiflesDefault2 + ["MG36"];
 DZAI_RiflesDefault3 = DZAI_RiflesDefault3 + ["BAF_L85A2_UGL_Holo"];
 
-_this = createTrigger ["EmptyDetector", [1804.9249, 603.63953, 0]];
+_this = createTrigger ["EmptyDetector", [1786.98, 596.24695]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
 _this setTriggerText "DZAI Trigger";
-_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
+_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [2,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_0 = _this;
 
-_this = createTrigger ["EmptyDetector", [1284.6974, 680.14709, 0]];
+_this = createTrigger ["EmptyDetector", [1188.6392, 703.38135]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
@@ -21,7 +21,7 @@ _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_2 = _this;
 
-_this = createTrigger ["EmptyDetector", [642.81305, 1014.5779, 1.5258789e-005]];
+_this = createTrigger ["EmptyDetector", [689.25891, 960.71619, 1.5258789e-005]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
@@ -29,20 +29,20 @@ _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_4 = _this;
 
-_this = createTrigger ["EmptyDetector", [524.05286, 1468.4082, 0]];
+_this = createTrigger ["EmptyDetector", [668.66809, 1512.7637]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
 _this setTriggerText "DZAI Trigger";
-_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
+_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [2,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_6 = _this;
 
-_this = createTrigger ["EmptyDetector", [952.16882, 1765.744]];
+_this = createTrigger ["EmptyDetector", [1029.8649, 2043.1067]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
 _this setTriggerText "DZAI Trigger";
-_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
+_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [2,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_8 = _this;
 
 _this = createTrigger ["EmptyDetector", [2104.4998, 1086.9586]];
@@ -53,7 +53,7 @@ _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_10 = _this;
 
-_this = createTrigger ["EmptyDetector", [2985.4958, 1316.4758]];
+_this = createTrigger ["EmptyDetector", [2721.5989, 1377.7301]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
@@ -61,7 +61,7 @@ _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_12 = _this;
 
-_this = createTrigger ["EmptyDetector", [3355.9346, 1495.5231]];
+_this = createTrigger ["EmptyDetector", [3270.4324, 1390.9686]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
@@ -69,21 +69,13 @@ _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_14 = _this;
 
-_this = createTrigger ["EmptyDetector", [3756.5676, 1560.3625]];
+_this = createTrigger ["EmptyDetector", [3828.3474, 1467.4255]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
 _this setTriggerText "DZAI Trigger";
-_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
+_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [2,2,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_16 = _this;
-
-_this = createTrigger ["EmptyDetector", [4037.1577, 1264.8981]];
-_this setTriggerArea [325, 325, 0, false];
-_this setTriggerActivation ["ANY", "PRESENT", false];
-_this setTriggerTimeout [30, 60, 90, true];
-_this setTriggerText "DZAI Trigger";
-_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
-_trigger_18 = _this;
 
 _this = createTrigger ["EmptyDetector", [4302.2827, 1656.1499, 0.080739975]];
 _this setTriggerArea [325, 325, 0, false];
@@ -109,7 +101,7 @@ _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_24 = _this;
 
-_this = createTrigger ["EmptyDetector", [2990.6809, 3786.3459, 6.1199799]];
+_this = createTrigger ["EmptyDetector", [2982.6289, 3746.0688, 6.1199799]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
@@ -117,7 +109,7 @@ _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_26 = _this;
 
-_this = createTrigger ["EmptyDetector", [3467.7466, 3731.0889]];
+_this = createTrigger ["EmptyDetector", [3536.1841, 3724.3757]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
@@ -133,21 +125,13 @@ _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_30 = _this;
 
-_this = createTrigger ["EmptyDetector", [957.51129, 5017.7886]];
+_this = createTrigger ["EmptyDetector", [818.98438, 4921.438]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
 _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_32 = _this;
-
-_this = createTrigger ["EmptyDetector", [648.1991, 4683.272, 1.9073486e-006]];
-_this setTriggerArea [325, 325, 0, false];
-_this setTriggerActivation ["ANY", "PRESENT", false];
-_this setTriggerTimeout [30, 60, 90, true];
-_this setTriggerText "DZAI Trigger";
-_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
-_trigger_34 = _this;
 
 _this = createTrigger ["EmptyDetector", [880.9198, 5574.8247, 3.8349648]];
 _this setTriggerArea [325, 325, 0, false];
@@ -162,7 +146,7 @@ _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
 _this setTriggerText "DZAI Trigger";
-_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
+_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [2,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_38 = _this;
 
 _this = createTrigger ["EmptyDetector", [3376.7754, 5193.8906, 5.9604645e-008]];
@@ -173,31 +157,31 @@ _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_40 = _this;
 
-_this = createTrigger ["EmptyDetector", [4043.269, 4967.686, 0]];
+_this = createTrigger ["EmptyDetector", [4037.2544, 4985.3105]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
 _this setTriggerText "DZAI Trigger";
-_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
+_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [2,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_42 = _this;
 
-_this = createTrigger ["EmptyDetector", [4519.1465, 4965.8013]];
+_this = createTrigger ["EmptyDetector", [4701.647, 5015.4766]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
 _this setTriggerText "DZAI Trigger";
-_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
+_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [2,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_44 = _this;
 
-_this = createTrigger ["EmptyDetector", [4133.1172, 4577.9092, 0]];
+_this = createTrigger ["EmptyDetector", [4282.311, 4470.6416]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
 _this setTriggerText "DZAI Trigger";
-_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
+_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [2,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_46 = _this;
 
-_this = createTrigger ["EmptyDetector", [3684.6152, 4541.8037, 0]];
+_this = createTrigger ["EmptyDetector", [3684.6152, 4458.5483]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
@@ -205,7 +189,7 @@ _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_48 = _this;
 
-_this = createTrigger ["EmptyDetector", [3188.2432, 4622.854]];
+_this = createTrigger ["EmptyDetector", [3139.9341, 4594.6597]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
@@ -213,7 +197,7 @@ _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_50 = _this;
 
-_this = createTrigger ["EmptyDetector", [4750.2075, 3096.2676]];
+_this = createTrigger ["EmptyDetector", [4724.7114, 3164.7393]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
@@ -258,10 +242,10 @@ _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
 _this setTriggerText "DZAI Trigger";
-_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
+_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [2,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_62 = _this;
 
-_this = createTrigger ["EmptyDetector", [6776.3828, 2624.4177, 1.4901161e-007]];
+_this = createTrigger ["EmptyDetector", [6757.5962, 2742.5635, 1.4901161e-007]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
@@ -269,7 +253,7 @@ _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_64 = _this;
 
-_this = createTrigger ["EmptyDetector", [6813.9429, 2127.8008, 2.9927869]];
+_this = createTrigger ["EmptyDetector", [6815.2852, 2074.0981, 2.9927869]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
@@ -282,18 +266,10 @@ _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
 _this setTriggerText "DZAI Trigger";
-_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
+_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [2,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_68 = _this;
 
-_this = createTrigger ["EmptyDetector", [7805.9497, 2724.627, -4.7683716e-007]];
-_this setTriggerArea [325, 325, 0, false];
-_this setTriggerActivation ["ANY", "PRESENT", false];
-_this setTriggerTimeout [30, 60, 90, true];
-_this setTriggerText "DZAI Trigger";
-_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
-_trigger_70 = _this;
-
-_this = createTrigger ["EmptyDetector", [7497.374, 2973.6724, 4.7683716e-007]];
+_this = createTrigger ["EmptyDetector", [7635.5903, 2855.5254, 4.7683716e-007]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
@@ -301,12 +277,12 @@ _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_72 = _this;
 
-_this = createTrigger ["EmptyDetector", [8301.5859, 2992.0928, 2.969995]];
+_this = createTrigger ["EmptyDetector", [8344.5273, 2833.6694, 2.969995]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
 _this setTriggerText "DZAI Trigger";
-_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
+_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [2,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_74 = _this;
 
 _this = createTrigger ["EmptyDetector", [6068.6338, 1710.0781, 0.047464609]];
@@ -317,21 +293,13 @@ _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_76 = _this;
 
-_this = createTrigger ["EmptyDetector", [5732.958, 4502.4248, 0]];
+_this = createTrigger ["EmptyDetector", [5834.3286, 4564.4883]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
 _this setTriggerText "DZAI Trigger";
-_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
+_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [2,2,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_78 = _this;
-
-_this = createTrigger ["EmptyDetector", [6010.5771, 4753.7783, 0]];
-_this setTriggerArea [325, 325, 0, false];
-_this setTriggerActivation ["ANY", "PRESENT", false];
-_this setTriggerTimeout [30, 60, 90, true];
-_this setTriggerText "DZAI Trigger";
-_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
-_trigger_80 = _this;
 
 _this = createTrigger ["EmptyDetector", [6820.2139, 4760.1143, 0]];
 _this setTriggerArea [325, 325, 0, false];
@@ -349,7 +317,7 @@ _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_84 = _this;
 
-_this = createTrigger ["EmptyDetector", [7094.666, 5789.8193]];
+_this = createTrigger ["EmptyDetector", [7012.9639, 5903.3506]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
@@ -357,31 +325,23 @@ _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_86 = _this;
 
-_this = createTrigger ["EmptyDetector", [6393.7568, 5831.0083, 0]];
+_this = createTrigger ["EmptyDetector", [6360.4697, 6009.6294]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
 _this setTriggerText "DZAI Trigger";
-_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
+_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [2,2,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_88 = _this;
 
-_this = createTrigger ["EmptyDetector", [6866.6592, 6167.9067]];
+_this = createTrigger ["EmptyDetector", [6811.6973, 6536.4175, 4.6562405]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
 _this setTriggerText "DZAI Trigger";
-_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
-_trigger_90 = _this;
-
-_this = createTrigger ["EmptyDetector", [6651.3193, 6557.6104, 4.6562405]];
-_this setTriggerArea [325, 325, 0, false];
-_this setTriggerActivation ["ANY", "PRESENT", false];
-_this setTriggerTimeout [30, 60, 90, true];
-_this setTriggerText "DZAI Trigger";
-_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
+_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [2,2,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_92 = _this;
 
-_this = createTrigger ["EmptyDetector", [6239.6406, 6770.9434]];
+_this = createTrigger ["EmptyDetector", [6194.25, 6733.0996]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
@@ -389,7 +349,7 @@ _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_94 = _this;
 
-_this = createTrigger ["EmptyDetector", [8506.3369, 7882.5532, 0]];
+_this = createTrigger ["EmptyDetector", [8612.2471, 7818.9756]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
@@ -397,7 +357,7 @@ _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_98 = _this;
 
-_this = createTrigger ["EmptyDetector", [8361.3301, 8872.6074, 2.9700069]];
+_this = createTrigger ["EmptyDetector", [8368.8955, 8807.5166, 2.9700069]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
@@ -421,7 +381,7 @@ _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_104 = _this;
 
-_this = createTrigger ["EmptyDetector", [3596.3274, 6397.5415]];
+_this = createTrigger ["EmptyDetector", [3689.5784, 6479.9902]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
@@ -437,20 +397,12 @@ _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_108 = _this;
 
-_this = createTrigger ["EmptyDetector", [4438.9258, 6043.4766, 0]];
+_this = createTrigger ["EmptyDetector", [4510.2466, 5792.0288]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
 _this setTriggerText "DZAI Trigger";
-_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
-_trigger_110 = _this;
-
-_this = createTrigger ["EmptyDetector", [4455.7783, 5589.1865]];
-_this setTriggerArea [325, 325, 0, false];
-_this setTriggerActivation ["ANY", "PRESENT", false];
-_this setTriggerTimeout [30, 60, 90, true];
-_this setTriggerText "DZAI Trigger";
-_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
+_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [2,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_112 = _this;
 
 _this = createTrigger ["EmptyDetector", [5194.457, 5560.1504, 0]];
@@ -469,15 +421,15 @@ _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_116 = _this;
 
-_this = createTrigger ["EmptyDetector", [3174.0918, 5841.1548, 0]];
+_this = createTrigger ["EmptyDetector", [3212.1772, 5937.606]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
 _this setTriggerText "DZAI Trigger";
-_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
+_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [2,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_118 = _this;
 
-_this = createTrigger ["EmptyDetector", [3010.2532, 6410.6572]];
+_this = createTrigger ["EmptyDetector", [3027.6021, 6430.1846]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
@@ -485,12 +437,12 @@ _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_120 = _this;
 
-_this = createTrigger ["EmptyDetector", [2760.2825, 6849.0244]];
+_this = createTrigger ["EmptyDetector", [2805.8235, 6951.0005]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
 _this setTriggerTimeout [30, 60, 90, true];
 _this setTriggerText "DZAI Trigger";
-_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
+_this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [2,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_122 = _this;
 
 _this = createTrigger ["EmptyDetector", [3069.2361, 8054.5342, 0]];
