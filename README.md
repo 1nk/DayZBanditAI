@@ -34,8 +34,8 @@ Update Instructions:
 - Copy the newer DZAI folder into your extracted mission folder and overwrite everything.
 - If you have not modified your dayz_variables.sqf file or don't want to retain your old settings, you may repack your mission .pbo file immediately and stop following these instructions.
 - If you have backed up your dayz_ai_variables.sqf file earlier, compare the previous and updated versions, and check if any new variables have been introduced. Note: Variable tweaks may occur after each update, so you may wish to keep them up-to-date.
-- If new variables have been introduced, copy them over to your original dayz_ai_variables.sqf.
-- Overwrite the "new" dayz_ai_variables.sqf with your original if you want to re-use your previous settings.
+- If new variables have been introduced, copy them over to your customized dayz_ai_variables.sqf.
+- Overwrite the "new" dayz_ai_variables.sqf with your customized file if you want to re-use your previous settings.
 - Repack your mission.pbo file.
 
 Detailed documentation for the DZAI package is coming.
