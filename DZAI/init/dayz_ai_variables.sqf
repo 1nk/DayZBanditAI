@@ -39,7 +39,7 @@ DZAI_skinItemChance = 0.085;		//Chance to add random item from DZAI_DefaultSkinL
 DZAI_maxPistolMags = 1;				//Maximum number of pistol magazines to generate (Note: AI may loot additional magazines from dead bodies they find)
 DZAI_maxRifleMags = 2;				//Maximum number of rifle  magazines to generate (Note: AI may loot additional magazines from dead bodies they find)
 DZAI_weaponGrades = [0,1,2,3];		//(DO NOT CHANGE) All possible weapon grades (Generally, 0: Residential, 1: Military, 2: MilitarySpecial, 3: Heli Crash)
-DZAI_gradeChances = [0.17,0.60,0.25,0.08]; //Probabilities for generating weapon grades (0 - 3).
+DZAI_gradeChances = [0.17,0.50,0.25,0.08]; //Probabilities for generating weapon grades (0 - 3).
 
 //Default Bandit Loot Tables (Edit with caution - these tables are shared between ALL DayZ mods. To make changes for a specific DayZ map, edit the appropriate config file in configs folder)
 DZAI_BanditTypesDefault = ["Survivor2_DZ", "SurvivorW2_DZ", "Bandit1_DZ", "BanditW1_DZ", "Camo1_DZ", "Sniper1_DZ"];
