@@ -23,7 +23,7 @@ DZAI_maxAIUnits = 65535;			//Global maximum number of spawned AI bandits (0: Dis
 
 //AI Respawn Timing
 DZAI_respawnTime1 = 90;				//Minimum wait time for AI respawn timer (seconds).
-DZAI_respawnTime2 = 150;			//Maximum additional wait time for AI respawn timer (seconds). Total Respawn Time = DZAI_respawnTime1 + random(DZAI_respawnTime2)
+DZAI_respawnTime2 = 180;			//Maximum additional wait time for AI respawn timer (seconds). Total Respawn Time = DZAI_respawnTime1 + random(DZAI_respawnTime2)
 
 //AI Loot Generation Configuration	(Edible and Medical items, Miscellaneous items, Skin packs)
 DZAI_invmedicals = 1; 				//Number of selections of medical items (Inventory)
