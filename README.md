@@ -16,7 +16,13 @@ This new package is MP-compatible and works out of the box for any supported Day
 - Utes
 - Zargabad
 
+DZAI Features:
+- List of features here.
+
+
 Changelog:
+
+
 April 3, 2013 - 0.02 Update:
 - Modified patrol script to include variances in AI behavior and speed settings.
 - Enabled variable logging for several script files. To enable event logging, modify DZAI_debug or DZAI_extdebug variables in \DZAI\init\dayz_ai_variables.sqf.
@@ -34,7 +40,7 @@ April 3, 2013 - 0.02 Update:
 - Reduced minimum spawn delay and minimum additional spawn delay by 30 seconds each. (Maximum potential spawn delay reduced from 300 seconds to 240 seconds, minimum potential spawn delay reduced from 120 seconds to 90 seconds).
 - Reduced maximum types of inventory medical items generated for AI from 2 to 1.
 - Increased chance of generating a random misc item (ie: vehicle parts) from 50% to 60%.
-- Added Colt1911 to second-tier pistol weapon array.
+- Added Colt1911 to third-tier pistol weapon array.
 - Reduced rate of generating Morphine Autoinjector for AI.
 - Reduced maximum distance between waypoints for AI patrol from 100m to 90m (building-spawn AI only). This is to keep them from wandering too far away from the towns they are generated from.
 
@@ -63,5 +69,4 @@ Update Instructions:
 - Overwrite the "new" dayz_ai_variables.sqf with your customized file if you want to re-use your previous settings.
 - Repack your mission.pbo file.
 
-Detailed documentation for the DZAI package is coming.
-
+Detailed documentation for the DZAI package is coming. Questions? Comments? Send me a PM on the Open DayZ forums at: http://opendayz.net/members/buttface.1178/ or open a thread on the forums.
