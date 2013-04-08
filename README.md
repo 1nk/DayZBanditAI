@@ -30,6 +30,7 @@ April 8, 2013 - 0.03 Update:
 - Removed chance to not generate any rifle for AI.
 - Lowered AI spawns for Utes due to introduction of new random AI spawn system. (Author's recommendation: try out Utes with at least 15 random AI spawns! Be sure to set a default loadout with weapons.)
 - Cleaned up code for several spawn/respawn scripts (no functional changes)
+- Reverted minimum delay for AI respawn to 120 seconds, maximum additional delay changed to 150 seconds. (120 seconds minimum, 270 seconds maximum).
 
 April 3, 2013 - 0.02 Update:
 - Modified patrol script to include variances in AI behavior and speed settings.
