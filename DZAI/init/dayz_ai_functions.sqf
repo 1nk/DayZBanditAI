@@ -23,3 +23,4 @@
 	fnc_selectRandomWeighted = compile preprocessFileLineNumbers "DZAI\compile\fn_selectRandomWeighted.sqf";
 	
 initialized = true;
+DZAI_initialized = true;

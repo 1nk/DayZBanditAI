@@ -1,4 +1,4 @@
-//DZAI unitConsumables Version 0.02
+//unitConsumables Version 0.02
 /*
 	Usage: [_unit] call fnc_unitConsumables;
 */

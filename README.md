@@ -2,7 +2,7 @@ DZAI - DayZ AI Addon (Current version: 0.02)
 ============
 
 
-This new package is MP-compatible and works out of the box for any supported DayZ map. Currently supported DayZ maps:
+This new package is MP-compatible and works out of the box with any supported DayZ mission file. Currently supported DayZ missions:
 - Chernarus (Base DayZ Mod only)
 - Fallujah
 - Isla Duala
@@ -15,6 +15,7 @@ This new package is MP-compatible and works out of the box for any supported Day
 - Taviana (Requires testing)
 - Utes
 - Zargabad
+- <b>Note</b>: DZAI version 0.03 onwards should work with any DayZ mission file, even ones not listed above. However, no AI units will spawn from buildings and default DayZ loot tables will be used to generate AI loadouts.
 
 DZAI Features:
 - List of features here.
@@ -22,6 +23,13 @@ DZAI Features:
 
 Changelog:
 
+April 8, 2013 - 0.03 Update:
+- Implemented new random AI spawn system that spawns AI in the same manner that DayZ spawns heli crashes. This feature works with any DayZ mission file that contains a "center" marker. By default, a total of 15 AI units will be spawned randomly around the map, but the number can be edited in dayz_ai_variables.sqf
+- Increased all AI skill parameters, decreased minimum endurance slightly.
+- AI pistol ammo is now added to backpack instead of inventory, to prevent AI from switching to sidearm and causing issues.
+- Removed chance to not generate any rifle for AI.
+- Lowered AI spawns for Utes due to introduction of new random AI spawn system. (Author's recommendation: try out Utes with at least 15 random AI spawns! Be sure to set a default loadout with weapons.)
+- Cleaned up code for several spawn/respawn scripts (no functional changes)
 
 April 3, 2013 - 0.02 Update:
 - Modified patrol script to include variances in AI behavior and speed settings.
@@ -29,7 +37,7 @@ April 3, 2013 - 0.02 Update:
 - Reduced number of input parameters for AI spawn scripts
 - Reduced maximum spawn distance for random-location AI spawn script from 400m to 350m. (note: random spawns have not yet been added)
 - Reduced maximum spawn distance for building-location AI spawn script from 450m to 400m.
-- Slight increases in minimum amingAccuracy, aimingShake, aimingSpeed for AI.
+- Slight increases in minimum aimingAccuracy, aimingShake, aimingSpeed for AI.
 - AI loadout generation: weapongrade variable is now also used to determine whether a gadget item or skin item may be generated.
 - Modified several script files to use BIS_fnc_selectRandom to select random elements from arrays instead of the previous lengthy method.
 - Lumped zombie spawns and wilderness zombie spawn toggle variables into a single variable. Now all zombie spawns can be turned on or off with one setting in dayz_ai_variables.sqf.

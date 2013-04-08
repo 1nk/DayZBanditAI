@@ -1,3 +1,4 @@
+//unitSelectRifle version 0.03
 /*
 	Usage: [_unit, _weapongrade] call fnc_unitSelectRifle;
 */
@@ -5,8 +6,6 @@
 	_unit = _this select 0;
 	_weapongrade = _this select 1;
 	//_weapongrade = call fnc_selectRandomGrade;
-	
-	if ((_weapongrade == 0) && ((random 1) < DZAI_noRifleChance)) exitWith {};	//If weapon grade is zero and norifle check failed, exit script without assigning a rifle. (Bandit should already have at least a sidearm)
 	
 	_nmags = (floor (random DZAI_maxRifleMags)) + 1;						// Number of mags to generate for selected weapon.
     

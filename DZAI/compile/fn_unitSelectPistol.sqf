@@ -1,3 +1,4 @@
+//unitSelectPistol version 0.03
 /*
 	Usage: [_unit, _weapongrade] call fnc_unitSelectPistol;
 */
@@ -29,9 +30,10 @@
 	_rnd = floor random (count _pistols);
 	_pistol = _pistols select _rnd;
 	_magazine = getArray (configFile >> "CfgWeapons" >> _pistol >> "magazines") select 0;
-	for [{_i=1},{_i<=_nmags},{_i=_i+1}] do {
+	/*for [{_i=1},{_i<=_nmags},{_i=_i+1}] do {
 			_unit addMagazine _magazine;
-		};
+	};*/
+	(unitBackpack _unit) addMagazineCargoGlobal [_magazine, ((floor random _nmags)+1)];	//Add pistol mag to backpack instead to prevent AI from using pistol as active weapon.
 	if (DZAI_extdebug) then {diag_log format["DZAI Extended Debug: Generated Pistol: %1 for AI.",_pistol];};
 	
 	_unit addWeapon _pistol;
