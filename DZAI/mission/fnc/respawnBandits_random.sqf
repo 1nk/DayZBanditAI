@@ -19,7 +19,6 @@ if (!isServer) exitWith {};
 	
 	if (DZAI_debug) then {diag_log format["DZAI Debug: Respawn AI (Random Spawn) started."];};
 
-	sleep DZAI_spawnRandomDelay;
 	_banditGrp = createGroup resistance;
 	_pos = [getMarkerPos _spawnMarker,0,_spawnRadius,10,0,2000,0] call BIS_fnc_findSafePos;
 	_type = DZAI_BanditTypesDefault call BIS_fnc_selectRandom;
