@@ -536,16 +536,6 @@ _this setTriggerText "DZAI Trigger";
 _this setTriggerStatements ["{isPlayer _x} count thisList > 0;", "nul = [0,1,300,thisTrigger] call fnc_spawnBandits_bldgs;", ""];
 _trigger_146 = _this;
 
-_unit_5 = objNull;
-if (true) then
-{
-  _this = _group_0 createUnit ["Bandit1_DZ", [13409.133, 2823.1218, 2.9492393], [], 0, "CAN_COLLIDE"];
-  _unit_5 = _this;
-  _this setUnitAbility 0.60000002;
-  if (true) then {_group_0 selectLeader _this;};
-  if (true) then {selectPlayer _this;};
-};
-
 _this = createTrigger ["EmptyDetector", [6268.3838, 3776.8945, 0.090011597]];
 _this setTriggerArea [325, 325, 0, false];
 _this setTriggerActivation ["ANY", "PRESENT", false];
