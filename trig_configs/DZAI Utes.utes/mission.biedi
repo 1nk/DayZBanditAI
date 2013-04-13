@@ -1,0 +1,115 @@
+class _prefix_0
+{
+	objectType="prefix";
+	class Arguments
+	{
+	};
+};
+class _center_0
+{
+	objectType="center";
+	class Arguments
+	{
+		SIDE="west";
+	};
+};
+class _group_0
+{
+	objectType="group";
+	class Arguments
+	{
+		CENTER="_center_0";
+	};
+};
+class _trigger_0
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[3376.7136, 4402.3555, 0]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_2
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[3561.8384, 3708.8481]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,0,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_4
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[3855.0464, 3373.2051]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,0,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_6
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[4354.2373, 3207.3979, 0.34515762]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,0,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _unit_1
+{
+	objectType="unit";
+	class Arguments
+	{
+		POSITION="[3435.6594, 4648.8091, 0]";
+		GROUP="_group_0";
+		TYPE="DZ_Pastor";
+		SKILL="0.60000002";
+		PLAYER="true";
+		LEADER="true";
+	};
+};
+class _postfix_0
+{
+	objectType="postfix";
+	class Arguments
+	{
+	};
+};

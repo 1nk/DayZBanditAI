@@ -1,0 +1,457 @@
+class _prefix_0
+{
+	objectType="prefix";
+	class Arguments
+	{
+	};
+};
+class _center_0
+{
+	objectType="center";
+	class Arguments
+	{
+		SIDE="west";
+	};
+};
+class _group_0
+{
+	objectType="group";
+	class Arguments
+	{
+		CENTER="_center_0";
+	};
+};
+class _unit_1
+{
+	objectType="unit";
+	class Arguments
+	{
+		POSITION="[4918.3984, 6697.6973, 0]";
+		GROUP="_group_0";
+		TYPE="ns_tamika";
+		SKILL="0.60000002";
+		PLAYER="true";
+		LEADER="true";
+	};
+};
+class _trigger_0
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[4145.2739, 6654.9507, 0]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_2
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[3557.7988, 6671.5659, 0]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_4
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[3939.7617, 7536.5967, 0]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_6
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[4976.6655, 6619.644, 42.068932]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_8
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[4845.8853, 6201.1484, 0]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_10
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[4070.5422, 9235.5088, 2.600769]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_12
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[4690.1934, 8916.7041, 5.2387733]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_14
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[5727.0972, 9852.3496, -7.6293945e-006]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_16
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[6485.832, 9293.6611, 0]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_18
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[5807.0181, 8675.7822, 12.870121]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_20
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[7293.3511, 7967.5581, 3.7465744]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_22
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[7845.5361, 7684.0601, 1.2397766e-005]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_26
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[7046.0806, 5808.7622]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_28
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[5986.1616, 6641.3848, -1.1444092e-005]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_30
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[4997.793, 8127.748, -3.8146973e-006]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_32
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[8199.6846, 10729.502]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,2,75,300,275,1,thisList] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_34
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[7210.9238, 10845.059, 1.335144e-005]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_36
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[5948.0098, 10797.239, 0.38125229]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_38
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[4829.1992, 10839.983, 2.8610229e-006]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_40
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[4455.5391, 11237.011, -1.2159348e-005]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_42
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[4407.7451, 10748.695]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_44
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[6743.1201, 11242.808, 5.5010681]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [2,1,75,300,275,1,thisList] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_46
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[7668.0474, 8760.8672, 12.067543]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="DZAI Trigger";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _postfix_0
+{
+	objectType="postfix";
+	class Arguments
+	{
+	};
+};
