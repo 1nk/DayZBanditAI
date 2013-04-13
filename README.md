@@ -60,9 +60,23 @@ Installation Instructions:
 - Extract your mission .pbo file.
 - Copy the entire DZAI folder into the extracted mission folder.
 - Edit your init.sqf with a text editor.
-- Add the line to your init.sqf file: 
+- Add the line to your init.sqf file after DayZ's compiled functions: 
 
 <code>call compile preprocessFileLineNumbers "DZAI\init\dayz_ai_initialize.sqf";				//Load DayZ AI Bandit Module</code>
+
+Example edit:
+
+<code>//Load in compiled functions
+call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";				//Initilize the Variables (IMPORTANT: Must happen very early)
+progressLoadingScreen 0.1;
+call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\publicEH.sqf";				//Initilize the publicVariable event handlers
+progressLoadingScreen 0.2;
+call compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\setup_functions_med.sqf";	//Functions used by CLIENT for medical
+progressLoadingScreen 0.4;
+call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";				//Compile regular functions
+progressLoadingScreen 0.6;
+call compile preprocessFileLineNumbers "DZAI\init\dayz_ai_initialize.sqf";				//Load DayZ AI Bandit Module
+progressLoadingScreen 1.0;</code>
 
 - Optional: Edit dayz_ai_variables.sqf in "DZAI\init" to customize the addon settings (ie: Enable/Disable zombies, AI loadouts, AI spawns)
 - Repack your mission.pbo file.
