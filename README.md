@@ -6,9 +6,9 @@ This new package is MP-compatible and works out of the box with any supported Da
 - Chernarus (Original DayZ Mod only)
 - Fallujah
 - Isla Duala
-- Lingor (Skaronator version)
+- Lingor
 - Celle
-- Namalsk (Requires testing)
+- Namalsk
 - Oring
 - Panthera
 - Takistan
@@ -25,13 +25,11 @@ April 20, 2013 - 0.04 Update:
 - [NEW] Namalsk: Added modified weapongrade chances for Namalsk. Military and MilitarySpecial weapons are slightly more common, while Residential-type weapons are slightly less common.
 - [NEW] Namalsk: Added several Namalsk-specific items to Namalsk tool tables: BrokenGPS, BrokenRadio, BrokenNVGoggles, ItemSolder, APSI.
 - [NEW] DZAI can now support multiple DayZ mods that use the same map. Currently supported alternate mods: Skaronator Lingor, DayZ 2017.
-
 - [FIXED] Fixed script responsible for updating current number of live AI units. Previously, killing an AI unit did not decrease the current live AI unit count, causing AI to stop spawning/respawning if the limit is reached.
 - [FIXED] AI units are now also hostile to zombies spawned in the wilderness.
 - [FIXED] Namalsk: Fixed several spawn triggers for Namalsk.
 - [FIXED] Namalsk: DZAI now reads from Namalsk-specific loot tables for generating zombie loot.
 - [FIXED] Taviana: Removed several weapons that were added in DayZ 1.7.6.1 that are not present in Taviana 2.0, which caused client crashes when looting AI bodies.
-
 - [MODIFIED] AI units now spawn only with a primary weapon, ammunition, backpack, and possibly binoculars.
 - [MODIFIED] AI units will have additional gear added to their inventory (sidearm, skin, tools, gadget, etc.) when they are killed by a player. An AI unit killed by another AI will not have additional gear added.
 - [MODIFIED] Slight increases in AI spawns for Cherno, Elektro, and Zelenogorsk.
