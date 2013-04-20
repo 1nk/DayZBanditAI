@@ -33,7 +33,7 @@
 	for [{_i=1},{_i<=_nmags},{_i=_i+1}] do {
 			_unit addMagazine _magazine;
 		};
-	if (DZAI_extdebug) then {diag_log format["DZAI Extended Debug: Generated Rifle: %1 for AI.",_rifle];};
+	if (DZAI_debugLevel > 1) then {diag_log format["DZAI Extended Debug: Generated Rifle: %1 with %2 magazines for AI.",_rifle,_nmags];};
 	
 	_unit addWeapon _rifle;
 	_unit selectweapon _rifle;

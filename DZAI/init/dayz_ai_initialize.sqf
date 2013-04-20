@@ -18,4 +18,4 @@ EAST setFriend [resistance, 0];
 WEST setFriend [EAST, 0];
 WEST setFriend [resistance, 0];
 waituntil {!isnil "DZAI_initialized"};
-_nul = [DZAI_spawnRandom,'center', 4000] spawn fnc_spawnBandits_random;
+_nul = [DZAI_spawnRandom,'center', 4500] spawn fnc_spawnBandits_random;

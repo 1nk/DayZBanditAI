@@ -1,9 +1,14 @@
-//Lingor Configuration 0.02
+//Lingor Configuration 0.04
 
-DZAI_PistolsDefault3 = DZAI_PistolsDefault3 + ["MakarovSD"];
-DZAI_RiflesDefault1 = DZAI_RiflesDefault1 + ["RPK_74"];
-DZAI_RiflesDefault2 = DZAI_RiflesDefault2 + ["MG36"];
-DZAI_RiflesDefault3 = DZAI_RiflesDefault3 + ["BAF_L85A2_UGL_Holo"];
+switch (DZAI_modName) do {
+	case "skarolingor":
+	{
+		DZAI_PistolsDefault3 = DZAI_PistolsDefault3 + ["MakarovSD"];
+		DZAI_RiflesDefault1 = DZAI_RiflesDefault1 + ["RPK_74"];
+		DZAI_RiflesDefault2 = DZAI_RiflesDefault2 + ["MG36"];
+		DZAI_RiflesDefault3 = DZAI_RiflesDefault3 + ["BAF_L85A2_UGL_Holo"];
+	};
+};
 
 _this = createTrigger ["EmptyDetector", [1786.98, 596.24695]];
 _this setTriggerArea [325, 325, 0, false];

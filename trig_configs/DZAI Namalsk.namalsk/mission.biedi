@@ -47,7 +47,7 @@ class _trigger_0
 		TIMEOUT_MID="60";
 		TIMEOUT_MAX="90";
 		INTERRUPTABLE="true";
-		TEXT="DZAI Trigger";
+		TEXT="Seraja Army Base";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
 		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
@@ -65,7 +65,7 @@ class _trigger_2
 		TIMEOUT_MID="60";
 		TIMEOUT_MAX="90";
 		INTERRUPTABLE="true";
-		TEXT="DZAI Trigger";
+		TEXT="Southern Army Base";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
 		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
@@ -83,9 +83,9 @@ class _trigger_4
 		TIMEOUT_MID="60";
 		TIMEOUT_MAX="90";
 		INTERRUPTABLE="true";
-		TEXT="DZAI Trigger";
+		TEXT="Norinsk";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
-		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+		EXP_ACTIV="nul = [1,2,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
 };
 class _trigger_6
@@ -101,7 +101,7 @@ class _trigger_6
 		TIMEOUT_MID="60";
 		TIMEOUT_MAX="90";
 		INTERRUPTABLE="true";
-		TEXT="DZAI Trigger";
+		TEXT="Object A2";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
 		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
@@ -119,7 +119,7 @@ class _trigger_8
 		TIMEOUT_MID="60";
 		TIMEOUT_MAX="90";
 		INTERRUPTABLE="true";
-		TEXT="DZAI Trigger";
+		TEXT="Brensk Railway Station";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
 		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
@@ -137,9 +137,9 @@ class _trigger_10
 		TIMEOUT_MID="60";
 		TIMEOUT_MAX="90";
 		INTERRUPTABLE="true";
-		TEXT="DZAI Trigger";
+		TEXT="Western Army Checkpoint";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
-		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+		EXP_ACTIV="nul = [1,0,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
 };
 class _trigger_12
@@ -155,9 +155,9 @@ class _trigger_12
 		TIMEOUT_MID="60";
 		TIMEOUT_MAX="90";
 		INTERRUPTABLE="true";
-		TEXT="DZAI Trigger";
+		TEXT="Sebjan Warehouse";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
-		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+		EXP_ACTIV="nul = [1,0,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
 };
 class _trigger_14
@@ -173,7 +173,7 @@ class _trigger_14
 		TIMEOUT_MID="60";
 		TIMEOUT_MAX="90";
 		INTERRUPTABLE="true";
-		TEXT="DZAI Trigger";
+		TEXT="Sebjan dam";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
 		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
@@ -191,9 +191,9 @@ class _trigger_16
 		TIMEOUT_MID="60";
 		TIMEOUT_MAX="90";
 		INTERRUPTABLE="true";
-		TEXT="DZAI Trigger";
+		TEXT="Sebjan Chemical Factory";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
-		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+		EXP_ACTIV="nul = [1,0,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
 };
 class _trigger_18
@@ -201,7 +201,7 @@ class _trigger_18
 	objectType="trigger";
 	class Arguments
 	{
-		POSITION="[5807.0181, 8675.7822, 12.870121]";
+		POSITION="[5807.0181, 8676.9521, 12.870121]";
 		A="325";
 		B="325";
 		ACTIVATION_BY="ANY";
@@ -209,9 +209,9 @@ class _trigger_18
 		TIMEOUT_MID="60";
 		TIMEOUT_MAX="90";
 		INTERRUPTABLE="true";
-		TEXT="DZAI Trigger";
+		TEXT="Sebjan";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
-		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+		EXP_ACTIV="nul = [1,0,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
 };
 class _trigger_20
@@ -227,7 +227,7 @@ class _trigger_20
 		TIMEOUT_MID="60";
 		TIMEOUT_MAX="90";
 		INTERRUPTABLE="true";
-		TEXT="DZAI Trigger";
+		TEXT="Old Hospital";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
 		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
@@ -245,7 +245,7 @@ class _trigger_22
 		TIMEOUT_MID="60";
 		TIMEOUT_MAX="90";
 		INTERRUPTABLE="true";
-		TEXT="DZAI Trigger";
+		TEXT="Tara harbor";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
 		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
@@ -263,9 +263,9 @@ class _trigger_26
 		TIMEOUT_MID="60";
 		TIMEOUT_MAX="90";
 		INTERRUPTABLE="true";
-		TEXT="DZAI Trigger";
+		TEXT="Old Sawmill";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
-		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+		EXP_ACTIV="nul = [0,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
 };
 class _trigger_28
@@ -281,7 +281,7 @@ class _trigger_28
 		TIMEOUT_MID="60";
 		TIMEOUT_MAX="90";
 		INTERRUPTABLE="true";
-		TEXT="DZAI Trigger";
+		TEXT="Nitija Army Base";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
 		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
@@ -299,7 +299,7 @@ class _trigger_30
 		TIMEOUT_MID="60";
 		TIMEOUT_MAX="90";
 		INTERRUPTABLE="true";
-		TEXT="DZAI Trigger";
+		TEXT="Sebjan Mine";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
 		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
@@ -317,9 +317,9 @@ class _trigger_32
 		TIMEOUT_MID="60";
 		TIMEOUT_MAX="90";
 		INTERRUPTABLE="true";
-		TEXT="DZAI Trigger";
+		TEXT="Jalovisko";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
-		EXP_ACTIV="nul = [1,2,75,300,275,1,thisList] call fnc_spawnBandits_bldgs;";
+		EXP_ACTIV="nul = [2,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
 };
 class _trigger_34
@@ -335,7 +335,7 @@ class _trigger_34
 		TIMEOUT_MID="60";
 		TIMEOUT_MAX="90";
 		INTERRUPTABLE="true";
-		TEXT="DZAI Trigger";
+		TEXT="Vorkuta Outskirts";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
 		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
@@ -353,7 +353,7 @@ class _trigger_36
 		TIMEOUT_MID="60";
 		TIMEOUT_MAX="90";
 		INTERRUPTABLE="true";
-		TEXT="DZAI Trigger";
+		TEXT="Old Yard Alakit";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
 		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
@@ -371,7 +371,7 @@ class _trigger_38
 		TIMEOUT_MID="60";
 		TIMEOUT_MAX="90";
 		INTERRUPTABLE="true";
-		TEXT="DZAI Trigger";
+		TEXT="Northern Army Base";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
 		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
@@ -389,7 +389,7 @@ class _trigger_40
 		TIMEOUT_MID="60";
 		TIMEOUT_MAX="90";
 		INTERRUPTABLE="true";
-		TEXT="DZAI Trigger";
+		TEXT="Lubjansk";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
 		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
@@ -407,9 +407,9 @@ class _trigger_42
 		TIMEOUT_MID="60";
 		TIMEOUT_MAX="90";
 		INTERRUPTABLE="true";
-		TEXT="DZAI Trigger";
+		TEXT="Lubjansk South";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
-		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+		EXP_ACTIV="nul = [0,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
 };
 class _trigger_44
@@ -425,9 +425,9 @@ class _trigger_44
 		TIMEOUT_MID="60";
 		TIMEOUT_MAX="90";
 		INTERRUPTABLE="true";
-		TEXT="DZAI Trigger";
+		TEXT="Vorkuta";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
-		EXP_ACTIV="nul = [2,1,75,300,275,1,thisList] call fnc_spawnBandits_bldgs;";
+		EXP_ACTIV="nul = [2,2,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
 };
 class _trigger_46
@@ -443,9 +443,81 @@ class _trigger_46
 		TIMEOUT_MID="60";
 		TIMEOUT_MAX="90";
 		INTERRUPTABLE="true";
+		TEXT="Nemsk Factory";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [1,0,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_48
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[7260.1699, 7052.3057, 0]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="Tara";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [0,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_52
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[7568.5547, 11340.646, 2.9974174]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="Vorkuta Outskirts Gas Station";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [0,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_55
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[6229.6514, 11772.12, 0]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
 		TEXT="DZAI Trigger";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
-		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+		EXP_ACTIV="nul = [0,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+	};
+};
+class _trigger_58
+{
+	objectType="trigger";
+	class Arguments
+	{
+		POSITION="[6169.7852, 5737.0293, -9.5367432e-007]";
+		A="325";
+		B="325";
+		ACTIVATION_BY="ANY";
+		TIMEOUT_MIN="30";
+		TIMEOUT_MID="60";
+		TIMEOUT_MAX="90";
+		INTERRUPTABLE="true";
+		TEXT="Tara Marsh";
+		EXP_COND="{isPlayer _x} count thisList > 0;";
+		EXP_ACTIV="nul = [0,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
 };
 class _postfix_0

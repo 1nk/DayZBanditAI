@@ -1,4 +1,4 @@
-//spawnBandits_bldgs Version 0.03
+//spawnBandits_bldgs Version 0.04
 /*
 	Usage: [_minAI, _addAI, _maxspawnd, _trigger] call spawnBandits_bldgs
 */
@@ -28,7 +28,7 @@ if (!isServer) exitWith {};
 	_nearbldgs = nearestObjects [_triggerpos, ["Building"], _maxspawnd];
 	_bldgpos = [_nearbldgs] call getBuildingPosition;
 				
-	if (DZAI_debug) then {diag_log format["DZAI Debug: %1 new AI spawns triggered using Building location as spawn point.",_totalAI];};
+	if (DZAI_debugLevel > 0) then {diag_log format["DZAI Debug: %1 new AI spawns triggered using Building location as spawn point.",_totalAI];};
 	for "_i" from 1 to _totalAI do {
 		private ["_banditGrp","_p","_pos","_type","_unit"];
 		_banditGrp = createGroup resistance;
@@ -46,13 +46,11 @@ if (!isServer) exitWith {};
 		_unit addEventHandler ["Killed",{_this spawn fnc_banditAIRespawn2;}];			// Respawn AI near nearby buildings
 		_unit addEventHandler ["Killed",{(_this select 0) setDamage 1;}];				
 		
-		_weapongrade = call fnc_selectRandomGrade;
+		_weapongrade = [DZAI_weaponGrades,DZAI_gradeChances] call fnc_selectRandomWeighted;	
 		[_unit] call fnc_setBehaviour;													// Set AI behavior
 		[_unit] call fnc_setSkills;														// Set AI skill
-		[_unit, _weapongrade] call fnc_unitBackpackTools;								// Assign backpack, tools, gadgets 
-		[_unit, _weapongrade] call fnc_unitSelectPistol;								// Assign sidearm
-		[_unit, _weapongrade] call fnc_unitSelectRifle;									// Assign rifle
-		[_unit, _weapongrade] call fnc_unitConsumables;									// Generate loot: food, medical, misc, skin
-		null = [_banditGrp,_pos,_patrold] execVM "DZAI\BIN_taskPatrol.sqf";
-		if (DZAI_debug) then {diag_log format["DZAI Debug: Spawned AI Type %1 %2 of %3. (Building)",_type,_i, _totalAI];};
+		[_unit] call fnc_unitBackpack;													// Add backpack and chance of binoculars
+		[_unit, _weapongrade] call fnc_unitSelectRifle;									// Add rifle
+		null = [_banditGrp,_pos,_patrold,DZAI_debugMarkers] execVM "DZAI\BIN_taskPatrol.sqf";
+		if (DZAI_debugLevel > 0) then {diag_log format["DZAI Debug: Spawned AI Type %1 %2 of %3 with weapongrade %4. (Building)",_type,_i, _totalAI,_weapongrade];};
 	};

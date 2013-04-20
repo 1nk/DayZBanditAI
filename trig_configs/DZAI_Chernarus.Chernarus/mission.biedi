@@ -21,6 +21,19 @@ class _group_0
 		CENTER="_center_0";
 	};
 };
+class _unit_5
+{
+	objectType="unit";
+	class Arguments
+	{
+		POSITION="[13409.133, 2823.1218, 2.9492393]";
+		GROUP="_group_0";
+		TYPE="Bandit1_DZ";
+		SKILL="0.60000002";
+		PLAYER="true";
+		LEADER="true";
+	};
+};
 class _trigger_0
 {
 	objectType="trigger";
@@ -108,7 +121,7 @@ class _trigger_10
 		INTERRUPTABLE="true";
 		TEXT="DZAI Trigger";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
-		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+		EXP_ACTIV="nul = [2,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
 };
 class _trigger_12
@@ -162,7 +175,7 @@ class _trigger_16
 		INTERRUPTABLE="true";
 		TEXT="DZAI Trigger";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
-		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+		EXP_ACTIV="nul = [2,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
 };
 class _trigger_18
@@ -180,7 +193,7 @@ class _trigger_18
 		INTERRUPTABLE="true";
 		TEXT="DZAI Trigger";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
-		EXP_ACTIV="nul = [2,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+		EXP_ACTIV="nul = [3,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
 };
 class _trigger_20
@@ -612,7 +625,7 @@ class _trigger_78
 		INTERRUPTABLE="true";
 		TEXT="DZAI Trigger";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
-		EXP_ACTIV="nul = [1,2,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+		EXP_ACTIV="nul = [2,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
 };
 class _trigger_80
@@ -882,7 +895,7 @@ class _trigger_108
 		INTERRUPTABLE="true";
 		TEXT="DZAI Trigger";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
-		EXP_ACTIV="nul = [2,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
+		EXP_ACTIV="nul = [3,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
 };
 class _trigger_110
@@ -1224,20 +1237,7 @@ class _trigger_146
 		INTERRUPTABLE="true";
 		TEXT="DZAI Trigger";
 		EXP_COND="{isPlayer _x} count thisList > 0;";
-		EXP_ACTIV="nul = [0,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
-	};
-};
-class _unit_5
-{
-	objectType="unit";
-	class Arguments
-	{
-		POSITION="[13409.133, 2823.1218, 2.9492393]";
-		GROUP="_group_0";
-		TYPE="Bandit1_DZ";
-		SKILL="0.60000002";
-		PLAYER="true";
-		LEADER="true";
+		EXP_ACTIV="nul = [1,1,300,thisTrigger] call fnc_spawnBandits_bldgs;";
 	};
 };
 class _trigger_148

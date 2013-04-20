@@ -1,4 +1,4 @@
-//respawnBandits_bldgs Version 0.03
+//respawnBandits_bldgs Version 0.04
 /*
 	Usage: [_maxspawnd, _respawnpos] call respawnBandits_bldgs
 */
@@ -10,7 +10,7 @@ private ["_maxspawnd", "_patrold","_weapongrade","_respawnpos","_banditGrp","_p"
 		
 	//Editables and default values
 	_patrold = 100;					//Maximum distance between patrol waypoints. 
-	_maxspawnd = 400;
+	_maxspawnd = 400;				//Maximum distance to search for buildings to use as respawn points.
 	
 	_respawnpos = _this select 0;	//Position of AI corpse, used as a reference position to generate a respawn position.
 	_maxspawnd = _this select 1;	//Maximum distance from trigger location to generate spawn positions
@@ -19,12 +19,10 @@ private ["_maxspawnd", "_patrold","_weapongrade","_respawnpos","_banditGrp","_p"
 
 	_nearbldgs = nearestObjects [_respawnpos, ["Building"], _maxspawnd];
 	if ((count _nearbldgs) == 0) exitWith {
-		_nul = [1000,_respawnpos] call fnc_respawnBandits_bldgs; //Extend range to 1km if no buildings immediately nearby
+		_nul = [1000,_respawnpos] call fnc_respawnBandits_bldgs; //Extend range to 1km if no buildings immediately nearby. This shouldn't be happening if patrol distance is short enough.
 		diag_log format["DZAI Warning: No buildings found within predefined radius. Extending respawn radius to 1000 units."]; 
 	};	
 	_bldgpos = [_nearbldgs] call getBuildingPosition;
-	
-	if (DZAI_debug) then {diag_log format["DZAI Debug: Respawn AI (Building Spawn) started."];};
 	
 	_banditGrp = createGroup resistance;
 	_p = _bldgpos call BIS_fnc_selectRandom;
@@ -40,14 +38,12 @@ private ["_maxspawnd", "_patrold","_weapongrade","_respawnpos","_banditGrp","_p"
 	_unit addEventHandler ["Killed",{_this call fnc_banditAIKilled;}];				// Update current AI count
 	_unit addEventHandler ["Killed",{_this spawn fnc_banditAIRespawn2;}];			// Respawn AI near nearby buildings
 	_unit addEventHandler ["Killed",{(_this select 0) setDamage 1;}];
-		
-	_weapongrade = call fnc_selectRandomGrade;		
+	
+	_weapongrade = [DZAI_weaponGrades,DZAI_gradeChances] call fnc_selectRandomWeighted;	
 	[_unit] call fnc_setBehaviour;													// Set AI behavior
 	[_unit] call fnc_setSkills;														// Set AI skill
-	[_unit, _weapongrade] call fnc_unitBackpackTools;								// Assign backpack, tools, gadgets 
-	[_unit, _weapongrade] call fnc_unitSelectPistol;								// Assign sidearm
-	[_unit, _weapongrade] call fnc_unitSelectRifle;									// Assign rifle
-	[_unit, _weapongrade] call fnc_unitConsumables;									// Generate loot: food, medical, misc, skin
-	null = [_banditGrp,_pos,_patrold] execVM "DZAI\BIN_taskPatrol.sqf";
-	if (DZAI_debug) then {diag_log format["DZAI Debug: Respawned AI Type %1. (Building)",_type];};
+	[_unit] call fnc_unitBackpack;													// Add backpack and chance of binoculars
+	[_unit, _weapongrade] call fnc_unitSelectRifle;									// Add rifle
+	null = [_banditGrp,_pos,_patrold,DZAI_debugMarkers] execVM "DZAI\BIN_taskPatrol.sqf";
+	if (DZAI_debugLevel > 0) then {diag_log format["DZAI Debug: Respawned 1 AI Type %1 with weapongrade %2. (Building)",_type,_weapongrade];};
 

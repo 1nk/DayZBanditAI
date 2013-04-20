@@ -1,4 +1,4 @@
-//setSkills version 0.03
+//setSkills version 0.04
 /*
 	Usage: [_unit] call fnc_setSkills;
 */
@@ -6,8 +6,8 @@
 _unit = _this select 0;
 	
 _unit setSkill ["aimingAccuracy",(0.15 + random 0.20)];
-_unit setSkill ["aimingShake",(0.40 + random 0.45)];
-_unit setSkill ["aimingSpeed",(0.40 + random 0.45)];
+_unit setSkill ["aimingShake",(0.40 + random 0.50)];
+_unit setSkill ["aimingSpeed",(0.40 + random 0.50)];
 _unit setSkill ["endurance",(0.60 + random 0.40)];
 _unit setSkill ["spotDistance",(0.40 + random 0.40)];
 _unit setSkill ["spotTime",(0.50 + random 0.30)];

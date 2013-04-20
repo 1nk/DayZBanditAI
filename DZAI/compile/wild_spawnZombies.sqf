@@ -62,3 +62,4 @@ if (_rnd > 0.3) then {
 
 //Start behavior
 _id = [_position,_agent] execFSM "\z\AddOns\dayz_code\system\zombie_agent.fsm";
+{ _x addRating -20000; } forEach allMissionObjects "zZombie_Base";

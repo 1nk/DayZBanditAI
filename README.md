@@ -1,9 +1,9 @@
-DZAI - DayZ AI Addon (Current version: 0.03)
+DZAI - DayZ AI Addon (Current version: 0.04)
 ============
 
 
 This new package is MP-compatible and works out of the box with any supported DayZ mission file. Currently supported DayZ missions:
-- Chernarus (Base DayZ Mod only)
+- Chernarus (Original DayZ Mod only)
 - Fallujah
 - Isla Duala
 - Lingor (Skaronator version)
@@ -15,49 +15,46 @@ This new package is MP-compatible and works out of the box with any supported Da
 - Taviana (Requires testing)
 - Utes
 - Zargabad
-- <b>Note</b>: DZAI version 0.03 onwards should work with any DayZ mission file, even ones not listed above. However, no AI units will spawn from buildings and default DayZ loot tables will be used to generate AI loadouts.
+- <b>Note</b>: DZAI version 0.03+ should work with any DayZ mission file. However for DayZ mods not listed above, no AI units will spawn from buildings and default DayZ loot tables will be used to generate AI loadouts. You will have to create and add your own configuration file to create new spawn points.
 
 DZAI Features:
 - List of features here.
 
+April 20, 2013 - 0.04 Update:
 
-Changelog:
+- [NEW] Namalsk: Added modified weapongrade chances for Namalsk. Military and MilitarySpecial weapons are slightly more common, while Residential-type weapons are slightly less common.
+- [NEW] Namalsk: Added several Namalsk-specific items to Namalsk tool tables: BrokenGPS, BrokenRadio, BrokenNVGoggles, ItemSolder, APSI.
+- [NEW] DZAI can now support multiple DayZ mods that use the same map. Currently supported alternate mods: Skaronator Lingor, DayZ 2017.
 
-April 8, 2013 - 0.03 Update:
-- Implemented new random AI spawn system that spawns AI in the same manner that DayZ spawns heli crashes. This feature works with any DayZ mission file that contains a "center" marker. By default, a total of 15 AI units will be spawned randomly around the map, but the number can be edited in dayz_ai_variables.sqf
-- Increased all AI skill parameters, decreased minimum endurance slightly.
-- AI pistol ammo is now added to backpack instead of inventory, to prevent AI from switching to sidearm and causing issues.
-- Removed chance to not generate any rifle for AI.
-- Lowered AI spawns for Utes due to introduction of new random AI spawn system. (Author's recommendation: try out Utes with at least 15 random AI spawns! Be sure to set a default loadout with weapons.)
-- Cleaned up code for several spawn/respawn scripts (no functional changes)
-- Reverted minimum delay for AI respawn to 120 seconds, maximum additional delay changed to 150 seconds. (120 seconds minimum, 270 seconds maximum).
+- [FIXED] Fixed script responsible for updating current number of live AI units. Previously, killing an AI unit did not decrease the current live AI unit count, causing AI to stop spawning/respawning if the limit is reached.
+- [FIXED] AI units are now also hostile to zombies spawned in the wilderness.
+- [FIXED] Namalsk: Fixed several spawn triggers for Namalsk.
+- [FIXED] Namalsk: DZAI now reads from Namalsk-specific loot tables for generating zombie loot.
+- [FIXED] Taviana: Removed several weapons that were added in DayZ 1.7.6.1 that are not present in Taviana 2.0, which caused client crashes when looting AI bodies.
 
-April 3, 2013 - 0.02 Update:
-- Modified patrol script to include variances in AI behavior and speed settings.
-- Enabled variable logging for several script files. To enable event logging, modify DZAI_debug or DZAI_extdebug variables in \DZAI\init\dayz_ai_variables.sqf.
-- Reduced number of input parameters for AI spawn scripts
-- Reduced maximum spawn distance for random-location AI spawn script from 400m to 350m. (note: random spawns have not yet been added)
-- Reduced maximum spawn distance for building-location AI spawn script from 450m to 400m.
-- Slight increases in minimum aimingAccuracy, aimingShake, aimingSpeed for AI.
-- AI loadout generation: weapongrade variable is now also used to determine whether a gadget item or skin item may be generated.
-- Modified several script files to use BIS_fnc_selectRandom to select random elements from arrays instead of the previous lengthy method.
-- Lumped zombie spawns and wilderness zombie spawn toggle variables into a single variable. Now all zombie spawns can be turned on or off with one setting in dayz_ai_variables.sqf.
-- Modified Chenarus AI spawn triggers from default settings. There is now some variance in the number of AI spawned per trigger depending on the location.
-- AI spawn trigger locations have been slightly adjusted for several maps.
-- Removed AI spawn multiplier variable (DZAI_spawnMultiplier) and replaced with a variable (DZAI_spawnExtra) to add a specific number of AI to each trigger. For example, if you want 1 additional AI to spawn for every trigger, set DZAI_spawnExtra to 1 in dayz_ai_variables.sqf.
-- Reduced default probability of AI spawning without a rifle (if weapongrade = 0) to 0.00. This probability may be changed in dayz_ai_variables.sqf.
-- Reduced minimum spawn delay and minimum additional spawn delay by 30 seconds each. (Maximum potential spawn delay reduced from 300 seconds to 240 seconds, minimum potential spawn delay reduced from 120 seconds to 90 seconds).
-- Reduced maximum types of inventory medical items generated for AI from 2 to 1.
-- Increased chance of generating a random misc item (ie: vehicle parts) from 50% to 60%.
-- Added Colt1911 to third-tier pistol weapon array.
-- Reduced rate of generating Morphine Autoinjector for AI.
-- Reduced maximum distance between waypoints for AI patrol from 100m to 90m (building-spawn AI only). This is to keep them from wandering too far away from the towns they are generated from.
+- [MODIFIED] AI units now spawn only with a primary weapon, ammunition, backpack, and possibly binoculars.
+- [MODIFIED] AI units will have additional gear added to their inventory (sidearm, skin, tools, gadget, etc.) when they are killed by a player. An AI unit killed by another AI will not have additional gear added.
+- [MODIFIED] Slight increases in AI spawns for Cherno, Elektro, and Zelenogorsk.
+- [MODIFIED] Random AI spawn radius increased from 4000 meters to 4500 meters.
+- [MODIFIED] Weapongrade is no longer used to influence consumable/tool item generation (for fnc_unitConsumables, fnc_unitTools).
+- [MODIFIED] Slight increases in maximum aimingShake/aimingSpeed parameters for AI.
+- [MODIFIED] Miscellaneous items recategorized into Small (1 inventory space) and Large (>1 inventory space) items. An AI may carry up to 3 Small items and 1 Large item. Note: If AI unit's backpack is full, extra items may appear on the ground nearby.
+- [MODIFIED] Pistol ammunition is again added to AI unit's inventory instead of backpack, since the pistol is now added to the AI after death.
+- [MODIFIED] Lingor config file now supports both Lingor 1.3 and Skaronator Lingor 2.1. To enable Skaronator Lingor support, edit "DZAI_modName" in dayz_ai_variables.sqf to "skarolingor".
+- [MODIFIED] Chernarus config file now supports both original DayZ and DayZ 2017. To enable DayZ 2017 support, edit "DZAI_modName" in dayz_ai_variables.sqf to "2017".
+- [MODIFIED] Namalsk: Lowered number of selections and number of edible items in AI backpack to zero, as food is intended to be rare on Namalsk.
+- [MODIFIED] Namalsk: Lowered chance of generating functional GPS and NVGoggles from 3% to 1%.
+- [MODIFIED] Namalsk: Labeled spawn triggers with names of their locations for easier editing. Note: Spawn triggers for other maps will be also labeled in the near future.
+- [MODIFIED] Taviana: Adjusted spawn numbers for nearly all triggers. Larger cities/towns will have more AI spawned, while less dense areas will have less AI. Several small AI spawns were also added.
+- [MODIFIED] DZAI debugging settings now grouped into a single variable (DZAI_debug). Possible settings: 0 (no debug logging), 1 (basic debug logging), 2 (extended debug logging).
+- [MODIFIED] Tool items (ie: Map, Compass, etc) are now generated individually on a probability basis instead of being generated as a set. Gadgets such as NVGoggles and GPS are now also categorized as tools.
+- [MODIFIED] Improved documentation in several script files.
+- [MODIFIED] Removed fnc_unitBackpackTools function, split into fnc_unitBackpack and fnc_unitTools functions.
 
-March 25, 2013 - 0.01 Release:
-- Complete revision of previous AI package to ensure multiplayer compatibility.
+- [REMOVED] Removed unnecessary fnc_selectRandomGrade function. Weapongrades are now generated directly using the fnc_selectRandomWeighted function instead.
 
 Installation Instructions:
-- Extract your mission .pbo file.
+- Extract your mission .pbo file. (I recommend cpbo, which can be downloaded as part of the Arma Tools package: http://www.armaholic.com/page.php?id=411)
 - Copy the entire DZAI folder into the extracted mission folder.
 - Edit your init.sqf with a text editor.
 - Add the line to your init.sqf file after DayZ's compiled functions: 
@@ -78,8 +75,9 @@ progressLoadingScreen 0.6;
 call compile preprocessFileLineNumbers "DZAI\init\dayz_ai_initialize.sqf";				//Load DayZ AI Bandit Module
 progressLoadingScreen 1.0;</code>
 
-- Optional: Edit dayz_ai_variables.sqf in "DZAI\init" to customize the addon settings (ie: Enable/Disable zombies, AI loadouts, AI spawns)
+- Optional: Edit dayz_ai_variables.sqf in "DZAI\init" to customize the addon settings (ie: Enable/Disable zombies, AI loadouts, AI spawns, etc.)
 - Repack your mission.pbo file.
+- You are now ready to start your server.
 
 Update Instructions:
 - Extract your mission .pbo file.
@@ -91,5 +89,6 @@ Update Instructions:
 - If new variables have been introduced, copy them over to your customized dayz_ai_variables.sqf.
 - Overwrite the "new" dayz_ai_variables.sqf with your customized file if you want to re-use your previous settings.
 - Repack your mission.pbo file.
+- You are now ready to start your server.
 
-Detailed documentation for the DZAI package is coming. Questions? Comments? Send me a PM on the Open DayZ forums at: http://opendayz.net/members/buttface.1178/ or open a thread on the forums.
+Detailed documentation for the DZAI package is coming. Questions? Comments? Send me a PM on the Open DayZ forums at: http://opendayz.net/members/buttface.1178/ and I will help if I am able.

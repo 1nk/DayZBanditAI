@@ -6,7 +6,7 @@ DZAI_PistolsDefault1 = DZAI_PistolsDefault1 + ["KPFS_P226","KPFS_PM63","KPFS_P88
 //DZAI_RiflesDefault0 = DZAI_RiflesDefault0 + [];
 //DZAI_RiflesDefault1 = DZAI_RiflesDefault1 + [];
 DZAI_RiflesDefault2 = DZAI_RiflesDefault2 - ["M107_DZ"];
-DZAI_RiflesDefault3 = DZAI_RiflesDefault3 - ["M107_DZ"] + ["KPFS_KarS","KPFS_MG1","KPFS_MP5A3SD"] ;
+DZAI_RiflesDefault3 = DZAI_RiflesDefault3 - ["M107_DZ"] + ["KPFS_KarS","KPFS_MG1","KPFS_MP5A3SD"];
 DZAI_DefaultSkinLoot = DZAI_DefaultSkinLoot + ["Skin_police1_DZ","Skin_police2_DZ","Skin_civilian2_DZ","Skin_civilian3_DZ","Skin_civilian4_DZ","Skin_civilian5_DZ"];
 
 _this = createTrigger ["EmptyDetector", [2109.7009, 3037.5085, 0]];

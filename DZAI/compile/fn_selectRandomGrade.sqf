@@ -7,7 +7,7 @@ private ["_weapongrade"];
 //_gradechances = [0.20,0.60,0.15,0.05];
 
 _weapongrade = [DZAI_weaponGrades,DZAI_gradeChances] call fnc_selectRandomWeighted;
-if (DZAI_extdebug) then {diag_log format["DZAI Extended Debug: Generated weapon grade: %1 for AI.",_weapongrade];};
+if (DZAI_debugLevel > 1) then {diag_log format["DZAI Extended Debug: Generated weapon grade: %1 for AI.",_weapongrade];};
 
 _weapongrade
 
